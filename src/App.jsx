@@ -10,10 +10,12 @@ import GymPage from "./pages/GymPage";
 import EnglishPage from "./pages/EnglishPage";
 import WellnessPage from "./pages/WellnessPage";
 import InspirationPage from "./pages/InspirationPage";
+import AdvicePage from "./pages/AdvicePage";
 
 // Components
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import PINLock from "./components/auth/PINLock"; // ✅ PIN Lock import
 
 const todayString = () => new Date().toDateString();
 
@@ -30,6 +32,7 @@ const defaultData = {
 };
 
 function App() {
+  const [isUnlocked, setIsUnlocked] = useState(false); // ✅ PIN unlock state
   const [data, setData] = useState(() => {
     const saved = JSON.parse(localStorage.getItem("seedrise93"));
     return saved ? { ...defaultData, ...saved } : defaultData;
@@ -87,6 +90,16 @@ function App() {
     setData({ ...data, darkMode: !data.darkMode });
   };
 
+  // ✅ Agar unlock nahi hai to PIN Lock dikhao
+  if (!isUnlocked) {
+    return (
+      <BrowserRouter>
+        <PINLock onUnlock={() => setIsUnlocked(true)} />
+      </BrowserRouter>
+    );
+  }
+
+  // ✅ Agar unlock hai to normal app dikhao
   return (
     <BrowserRouter>
       <div className="app">
@@ -124,6 +137,7 @@ function App() {
             <Route path="/english" element={<EnglishPage streak={data.currentStreak} />} />
             <Route path="/wellness" element={<WellnessPage streak={data.currentStreak} />} />
             <Route path="/inspiration" element={<InspirationPage streak={data.currentStreak} />} />
+            <Route path="/advice" element={<AdvicePage streak={data.currentStreak} />} />
           </Routes>
         </main>
 

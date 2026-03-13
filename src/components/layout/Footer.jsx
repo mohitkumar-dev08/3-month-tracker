@@ -1,6 +1,44 @@
+// components/layout/Footer.jsx
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function Footer() {
+  const [timeLeft, setTimeLeft] = useState("");
+
+  useEffect(() => {
+    const updateTimer = () => {
+      const unlockTime = sessionStorage.getItem("app_unlock_time");
+      
+      if (unlockTime) {
+        const now = Date.now();
+        const elapsed = now - parseInt(unlockTime);
+        const fiveMinutes = 5 * 60 * 1000; // 5 minutes in milliseconds
+        const remaining = fiveMinutes - elapsed;
+        
+        if (remaining <= 0) {
+          setTimeLeft("Locking soon...");
+          // Auto-lock when time's up
+          setTimeout(() => {
+            sessionStorage.removeItem("app_unlock_time");
+            window.location.reload();
+          }, 1000);
+        } else {
+          const minutes = Math.floor(remaining / 60000);
+          const seconds = Math.floor((remaining % 60000) / 1000);
+          setTimeLeft(`${minutes}m ${seconds}s`);
+        }
+      } else {
+        setTimeLeft("");
+      }
+    };
+
+    // Update every second
+    updateTimer();
+    const interval = setInterval(updateTimer, 1000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -37,6 +75,14 @@ export default function Footer() {
             <a href="#" className="social-link">📘</a>
             <a href="#" className="social-link">📸</a>
           </div>
+          
+          {/* 🔥 LOCK TIMER - Simple text */}
+          {timeLeft && (
+  <div className="lock-timer" style={{background: 'yellow', color: 'black'}}>
+    ⏱️ Time left for lock: {timeLeft}
+  </div>
+)}
+          
           <p className="copyright">© 2026 93 Days Challenge</p>
         </div>
       </div>

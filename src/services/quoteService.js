@@ -17,4 +17,4 @@ export const fetchQuote = async () => {
     ];
     return fallback[Math.floor(Math.random() * fallback.length)];
   }
-};
+}; 

@@ -12,7 +12,8 @@ export default function Navbar({ streak, darkMode, toggleDarkMode }) {
     { path: "/gym", name: "Gym", icon: "💪" },
     { path: "/english", name: "English", icon: "🇬🇧" },
     { path: "/wellness", name: "Wellness", icon: "🧘" },
-    { path: "/inspiration", name: "Inspire", icon: "💭" }
+    { path: "/inspiration", name: "Inspire", icon: "💭" },
+    { path: "/advice", name: "Advice", icon: "💡" }
   ];
 
   return (

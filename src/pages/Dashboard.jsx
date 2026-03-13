@@ -11,7 +11,8 @@ export default function Dashboard({ data, onSurvive, onRelapse, message }) {
     { path: "/gym", icon: "💪", name: "Gym", desc: "3 Month Target" },
     { path: "/english", icon: "🇬🇧", name: "English", desc: "3 Month Fluency" },
     { path: "/wellness", icon: "🧘", name: "Wellness", desc: "Mood • Journal • Sleep" },
-    { path: "/inspiration", icon: "💭", name: "Inspire", desc: "Daily Quotes" }
+    { path: "/inspiration", icon: "💭", name: "Inspire", desc: "Daily Quotes" },
+    { path: "/advice", icon: "💡", name: "Advice", desc: "Daily Wisdom" }
   ];
 
   return (
