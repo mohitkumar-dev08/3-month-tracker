@@ -1,0 +1,226 @@
+:root {
+  /* ===== CUSTOM VARIABLES (LIGHT GREEN THEME) ===== */
+  --primary: #10b981;
+  --primary-dark: #059669;
+  --primary-light: #34d399;
+  --secondary: #8b5cf6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+  --purple: #8b5cf6;
+  --amber: #fbbf24;
+  
+  --text: #4b5563;
+  --text-h: #111827;
+  --bg: #f0fdf4;
+  --border: #d1fae5;
+  --code-bg: #e6f7e6;
+  --accent: #10b981;
+  --accent-bg: rgba(16, 185, 129, 0.1);
+  --accent-border: rgba(16, 185, 129, 0.5);
+  --social-bg: rgba(16, 185, 129, 0.05);
+  
+  --card-light: #ffffff;
+  --card-dark: #1f2937;
+  --text-light: #111827;
+  --text-dark: #f9fafb;
+  --border-light: #d1fae5;
+  --border-dark: #374151;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(16, 185, 129, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(16, 185, 129, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(16, 185, 129, 0.15);
+  --shadow-xl: 0 20px 25px -5px rgba(16, 185, 129, 0.2);
+  
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* ===== FONT SETTINGS ===== */
+  --sans: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #111827;
+    --border: #1f2937;
+    --code-bg: #1e293b;
+    --accent: #34d399;
+    --accent-bg: rgba(52, 211, 153, 0.15);
+    --accent-border: rgba(52, 211, 153, 0.5);
+    
+    --primary: #34d399;
+    --primary-dark: #10b981;
+    --card-light: #1f2937;
+    --card-dark: #111827;
+    --text-light: #f9fafb;
+    --text-dark: #111827;
+    --border-light: #374151;
+    --border-dark: #4b5563;
+  }
+}
+
+/* ===== MANUAL DARK MODE ===== */
+body.dark {
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #111827;
+  --border: #1f2937;
+  --code-bg: #1e293b;
+  --accent: #34d399;
+  --accent-bg: rgba(52, 211, 153, 0.15);
+  --accent-border: rgba(52, 211, 153, 0.5);
+  
+  --primary: #34d399;
+  --primary-dark: #10b981;
+  --card-light: #1f2937;
+  --card-dark: #111827;
+  --text-light: #f9fafb;
+  --text-dark: #111827;
+  --border-light: #374151;
+  --border-dark: #4b5563;
+}
+
+/* ===== GLOBAL RESETS ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: var(--bg);
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading);
+  font-weight: 600;
+  color: var(--text-h);
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 0;
+}
+
+code, .counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--border-light);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+}
