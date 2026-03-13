@@ -12,20 +12,19 @@ export default function Footer() {
       if (unlockTime) {
         const now = Date.now();
         const elapsed = now - parseInt(unlockTime);
-        const fiveMinutes = 5 * 60 * 1000; // 5 minutes in milliseconds
-        const remaining = fiveMinutes - elapsed;
+        const AUTO_LOCK_TIME = 25 * 1000; // 25 seconds
+        const remaining = AUTO_LOCK_TIME - elapsed;
         
         if (remaining <= 0) {
-          setTimeLeft("Locking soon...");
+          setTimeLeft("0s");
           // Auto-lock when time's up
           setTimeout(() => {
             sessionStorage.removeItem("app_unlock_time");
             window.location.reload();
           }, 1000);
         } else {
-          const minutes = Math.floor(remaining / 60000);
-          const seconds = Math.floor((remaining % 60000) / 1000);
-          setTimeLeft(`${minutes}m ${seconds}s`);
+          const seconds = Math.ceil(remaining / 1000);
+          setTimeLeft(`${seconds}s`);
         }
       } else {
         setTimeLeft("");
@@ -76,12 +75,12 @@ export default function Footer() {
             <a href="#" className="social-link">📸</a>
           </div>
           
-          {/* 🔥 LOCK TIMER - Simple text */}
+          {/* 🔥 LOCK TIMER - 25 seconds */}
           {timeLeft && (
-  <div className="lock-timer" style={{background: 'yellow', color: 'black'}}>
-    ⏱️ Time left for lock: {timeLeft}
-  </div>
-)}
+            <div className="lock-timer">
+              ⏱️ Auto-lock in: {timeLeft}
+            </div>
+          )}
           
           <p className="copyright">© 2026 93 Days Challenge</p>
         </div>

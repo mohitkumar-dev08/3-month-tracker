@@ -16,8 +16,6 @@ export default function PINLock({ onUnlock }) {
   // Check if already authenticated in this session
   useEffect(() => {
     const checkAuth = () => {
-      // ✅ FIXED: YEH LINE HATAI - sessionStorage clear nahi karenge
-      
       const lockUntilTime = localStorage.getItem("app_lock_until");
       const savedUnlockTime = sessionStorage.getItem("app_unlock_time");
       
@@ -44,7 +42,7 @@ export default function PINLock({ onUnlock }) {
     checkAuth();
   }, []);
 
-  // Timer for auto-lock countdown
+  // Timer for auto-lock countdown - 25 SECONDS
   useEffect(() => {
     let interval;
     
@@ -52,19 +50,17 @@ export default function PINLock({ onUnlock }) {
       interval = setInterval(() => {
         const now = Date.now();
         const elapsed = now - unlockTime;
-        const fiveMinutes = 5 * 60 * 1000;
-        const remaining = fiveMinutes - elapsed;
+        const AUTO_LOCK_TIME = 25 * 1000; // 25 seconds
+        const remaining = AUTO_LOCK_TIME - elapsed;
         
         if (remaining <= 0) {
           // Time's up - lock the app
           sessionStorage.removeItem("app_unlock_time");
           window.location.reload();
         } else {
-          // Show remaining time in minutes:seconds
+          // Show remaining time in seconds
           const remainingSeconds = Math.ceil(remaining / 1000);
-          const mins = Math.floor(remainingSeconds / 60);
-          const secs = remainingSeconds % 60;
-          setTimeUntilLock(`${mins}:${secs.toString().padStart(2, '0')}`);
+          setTimeUntilLock(`${remainingSeconds}s`);
         }
       }, 1000);
     }
@@ -178,7 +174,7 @@ export default function PINLock({ onUnlock }) {
           </div>
         ) : (
           <p className="pin-subtitle">
-            <span>⏰ Auto-locks every 5 min</span>
+            <span>⏰ Auto-locks every 25 sec</span>
             <span>🔄 Instant lock on refresh</span>
           </p>
         )}
@@ -239,9 +235,9 @@ export default function PINLock({ onUnlock }) {
         </form>
         
         <div className="pin-footer">
-          <span>⏰ 5 min auto-lock</span>
+          <span>⏰ 25 sec auto-lock</span>
           <span>🔄 Instant refresh lock</span>
-          <span>🔐 PIN: 1234</span>
+          <span>🔐 PIN: 2626</span>
         </div>  
       </div>
     </div>
