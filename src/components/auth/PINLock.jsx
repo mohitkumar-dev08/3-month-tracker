@@ -237,7 +237,7 @@ export default function PINLock({ onUnlock }) {
         <div className="pin-footer">
           <span>⏰ 25 sec auto-lock</span>
           <span>🔄 Instant refresh lock</span>
-          <span>🔐 PIN: 2626</span>
+            
         </div>  
       </div>
     </div>
