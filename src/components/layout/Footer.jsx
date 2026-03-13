@@ -12,7 +12,7 @@ export default function Footer() {
       if (unlockTime) {
         const now = Date.now();
         const elapsed = now - parseInt(unlockTime);
-        const AUTO_LOCK_TIME = 25 * 1000; // 25 seconds
+        const AUTO_LOCK_TIME = 60 * 1000; // 25 seconds
         const remaining = AUTO_LOCK_TIME - elapsed;
         
         if (remaining <= 0) {

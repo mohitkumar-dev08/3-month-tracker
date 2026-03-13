@@ -50,7 +50,7 @@ export default function PINLock({ onUnlock }) {
       interval = setInterval(() => {
         const now = Date.now();
         const elapsed = now - unlockTime;
-        const AUTO_LOCK_TIME = 25 * 1000; // 25 seconds
+        const AUTO_LOCK_TIME = 60 * 1000; // 25 seconds
         const remaining = AUTO_LOCK_TIME - elapsed;
         
         if (remaining <= 0) {
@@ -174,7 +174,7 @@ export default function PINLock({ onUnlock }) {
           </div>
         ) : (
           <p className="pin-subtitle">
-            <span>⏰ Auto-locks every 25 sec</span>
+            <span>⏰ Auto-locks every 1 min</span>
             <span>🔄 Instant lock on refresh</span>
           </p>
         )}
@@ -235,7 +235,7 @@ export default function PINLock({ onUnlock }) {
         </form>
         
         <div className="pin-footer">
-          <span>⏰ 25 sec auto-lock</span>
+          <span>⏰ 1 min auto-lock</span>
           <span>🔄 Instant refresh lock</span>
             
         </div>  
