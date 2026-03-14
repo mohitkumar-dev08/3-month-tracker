@@ -6,6 +6,10 @@ export default function TrackerPage({ data, onSurvive, onRelapse }) {
   const remainingDays = Math.max(0, 93 - data.currentStreak);
   const progressPercent = (data.currentStreak / 93) * 100;
   
+  // ✅ Check if today is already marked
+  const today = new Date().toDateString();
+  const isTodayMarked = data.lastCheckIn === today;
+  
   const milestones = [
     { days: 3, emoji: "🌱", name: "Seedling", unlocked: data.currentStreak >= 3 },
     { days: 7, emoji: "🌿", name: "Sprout", unlocked: data.currentStreak >= 7 },
@@ -82,13 +86,32 @@ export default function TrackerPage({ data, onSurvive, onRelapse }) {
           <div className="action-card">
             <h3 className="card-title">Daily Check-in</h3>
             <div className="action-buttons">
-              <button onClick={onSurvive} className="btn btn-primary btn-block">
-                ✅ I Survived Today
-              </button>
+              {/* ✅ FIXED: Show different button if already marked */}
+              {isTodayMarked ? (
+                <button 
+                  className="btn btn-success btn-block" 
+                  disabled
+                  style={{ opacity: 0.7, cursor: 'not-allowed' }}
+                >
+                  ✅ Already Marked Today
+                </button>
+              ) : (
+                <button onClick={onSurvive} className="btn btn-primary btn-block">
+                  ✅ I Survived Today
+                </button>
+              )}
+              
               <button onClick={onRelapse} className="btn btn-danger btn-block">
                 ⚠️ Relapse
               </button>
             </div>
+            
+            {/* ✅ OPTIONAL: Show last check-in time */}
+            {data.lastCheckIn && (
+              <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', color: 'var(--text-light)' }}>
+                Last check-in: {new Date(data.lastCheckIn).toLocaleDateString()}
+              </p>
+            )}
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ import EnglishPage from "./pages/EnglishPage";
 import WellnessPage from "./pages/WellnessPage";
 import InspirationPage from "./pages/InspirationPage";
 import AdvicePage from "./pages/AdvicePage";
-
+import PsychologyPage from "./pages/PsychologyPage";
 // Components
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -138,7 +138,9 @@ function App() {
             <Route path="/wellness" element={<WellnessPage streak={data.currentStreak} />} />
             <Route path="/inspiration" element={<InspirationPage streak={data.currentStreak} />} />
             <Route path="/advice" element={<AdvicePage streak={data.currentStreak} />} />
+            <Route path="/psychology" element={<PsychologyPage streak={data.currentStreak} />} />
           </Routes>
+
         </main>
 
         <Footer />

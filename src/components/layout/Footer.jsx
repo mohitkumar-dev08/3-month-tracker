@@ -12,19 +12,21 @@ export default function Footer() {
       if (unlockTime) {
         const now = Date.now();
         const elapsed = now - parseInt(unlockTime);
-        const AUTO_LOCK_TIME = 60 * 1000; // 25 seconds
+        const AUTO_LOCK_TIME = 5 * 60 * 1000; // 🔴 5 minutes
         const remaining = AUTO_LOCK_TIME - elapsed;
         
         if (remaining <= 0) {
-          setTimeLeft("0s");
+          setTimeLeft("0m 0s");
           // Auto-lock when time's up
           setTimeout(() => {
             sessionStorage.removeItem("app_unlock_time");
             window.location.reload();
           }, 1000);
         } else {
-          const seconds = Math.ceil(remaining / 1000);
-          setTimeLeft(`${seconds}s`);
+          const totalSeconds = Math.ceil(remaining / 1000);
+          const minutes = Math.floor(totalSeconds / 60);
+          const seconds = totalSeconds % 60;
+          setTimeLeft(`${minutes}m ${seconds}s`); // 🔴 Format: "4m 30s"
         }
       } else {
         setTimeLeft("");
@@ -75,7 +77,7 @@ export default function Footer() {
             <a href="#" className="social-link">📸</a>
           </div>
           
-          {/* 🔥 LOCK TIMER - 25 seconds */}
+          {/* 🔥 LOCK TIMER - 5 minutes */}
           {timeLeft && (
             <div className="lock-timer">
               ⏱️ Auto-lock in: {timeLeft}

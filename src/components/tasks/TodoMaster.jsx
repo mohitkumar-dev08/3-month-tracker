@@ -69,6 +69,7 @@ export default function TodoMaster() {
   const [checks, setChecks] = useState({});
   const [expandedTask, setExpandedTask] = useState(null);
   const [showHistory, setShowHistory] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false); // ✅ NEW: Track initialization
   
   const today = new Date().toDateString();
   const todaysChecks = checks[today] || {};
@@ -130,18 +131,40 @@ export default function TodoMaster() {
     ? Math.round((sectionCompleted / currentTasks.length) * 100) 
     : 0;
 
-  // Load from localStorage
+  // ✅ FIXED: Load from localStorage with initialization flag
   useEffect(() => {
-    const saved = localStorage.getItem("todoMaster");
-    if (saved) setChecks(JSON.parse(saved));
+    try {
+      const saved = localStorage.getItem("todoMaster");
+      console.log("Loading from localStorage:", saved);
+      
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        setChecks(parsed);
+        console.log("✅ Data loaded:", parsed);
+      } else {
+        console.log("No saved data found");
+      }
+    } catch (error) {
+      console.error("Error loading from localStorage:", error);
+    } finally {
+      setIsInitialized(true); // Mark as initialized after load
+    }
   }, []);
 
-  // Save to localStorage
+  // ✅ FIXED: Save to localStorage only after initialization
   useEffect(() => {
-    localStorage.setItem("todoMaster", JSON.stringify(checks));
-  }, [checks]);
+    if (!isInitialized) return; // Don't save during initial load
+    
+    try {
+      console.log("Saving to localStorage:", checks);
+      localStorage.setItem("todoMaster", JSON.stringify(checks));
+      console.log("✅ Data saved successfully");
+    } catch (error) {
+      console.error("Error saving to localStorage:", error);
+    }
+  }, [checks, isInitialized]);
 
-  // Toggle function
+  // Toggle function (EXACTLY AS BEFORE)
   const toggleTask = (taskId) => {
     if (activeTab === "gym") {
       // GYM SECTION - Single select with uncheck
@@ -197,7 +220,7 @@ export default function TodoMaster() {
     }
   };
 
-  // Get history for last 7 days
+  // Get history for last 7 days (EXACTLY AS BEFORE)
   const getHistory = () => {
     const history = [];
     const todayDate = new Date();
@@ -259,6 +282,11 @@ export default function TodoMaster() {
 
   const history = getHistory();
 
+  // ✅ Loading state while initializing
+  if (!isInitialized) {
+    return <div className="todo-master">Loading tasks...</div>;
+  }
+
   return (
     <div className="todo-master">
       {/* Tabs */}
@@ -275,7 +303,7 @@ export default function TodoMaster() {
         ))}
       </div>
 
-      {/* OVERALL PROGRESS BAR - NEW */}
+      {/* OVERALL PROGRESS BAR */}
       <div className="overall-progress">
         <div className="progress-header">
           <span>📊 Overall Progress</span>
