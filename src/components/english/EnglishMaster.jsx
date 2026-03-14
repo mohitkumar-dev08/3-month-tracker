@@ -499,7 +499,7 @@ export default function EnglishMaster() {
       <div className="english-milestones" style={{ marginTop: '1rem', marginBottom: '1rem' }}>
         <h4>🏆 Milestones</h4>
         <div className="milestone-badges">
-          {[7, 15, 30, 60, 93].map(days => (
+          {[7, 15, 30, 51, 93].map(days => (
             <div 
               key={days}
               className={`badge ${streak >= days ? 'unlocked' : 'locked'}`}

@@ -24,7 +24,7 @@ export default function Navbar({ streak, darkMode, toggleDarkMode }) {
           {/* Brand with animation */}
           <Link to="/" className="nav-brand">
             <span className="brand-icon">🌳</span>
-            <span className="brand-name">93 DAYS</span>
+            <span className="brand-name">51 DAYS</span>
           </Link>
 
           {/* Desktop Navigation */}
