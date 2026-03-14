@@ -1,19 +1,19 @@
 // pages/Dashboard.jsx
 import { Link } from "react-router-dom";
 import QuoteBanner from "../components/common/QuoteBanner";
-
 export default function Dashboard({ data, onSurvive, onRelapse, message }) {
-  const remainingDays = Math.max(0, 51 - data.currentStreak);
+  const remainingDays = Math.max(0, 191 - data.currentStreak);
 
   const features = [
-    { path: "/tracker", icon: "📊", name: "Tracker", desc: "Main 51 Days" },
+    { path: "/tracker", icon: "📊", name: "Tracker", desc: "Main 191 Days" },
     { path: "/tasks", icon: "✅", name: "Tasks", desc: "Todo • Rules • Skin • Gym • Diet" },
     { path: "/gym", icon: "💪", name: "Gym", desc: "3 Month Target" },
     { path: "/english", icon: "🇬🇧", name: "English", desc: "3 Month Fluency" },
     { path: "/wellness", icon: "🧘", name: "Wellness", desc: "Mood • Journal • Sleep" },
     { path: "/inspiration", icon: "💭", name: "Inspire", desc: "Daily Quotes" },
     { path: "/advice", icon: "💡", name: "Advice", desc: "Daily Wisdom" },
-    { path: "/psychology", icon: "🧠", name: "Psychology", desc: "Mind Hacks • Communication" }
+    { path: "/psychology", icon: "🧠", name: "Psychology", desc: "Mind Hacks • Communication" },
+    { path: "/heatmap", icon: "📅", name: "Heatmap", desc: "Progress Visualization" }
   ];
 
   return (

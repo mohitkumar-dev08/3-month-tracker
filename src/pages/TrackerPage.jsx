@@ -3,20 +3,24 @@ import QuoteBanner from "../components/common/QuoteBanner";
 import AchievementsGrid from "../components/tracker/AchievementsGrid";
 
 export default function TrackerPage({ data, onSurvive, onRelapse }) {
-  const remainingDays = Math.max(0, 51 - data.currentStreak);
-  const progressPercent = (data.currentStreak / 51) * 100;
+  const remainingDays = Math.max(0, 191 - data.currentStreak);
+  const progressPercent = (data.currentStreak / 191) * 100;
   
   // ✅ Check if today is already marked
   const today = new Date().toDateString();
   const isTodayMarked = data.lastCheckIn === today;
   
   const milestones = [
-    { days: 3, emoji: "🌱", name: "Seedling", unlocked: data.currentStreak >= 3 },
-    { days: 7, emoji: "🌿", name: "Sprout", unlocked: data.currentStreak >= 7 },
-    { days: 15, emoji: "🌲", name: "Sapling", unlocked: data.currentStreak >= 15 },
-    { days: 30, emoji: "🌳", name: "Tree", unlocked: data.currentStreak >= 30 },
-    { days: 51, emoji: "🏆", name: "Strong", unlocked: data.currentStreak >= 51 }
-  ];
+  { days: 7, emoji: "🌿", name: "Sprout", unlocked: data.currentStreak >= 7 },
+  { days: 15, emoji: "🌲", name: "Sapling", unlocked: data.currentStreak >= 15 },
+  { days: 30, emoji: "🌳", name: "Tree", unlocked: data.currentStreak >= 30 },
+  { days: 60, emoji: "🏆", name: "Strong", unlocked: data.currentStreak >= 60 },
+  { days: 90, emoji: "⭐", name: "Star", unlocked: data.currentStreak >= 90 },
+  { days: 120, emoji: "🔥", name: "Fire", unlocked: data.currentStreak >= 120 },
+  { days: 150, emoji: "💪", name: "Warrior", unlocked: data.currentStreak >= 150 },
+  { days: 180, emoji: "👑", name: "Legend", unlocked: data.currentStreak >= 180 },
+  { days: 191, emoji: "🏅", name: "Champion", unlocked: data.currentStreak >= 191 }  // 🔴 190 → 191
+];
 
   return (
     <div className="tracker-page">
@@ -26,7 +30,7 @@ export default function TrackerPage({ data, onSurvive, onRelapse }) {
         {/* Left Column */}
         <div className="tracker-left">
           <div className="progress-card">
-            <h2 className="card-title">51 Days Challenge</h2>
+            <h2 className="card-title">191 Days Challenge</h2>
             
             <div className="progress-circle-large">
               <svg viewBox="0 0 120 120">
@@ -39,7 +43,7 @@ export default function TrackerPage({ data, onSurvive, onRelapse }) {
                   stroke="var(--primary)"
                   strokeWidth="12"
                   strokeDasharray="339.292"
-                  strokeDashoffset={339.292 * (1 - data.currentStreak / 51)}
+                  strokeDashoffset={339.292 * (1 - data.currentStreak / 191)}
                   strokeLinecap="round"
                   transform="rotate(-90 60 60)"
                 />

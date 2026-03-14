@@ -14,7 +14,9 @@ export default function Navbar({ streak, darkMode, toggleDarkMode }) {
     { path: "/wellness", name: "Wellness", icon: "🧘" },
     { path: "/inspiration", name: "Inspire", icon: "💭" },
     { path: "/advice", name: "Advice", icon: "💡" },
-    { path: "/psychology", name: "Psychology", icon: "🧠" }
+    { path: "/psychology", name: "Psychology", icon: "🧠" },
+    { path: "/heatmap", name: "Heatmap", icon: "📅" },
+    // Navbar links mein add karo
   ];
 
   return (
@@ -24,7 +26,7 @@ export default function Navbar({ streak, darkMode, toggleDarkMode }) {
           {/* Brand with animation */}
           <Link to="/" className="nav-brand">
             <span className="brand-icon">🌳</span>
-            <span className="brand-name">51 DAYS</span>
+            <span className="brand-name">191 DAYS</span>
           </Link>
 
           {/* Desktop Navigation */}

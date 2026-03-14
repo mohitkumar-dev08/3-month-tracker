@@ -16,6 +16,7 @@ import PsychologyPage from "./pages/PsychologyPage";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import PINLock from "./components/auth/PINLock"; // ✅ PIN Lock import
+import HeatmapPage from "./pages/HeatmapPage";
 
 const todayString = () => new Date().toDateString();
 
@@ -28,7 +29,7 @@ const defaultData = {
   weeklyData: Array(7).fill(0),
   darkMode: false,
   goalStartDate: new Date().toDateString(),
-  goalDuration: 51
+  goalDuration: 191
 };
 
 function App() {
@@ -139,6 +140,8 @@ function App() {
             <Route path="/inspiration" element={<InspirationPage streak={data.currentStreak} />} />
             <Route path="/advice" element={<AdvicePage streak={data.currentStreak} />} />
             <Route path="/psychology" element={<PsychologyPage streak={data.currentStreak} />} />
+            <Route path="/heatmap" element={<HeatmapPage streak={data.currentStreak} />} />
+            
           </Routes>
 
         </main>

@@ -94,7 +94,105 @@ const PSYCHOLOGY_TRICKS = [
   { day: 90, trick: "The Gift Effect", meaning: "Small gifts create obligation.", example1: "Bring coffee for colleagues.", example2: "Give without expecting return - they'll remember." },
   { day: 91, trick: "The Help Effect", meaning: "Ask for small help - they'll like you.", example1: "Ask for directions - they'll feel helpful.", example2: "Borrow a pen - builds connection." },
   { day: 92, trick: "The Thank You Effect", meaning: "Thank you notes strengthen relationships.", example1: "Send thank you email after meetings.", example2: "Handwritten notes are powerful." },
-  { day: 93, trick: "The Follow-up Effect", meaning: "Following up shows you care.", example1: "Check in after conversations.", example2: "Remember details they shared." }
+  { day: 93, trick: "The Follow-up Effect", meaning: "Following up shows you care.", example1: "Check in after conversations.", example2: "Remember details they shared." },
+  { day: 94, trick: "The Tetris Effect", meaning: "Repeated activities shape your thoughts.", example1: "After playing Tetris, you see blocks everywhere.", example2: "Practice gratitude - you'll start noticing good things." },
+  { day: 95, trick: "The Google Effect", meaning: "We forget information we can easily look up.", example1: "Don't remember phone numbers - they're in your phone.", example2: "Focus on learning concepts, not facts you can Google." },
+  { day: 96, trick: "The Curse of Knowledge", meaning: "Once you know something, you can't imagine not knowing it.", example1: "Experts struggle to teach beginners - they forget what it's like.", example2: "When explaining, assume the other person knows nothing." },
+  { day: 97, trick: "The Illusion of Transparency", meaning: "We think our emotions are more obvious than they are.", example1: "You're nervous but others can't tell - don't assume they know.", example2: "Speak up about your feelings - people can't read your mind." },
+  { day: 98, trick: "The Spotlight Effect", meaning: "We think people notice us more than they do.", example1: "That embarrassing moment? Others forgot it already.", example2: "Wear what makes you happy - no one's staring." },
+  { day: 99, trick: "The Hindsight Bias", meaning: "We think we 'knew it all along' after something happens.", example1: "I knew that stock would crash!' (after it crashed)", example2: "Use this in meetings - 'As I predicted earlier...'" },
+  { day: 100, trick: "The Overconfidence Effect", meaning: "We overestimate our abilities.", example1: "90% of drivers think they're above average.", example2: "Always double-check your work - confidence can mislead." },
+  { day: 101, trick: "The Planning Fallacy", meaning: "We underestimate how long things take.", example1: "Projects always take longer than planned - add buffer time.", example2: "Tell your boss 'It'll take 2 weeks' even if you think 1 week." },
+  { day: 102, trick: "The Action Bias", meaning: "We feel we must do something, even if doing nothing is better.", example1: "Stock traders overtrade and lose money.", example2: "Sometimes waiting is the best action." },
+  { day: 103, trick: "The Omission Bias", meaning: "We judge harmful actions worse than harmful inactions.", example1: "Not vaccinating (inaction) feels less bad than side effects (action).", example2: "People forgive 'not helping' more than 'hurting'." },
+  { day: 104, trick: "The Status Quo Bias", meaning: "We prefer things to stay the same.", example1: "People stick with current phone plan even if better exists.", example2: "In negotiations, make the current option seem worse." },
+  { day: 105, trick: "The Slippery Slope Fallacy", meaning: "Assuming one small step leads to disaster.", example1: "If we legalize weed, everyone will become addicts.", example2: "Use carefully - 'If we don't act now, things will get worse.'" },
+  { day: 106, trick: "The Straw Man Fallacy", meaning: "Misrepresenting someone's argument to attack it.", example1: "You want to lower taxes? So you hate poor people?", example2: "Don't fall for this - clarify your actual position." },
+  { day: 107, trick: "The Ad Hominem Fallacy", meaning: "Attacking the person instead of the argument.", example1: "You can't trust his climate science - he drives a car.", example2: "When someone attacks you, redirect to the topic." },
+  { day: 108, trick: "The Bandwagon Effect", meaning: "People do things because others are doing them.", example1: "Crowded restaurant must be good - let's eat there.", example2: "In meetings, say 'Many teams are adopting this approach.'" },
+  { day: 109, trick: "The Boomerang Effect", meaning: "Trying to persuade can make people believe the opposite.", example1: "Tell teens not to smoke - they smoke more.", example2: "Instead of saying 'Don't', explain benefits of alternative." },
+  { day: 110, trick: "The Sleeper Effect", meaning: "Messages from low-credibility sources become persuasive over time.", example1: "You forget the source, remember the message.", example2: "Good ideas stick even if initially dismissed." },
+  { day: 111, trick: "The Elaboration Likelihood Model", meaning: "People persuaded by logic or emotion depending on involvement.", example1: "High involvement (buying car) = logic matters.", example2: "Low involvement (buying gum) = emotion matters." },
+  { day: 112, trick: "The Yale Attitude Change Approach", meaning: "Who says what to whom matters.", example1: "Expert source = more persuasive.", example2: "Attractive source = more persuasive for shallow topics." },
+  { day: 113, trick: "The Inoculation Theory", meaning: "Exposing to weak arguments builds resistance to strong ones.", example1: "Teach kids about peer pressure before it happens.", example2: "Prepare your team for competitor objections." },
+  { day: 114, trick: "The Self-Perception Theory", meaning: "We infer our attitudes by observing our behavior.", example1: "I helped this person, so I must like them.", example2: "If you want to like someone, do them a favor." },
+  { day: 115, trick: "The Overjustification Effect", meaning: "External rewards can reduce intrinsic motivation.", example1: "Pay kids to read - they'll stop reading for fun.", example2: "Praise effort, not just results." },
+  { day: 116, trick: "The Goal Gradient Effect", meaning: "We work harder as we get closer to a goal.", example1: "Coffee shop punch cards - people buy more coffee near the free one.", example2: "Show progress bars to motivate teams." },
+  { day: 117, trick: "The Zeigarnik Effect", meaning: "We remember interrupted tasks better.", example1: "Leave a task halfway - you'll think about it.", example2: "In conversations, pause mid-sentence - they'll remember you." },
+  { day: 118, trick: "The Ovsiankina Effect", meaning: "We feel compelled to complete interrupted tasks.", example1: "Cliffhangers make us watch next episode.", example2: "Start a task but don't finish - you'll want to return." },
+  { day: 119, trick: "The Leveling and Sharpening Effect", meaning: "Stories get simplified (leveled) and details exaggerated (sharpened).", example1: "Tell a story 3 times - it becomes very different.", example2: "In gossip, details get distorted - be careful." },
+  { day: 120, trick: "The Misinformation Effect", meaning: "Memories can be altered by misleading information.", example1: "Leading questions change what witnesses remember.", example2: "Don't ask 'Did you see the broken headlight?' Ask 'What did you see?'" },
+  { day: 121, trick: "The Mandela Effect", meaning: "Large groups misremember the same thing.", example1: "Many remember Nelson Mandela dying in prison (he didn't).", example2: "Berenstain Bears vs Berenstein - many misremember." },
+  { day: 122, trick: "The Cryptomnesia Effect", meaning: "Thinking you invented something you actually remembered.", example1: "A 'new' idea is actually something you heard before.", example2: "Keep idea journals to track originality." },
+  { day: 123, trick: "The Tip of the Tongue Effect", meaning: "Temporary inability to retrieve known information.", example1: "You know the word but can't say it.", example2: "Relax and let it come - forcing makes it worse." },
+  { day: 124, trick: "The Fading Affect Bias", meaning: "Negative memories fade faster than positive ones.", example1: "Breakups hurt less over time, good memories remain.", example2: "Time heals - remind yourself when things are hard." },
+  { day: 125, trick: "The Pollyanna Principle", meaning: "We process pleasant information more accurately.", example1: "People remember compliments more than criticism.", example2: "Start meetings with good news - it'll be remembered." },
+  { day: 126, trick: "The Reminiscence Bump", meaning: "We remember more from adolescence and early adulthood.", example1: "Old people recall teen years vividly.", example2: "Create memorable experiences in your 20s." },
+  { day: 127, trick: "The Next-in-Line Effect", meaning: "We don't remember what others say when we're next to speak.", example1: "In group discussions, you're focused on your turn.", example2: "Take notes when others speak - don't just wait to talk." },
+  { day: 128, trick: "The Bizarreness Effect", meaning: "Bizarre things are remembered better.", example1: "A purple cow is more memorable than a brown one.", example2: "Make your presentations weird - people will remember." },
+  { day: 129, trick: "The Humor Effect", meaning: "Funny things are remembered better.", example1: "Jokes in presentations stick.", example2: "Use relevant memes in training materials." },
+  { day: 130, trick: "The Self-Implication Effect", meaning: "We remember things that involve us.", example1: "Personal examples are unforgettable.", example2: "Relate concepts to your own life." },
+  { day: 131, trick: "The Production Effect", meaning: "Saying things aloud improves memory.", example1: "Read your notes out loud while studying.", example2: "Teach others to remember better." },
+  { day: 132, trick: "The Enactment Effect", meaning: "Doing actions helps remember them.", example1: "Role-play scenarios to learn.", example2: "Practice presentations physically." },
+  { day: 133, trick: "The Observation Effect", meaning: "Watching others do things helps learning.", example1: "Watch skilled people work - you'll learn.", example2: "Apprenticeship works via observation." },
+  { day: 134, trick: "The Mirror Neuron Effect", meaning: "We feel what we see others feel.", example1: "Yawn when others yawn.", example2: "Smile at someone - they'll smile back." },
+  { day: 135, trick: "The Chameleon Effect", meaning: "We unconsciously mimic others.", example1: "Cross legs when they cross legs.", example2: "Use this to build rapport subtly." },
+  { day: 136, trick: "The Emotional Contagion Effect", meaning: "Emotions spread between people.", example1: "Work with positive people - you'll be positive.", example2: "Stay calm around angry people - calm spreads." },
+  { day: 137, trick: "The Priming Effect", meaning: "Exposure to one thing influences response to another.", example1: "See money signs - become more selfish.", example2: "Show nature images - become kinder." },
+  { day: 138, trick: "The Anchoring Effect", meaning: "We rely heavily on first information.", example1: "First price offered influences negotiation.", example2: "First impression colors everything." },
+  { day: 139, trick: "The Adjustment Effect", meaning: "We adjust insufficiently from anchors.", example1: "Start high in salary negotiation - final will be higher.", example2: "List high price first, then show discount." },
+  { day: 140, trick: "The Contrast Effect", meaning: "We judge things relative to what came before.", example1: "Cold water feels colder after warm water.", example2: "Show ugly designs before your good one." },
+  { day: 141, trick: "The Distinction Bias", meaning: "We overestimate differences when comparing side by side.", example1: "TVs look very different in store, same at home.", example2: "Don't compare too many options - you'll see false differences." },
+  { day: 142, trick: "The Focusing Effect", meaning: "We overemphasize one aspect when judging.", example1: "Sunny weather = good life? (No, but we focus on weather)", example2: "Money matters but not as much as we think." },
+  { day: 143, trick: "The Impact Bias", meaning: "We overestimate emotional impact of future events.", example1: "I'll be miserable forever after breakup' - you won't.", example2: "Winning lottery won't make you happy forever." },
+  { day: 144, trick: "The Durability Bias", meaning: "We overestimate how long emotions will last.", example1: "I'll never get over this' - you will.", example2: "Humans are resilient - remember that." },
+  { day: 145, trick: "The Focalism Effect", meaning: "We focus too much on one event, ignore other life aspects.", example1: "This exam determines my future' (it doesn't).", example2: "Remember: life has many parts, not just one." },
+  { day: 146, trick: "The Immune Neglect Effect", meaning: "We underestimate our psychological immune system.", example1: "We adapt to setbacks faster than expected.", example2: "Trust yourself to handle hard times." },
+  { day: 147, trick: "The Paradox of Choice", meaning: "More choices = less satisfaction.", example1: "24 jam flavors - confused, buy none.", example2: "3 options - easier to choose and happier." },
+  { day: 148, trick: "The Maximizer Effect", meaning: "Seeking the best leads to less happiness.", example1: "Maximizers compare endlessly, regret choices.", example2: "Satisficers (good enough) are happier." },
+  { day: 149, trick: "The Satisficer Effect", meaning: "Accepting 'good enough' leads to more happiness.", example1: "Pick first option that meets criteria, don't search forever.", example2: "Be a satisficer in small decisions." },
+  { day: 150, trick: "The Counterfactual Thinking Effect", meaning: "We imagine 'what if' scenarios.", example1: "Bronze medalists happier than silver (almost didn't get medal).", example2: "Downward counterfactuals (could be worse) increase gratitude." },
+  { day: 151, trick: "The Upward Counterfactual Effect", meaning: "Imagining better outcomes leads to regret.", example1: "If only I studied more...'", example2: "Use upward for motivation, not self-punishment." },
+  { day: 152, trick: "The Downward Counterfactual Effect", meaning: "Imagining worse outcomes increases gratitude.", example1: "I could have died in that accident - glad I'm alive.", example2: "Practice downward counterfactuals daily." },
+  { day: 153, trick: "The Regret Aversion Effect", meaning: "We avoid actions that might cause regret.", example1: "Don't invest because might lose money.", example2: "Inaction regret is often worse - we regret chances not taken." },
+  { day: 154, trick: "The Anticipated Regret Effect", meaning: "We imagine future regret to guide decisions.", example1: "Will I regret not traveling when I'm old?", example2: "Ask 'Will I regret not doing this?'" },
+  { day: 155, trick: "The Disposition Effect", meaning: "We sell winners too early, keep losers too long.", example1: "Sell stock that goes up (take profit), keep falling stock (hope recovers).", example2: "Check your portfolio - are you doing this?" },
+  { day: 156, trick: "The Endowment Effect", meaning: "We value what we own more.", example1: "Price to sell > price to buy.", example2: "Test drive a car - you'll want it." },
+  { day: 157, trick: "The Mere Ownership Effect", meaning: "We value things just because we own them.", example1: "Your own mug feels more valuable than identical one.", example2: "Use 'yours' in marketing - 'Your free guide'." },
+  { day: 158, trick: "The Possession Effect", meaning: "We remember what we own better.", example1: "Remember items on 'my list' vs generic list.", example2: "Personalize learning - relate to your life." },
+  { day: 159, trick: "The IKEA Effect", meaning: "We value what we create.", example1: "Self-assembled furniture valued more.", example2: "Involve team in planning - they'll own it." },
+  { day: 160, trick: "The Not-Invented-Here Bias", meaning: "We distrust ideas from outside.", example1: "Internal team rejects good external ideas.", example2: "Be open - good ideas come from anywhere." },
+  { day: 161, trick: "The Pro-Innovation Bias", meaning: "We overvalue new things.", example1: "New version must be better (often isn't).", example2: "Don't upgrade blindly - check reviews." },
+  { day: 162, trick: "The Neomania Effect", meaning: "Obsession with new things.", example1: "Always want latest phone.", example2: "New ≠ better - check if you actually need it." },
+  { day: 163, trick: "The Sunk Cost Effect", meaning: "We continue because we've invested.", example1: "Finish bad movie because you paid.", example2: "Stay in bad relationship because of time invested." },
+  { day: 164, trick: "The Irrational Escalation Effect", meaning: "We invest more to justify past investment.", example1: "Keep putting money into failing business.", example2: "Know when to cut losses - don't throw good money after bad." },
+  { day: 165, trick: "The Loss Aversion Effect", meaning: "Losing hurts more than winning feels good.", example1: "Upset losing ₹100 > happy gaining ₹100.", example2: "Frame things as 'avoid loss' not 'gain'." },
+  { day: 166, trick: "The Risk Aversion Effect", meaning: "We prefer sure thing over gamble.", example1: "Sure ₹500 vs 50% chance of ₹1000 - most take sure ₹500.", example2: "Use this in negotiations - offer certainty." },
+  { day: 167, trick: "The Certainty Effect", meaning: "We overweight certain outcomes.", example1: "100% chance vs 99% - we pay more for that 1%.", example2: "Guarantees sell - '100% money back'." },
+  { day: 168, trick: "The Possibility Effect", meaning: "We overweight small probabilities.", example1: "Lottery tickets sell because 'someone wins'.", example2: "Hope sells - 'You could be the winner'." },
+  { day: 169, trick: "The Zero Risk Bias", meaning: "We prefer to eliminate one risk completely.", example1: "Prefer 0% risk on one thing vs reducing all risks.", example2: "Use in sales - 'Eliminate this specific worry'." },
+  { day: 170, trick: "The Ambiguity Effect", meaning: "We avoid options with missing information.", example1: "Choose known brand over unknown even if unknown might be better.", example2: "Provide complete information - people trust clarity." },
+  { day: 171, trick: "The Familiarity Effect", meaning: "We prefer what we know.", example1: "Buy same brand again.", example2: "Familiarity breeds liking - not contempt." },
+  { day: 172, trick: "The Fluency Effect", meaning: "Easy-to-process things seem truer.", example1: "Rhyming statements seem more accurate.", example2: "Make your messages simple and clear." },
+  { day: 173, trick: "The Disfluency Effect", meaning: "Hard-to-process things are remembered better.", example1: "Hard-to-read fonts improve memory.", example2: "Use slightly difficult fonts for study materials." },
+  { day: 174, trick: "The Clarity Effect", meaning: "Clear messages seem more credible.", example1: "Simple explanations beat complex ones.", example2: "If you can't explain simply, you don't understand well." },
+  { day: 175, trick: "The Simplicity Effect", meaning: "Simple ideas spread faster.", example1: "Apple's design philosophy - simple sells.", example2: "One clear message beats ten confusing ones." },
+  { day: 176, trick: "The Complexity Effect", meaning: "Complex things seem more sophisticated.", example1: "Big words in academic papers (often unnecessary).", example2: "Use complexity only when needed - otherwise simplify." },
+  { day: 177, trick: "The Oberon Effect", meaning: "We judge attractive people as more competent.", example1: "Good-looking people get hired more.", example2: "Dress well for interviews - it matters." },
+  { day: 178, trick: "The Beauty Premium Effect", meaning: "Attractive people earn more.", example1: "Study shows attractive people earn 10-15% more.", example2: "Invest in grooming - it pays off." },
+  { day: 179, trick: "The Physical Attractiveness Stereotype", meaning: "What is beautiful is good.", example1: "Assume attractive people are kinder, smarter.", example2: "Be aware of this bias in hiring." },
+  { day: 180, trick: "The What-Is-Beautiful-Is-Good Effect", meaning: "We attribute positive traits to attractive people.", example1: "Attractive = successful, happy, intelligent.", example2: "Check if you're falling for this." },
+  { day: 181, trick: "The Baby-Face Effect", meaning: "People with baby faces seem more naive.", example1: "Baby-faced adults seen as warmer, less competent.", example2: "If you have baby face, work on sounding authoritative." },
+  { day: 182, trick: "The Mature-Face Effect", meaning: "Mature faces seem more competent.", example1: "Older-looking people get leadership roles.", example2: "Dress maturely if you want authority." },
+  { day: 183, trick: "The Height Effect", meaning: "Taller people earn more.", example1: "CEOs are taller than average.", example2: "Stand straight - posture affects perceived height." },
+  { day: 184, trick: "The Deep Voice Effect", meaning: "Deeper voices seem more authoritative.", example1: "Deep-voiced politicians win more elections.", example2: "Practice speaking from chest, not throat." },
+  { day: 185, trick: "The Fast Talker Effect", meaning: "Fast talkers seem more intelligent.", example1: "Rapid speech = confidence (but can seem nervous).", example2: "Vary pace - fast for energy, slow for importance." },
+  { day: 186, trick: "The Slow Talker Effect", meaning: "Slow talkers seem more thoughtful.", example1: "Pauses make you seem wise.", example2: "Slow down for important points." },
+  { day: 187, trick: "The Upspeak Effect", meaning: "Rising intonation makes you seem uncertain.", example1: "Ending sentences like questions? Sounds unsure?", example2: "End statements with falling tone for authority." },
+  { day: 188, trick: "The Downspeak Effect", meaning: "Falling intonation shows confidence.", example1: "Lower pitch at end = certainty.", example2: "Practice ending sentences firmly." },
+  { day: 189, trick: "The Vocal Fry Effect", meaning: "Creaky voice can seem trendy or unprofessional.", example1: "Young women use vocal fry - can be seen as less competent.", example2: "Be aware of your voice quality." },
+  { day: 190, trick: "The Fidgeting Effect", meaning: "Fidgeting makes you seem nervous.", example1: "Playing with pen, touching hair = anxious.", example2: "Keep hands still - hold something if needed." },
+  { day: 191, trick: "The Steady Gaze Effect", meaning: "Steady eye contact builds trust.", example1: "Look at people 60-70% of time.", example2: "Too little = untrustworthy, too much = creepy." }
 ];
 
 // 2. DAILY COMMUNICATION SKILLS TIPS
@@ -191,7 +289,105 @@ const COMMUNICATION_TIPS = [
   { day: 90, tip: "Keep Hands Clean", meaning: "Clean nails, no dirt.", example1: "People notice hands.", example2: "Handshake with clean hands." },
   { day: 91, tip: "Firm Handshake", meaning: "Not too hard, not too soft.", example1: "Web to web contact.", example2: "2-3 shakes then release." },
   { day: 92, tip: "Introduce Yourself Clearly", meaning: "Name clearly, smile.", example1: "Hi, I'm [Name], nice to meet you.'", example2: "Repeat their name after they say it." },
-  { day: 93, tip: "End on a High Note", meaning: "Last impression matters.", example1: "It was great meeting you, hope we can talk again.'", example2: "Thanks for your time, have a great day!'" }
+  { day: 93, tip: "End on a High Note", meaning: "Last impression matters.", example1: "It was great meeting you, hope we can talk again.'", example2: "Thanks for your time, have a great day!'" },
+  { day: 94, tip: "The 7-38-55 Rule", meaning: "7% words, 38% tone, 55% body language.", example1: "Focus on how you say it, not just what you say.", example2: "Record yourself - check your body language." },
+  { day: 95, tip: "The Power of Pause", meaning: "Pause before important points.", example1: "Pause 2-3 seconds before key message.", example2: "Silence builds anticipation." },
+  { day: 96, tip: "The Rule of Three", meaning: "Things in threes are more memorable.", example1: "I came, I saw, I conquered.'", example2: "Give 3 main points, not 10." },
+  { day: 97, tip: "The Story Formula", meaning: "Character + Problem + Solution = Story.", example1: "Share customer success stories this way.", example2: "Personal stories follow this pattern." },
+  { day: 98, tip: "The PREP Method", meaning: "Point, Reason, Example, Point.", example1: "State point, explain why, give example, restate.", example2: "Use in presentations for clarity." },
+  { day: 99, tip: "The STAR Method", meaning: "Situation, Task, Action, Result.", example1: "Use in interviews to answer behavioral questions.", example2: "Structure your success stories this way." },
+  { day: 100, tip: "The 30-Second Rule", meaning: "You have 30 seconds to hook attention.", example1: "Start with a question, fact, or story.", example2: "Don't waste the opening." },
+  { day: 101, tip: "The 5-Second Rule", meaning: "If you hesitate more than 5 seconds, you lose them.", example1: "Answer questions promptly.", example2: "If you don't know, say 'Let me find out'." },
+  { day: 102, tip: "The 1-Minute Rule", meaning: "Don't talk more than 1 minute without engaging.", example1: "Ask a question every minute.", example2: "Check for understanding frequently." },
+  { day: 103, tip: "The 80/20 Rule", meaning: "Listen 80%, talk 20%.", example1: "You have two ears, one mouth - use them proportionally.", example2: "Ask questions, don't dominate." },
+  { day: 104, tip: "The Echo Technique", meaning: "Repeat last few words they said.", example1: "Them: 'I'm excited about the project.' You: 'Excited - tell me more.'", example2: "Shows you're listening." },
+  { day: 105, tip: "The Paraphrase Technique", meaning: "Summarize what they said in your words.", example1: "So if I understand correctly, you're saying...", example2: "Check understanding and show listening." },
+  { day: 106, tip: "The Label Technique", meaning: "Name their emotion.", example1: "You seem frustrated about this.", example2: "It sounds like you're really excited." },
+  { day: 107, tip: "The Validation Technique", meaning: "Acknowledge their feelings as valid.", example1: "That makes sense given what happened.", example2: "Anyone would feel that way in your situation." },
+  { day: 108, tip: "The Normalization Technique", meaning: "Let them know it's normal.", example1: "Many people feel that way at first.", example2: "That's a common reaction." },
+  { day: 109, tip: "The Empowerment Technique", meaning: "Remind them of their strengths.", example1: "You've handled similar situations before.", example2: "I've seen you overcome bigger challenges." },
+  { day: 110, tip: "The Possibility Technique", meaning: "Open up new possibilities.", example1: "What if we looked at this differently?", example2: "Another way to think about this is..." },
+  { day: 111, tip: "The Perspective Technique", meaning: "Help them see other views.", example1: "How might they be seeing this?", example2: "What would you advise a friend in this situation?" },
+  { day: 112, tip: "The Future Technique", meaning: "Focus on future solutions, not past problems.", example1: "What would you like to happen next?", example2: "Let's focus on where we go from here." },
+  { day: 113, tip: "The Scaling Technique", meaning: "Rate things on a scale.", example1: "On a scale of 1-10, how upset are you?", example2: "What would it take to go from 5 to 6?" },
+  { day: 114, tip: "The Miracle Question", meaning: "If a miracle happened, what would be different?", example1: "If you woke up tomorrow and problem was solved, what would change?", example2: "Helps clarify goals." },
+  { day: 115, tip: "The Exception Question", meaning: "When is the problem not happening?", example1: "Tell me about times when you don't feel this way.", example2: "What's different about those times?" },
+  { day: 116, tip: "The Coping Question", meaning: "How are you managing?", example1: "This is really hard - how are you coping?", example2: "What's helping you get through?" },
+  { day: 117, tip: "The Strength Question", meaning: "What strengths are you using?", example1: "What personal strengths are helping you?", example2: "What have you learned about yourself?" },
+  { day: 118, tip: "The Support Question", meaning: "Who supports you?", example1: "Who in your life is helping you?", example2: "What support would be most helpful now?" },
+  { day: 119, tip: "The Action Question", meaning: "What's the next small step?", example1: "What's one small thing you could do today?", example2: "What would be a good first step?" },
+  { day: 120, tip: "The Commitment Question", meaning: "How committed are you?", example1: "On a scale of 1-10, how likely are you to do this?", example2: "What would make it a 10?" },
+  { day: 121, tip: "The Follow-Up Question", meaning: "What happened after?", example1: "After that conversation, what happened?", example2: "How did things change?" },
+  { day: 122, tip: "The Clarifying Question", meaning: "Help me understand better.", example1: "When you say 'soon', what does that mean?", example2: "Can you give me an example?" },
+  { day: 123, tip: "The Probing Question", meaning: "Dig deeper.", example1: "What else can you tell me about that?", example2: "Why do you think that happened?" },
+  { day: 124, tip: "The Leading Question", meaning: "Guide toward an answer.", example1: "Don't you think it would be better to...", example2: "Wouldn't you agree that... (use carefully)" },
+  { day: 125, tip: "The Rhetorical Question", meaning: "Question not needing answer.", example1: "Isn't it amazing what we can achieve together?", example2: "Who doesn't want to save money?" },
+  { day: 126, tip: "The Open Loop Question", meaning: "Leave them curious.", example1: "I'll tell you the secret later - first, let's discuss...", example2: "There's one more thing I'll share at the end." },
+  { day: 127, tip: "The Closed Question", meaning: "Yes/no answers.", example1: "Did you finish the report?", example2: "Are you available tomorrow?" },
+  { day: 128, tip: "The Funnel Technique", meaning: "Broad to narrow questions.", example1: "Start with 'Tell me about your work', then 'What projects?', then 'Tell me about that specific project.'", example2: "Narrow down to details." },
+  { day: 129, tip: "The Inverted Funnel", meaning: "Narrow to broad.", example1: "Start with specific, then generalize.", example2: "Use when you need quick facts then explore." },
+  { day: 130, tip: "The Tunnel Technique", meaning: "All questions on same topic.", example1: "Stay on one subject until fully explored.", example2: "Good for investigations." },
+  { day: 131, tip: "The Spotlight Technique", meaning: "Focus on one aspect.", example1: "Let's focus specifically on the budget for now.", example2: "We'll cover other areas later." },
+  { day: 132, tip: "The Scattergun Technique", meaning: "Many topics quickly.", example1: "Brainstorming - throw out many ideas.", example2: "Good for creativity, not for details." },
+  { day: 133, tip: "The Bounce Technique", meaning: "Redirect question back.", example1: "That's interesting - what do you think?", example2: "How would you answer that?" },
+  { day: 134, tip: "The Bridge Technique", meaning: "Acknowledge then redirect.", example1: "That's a good point, and I'd also add...", example2: "I hear you, and let me share another perspective." },
+  { day: 135, tip: "The Flag Technique", meaning: "Flag important points.", example1: "This is really important: ...", example2: "If you remember only one thing, remember this." },
+  { day: 136, tip: "The Bookend Technique", meaning: "Start and end with key message.", example1: "Open with main point, close with same point.", example2: "People remember beginnings and endings." },
+  { day: 137, tip: "The Signpost Technique", meaning: "Tell them what's coming.", example1: "I'll cover three points: first..., second..., finally...", example2: "Makes your talk easy to follow." },
+  { day: 138, tip: "The Summary Technique", meaning: "Summarize periodically.", example1: "So far we've discussed X and Y. Now let's move to Z.", example2: "Helps retention." },
+  { day: 139, tip: "The Transition Technique", meaning: "Smooth topic changes.", example1: "Now that we've covered X, let's turn to Y.", example2: "Speaking of X, that reminds me of Y." },
+  { day: 140, tip: "The Hook Technique", meaning: "Grab attention early.", example1: "Start with a surprising fact.", example2: "Open with a question that makes them think." },
+  { day: 141, tip: "The Cliffhanger Technique", meaning: "Leave them wanting more.", example1: "I'll share the solution after the break.", example2: "If you want to know the secret, stay tuned." },
+  { day: 142, tip: "The Teaser Technique", meaning: "Preview exciting content.", example1: "Wait till you hear what I discovered.", example2: "You won't believe what happened next." },
+  { day: 143, tip: "The Curiosity Gap", meaning: "Create curiosity.", example1: "The one thing successful people do differently...", example2: "The secret they don't want you to know..." },
+  { day: 144, tip: "The Contrast Technique", meaning: "Show difference.", example1: "Before this method, I struggled. After, everything changed.", example2: "Compare old vs new." },
+  { day: 145, tip: "The Comparison Technique", meaning: "Compare to something familiar.", example1: "It's like riding a bike - once you learn, you never forget.", example2: "Think of it as a smartphone - simple interface, complex inside." },
+  { day: 146, tip: "The Analogy Technique", meaning: "Use analogies to explain.", example1: "Memory is like a library - organize it well.", example2: "The brain is like a computer - process input, store data." },
+  { day: 147, tip: "The Metaphor Technique", meaning: "Use metaphors.", example1: "Life is a journey.", example2: "Time is money." },
+  { day: 148, tip: "The Example Technique", meaning: "Give specific examples.", example1: "For instance, last week...", example2: "Let me give you a real example." },
+  { day: 149, tip: "The Story Technique", meaning: "Wrap message in story.", example1: "Let me tell you about a client who...", example2: "This reminds me of when I..." },
+  { day: 150, tip: "The Data Technique", meaning: "Use numbers and facts.", example1: "Studies show that 80% of people...", example2: "According to research..." },
+  { day: 151, tip: "The Testimonial Technique", meaning: "Quote others.", example1: "As one client said, 'This changed my life.'", example2: "Even Einstein said..." },
+  { day: 152, tip: "The Authority Technique", meaning: "Cite experts.", example1: "Harvard researchers found that...", example2: "According to Dr. Smith..." },
+  { day: 153, tip: "The Social Proof Technique", meaning: "Show others agree.", example1: "Join 10,000 satisfied customers.", example2: "Most people choose this option." },
+  { day: 154, tip: "The Scarcity Technique", meaning: "Highlight limited availability.", example1: "Only 5 spots left.", example2: "This offer ends today." },
+  { day: 155, tip: "The Urgency Technique", meaning: "Create time pressure.", example1: "Act now before it's too late.", example2: "Limited time offer." },
+  { day: 156, tip: "The Reciprocity Technique", meaning: "Give first.", example1: "Here's a free guide - no strings attached.", example2: "Let me help you with that." },
+  { day: 157, tip: "The Liking Technique", meaning: "Build rapport first.", example1: "Find common ground before business.", example2: "Give genuine compliments." },
+  { day: 158, tip: "The Consistency Technique", meaning: "Get small agreement first.", example1: "Do you agree that health is important? Then let's discuss gym membership.", example2: "You said you value quality - let me show you our premium option." },
+  { day: 159, tip: "The Unity Technique", meaning: "Emphasize shared identity.", example1: "We're both parents, so we want what's best for children.", example2: "As fellow engineers, you'll appreciate this." },
+  { day: 160, tip: "The Contrast Technique", meaning: "Show difference after.", example1: "This is ₹1000, but for just ₹100 more you get premium.", example2: "Compared to others, our price is lower." },
+  { day: 161, tip: "The Decoy Technique", meaning: "Add third option to make one appealing.", example1: "Small ₹100, Large ₹200 - add Medium ₹190, Large seems best.", example2: "Gold plan $100, Platinum $200 - add Silver $199, Platinum seems best." },
+  { day: 162, tip: "The Anchor Technique", meaning: "Start high.", example1: "Quote ₹10,000 first, then ₹5,000 seems reasonable.", example2: "Compare to expensive option first." },
+  { day: 163, tip: "The Framing Technique", meaning: "Frame positively.", example1: "90% success rate vs 10% failure rate.", example2: "Save ₹500 vs Pay ₹500 less." },
+  { day: 164, tip: "The Reframing Technique", meaning: "Change the meaning.", example1: "Not a failure, but a learning experience.", example2: "Not expensive, but an investment." },
+  { day: 165, tip: "The Reappraisal Technique", meaning: "Reinterpret feelings.", example1: "Nervousness is excitement without breath.", example2: "Anxiety means you care." },
+  { day: 166, tip: "The Normalizing Technique", meaning: "Make feelings normal.", example1: "Everyone feels this way at first.", example2: "It's completely normal to be nervous." },
+  { day: 167, tip: "The Depersonalizing Technique", meaning: "Not about you.", example1: "Their anger is about them, not you.", example2: "Don't take it personally." },
+  { day: 168, tip: "The Externalizing Technique", meaning: "Problem is separate.", example1: "The problem is the deadline, not you.", example2: "Let's fight the problem together." },
+  { day: 169, tip: "The De-catastrophizing Technique", meaning: "What's worst that could happen?", example1: "If you fail interview, you try another.", example2: "Really, how bad would that be?" },
+  { day: 170, tip: "The Re-catastrophizing Technique", meaning: "What's best that could happen?", example1: "But what if you succeed brilliantly?", example2: "Imagine the best possible outcome." },
+  { day: 171, tip: "The Probability Technique", meaning: "What are the actual odds?", example1: "What's the real probability of that happening?", example2: "How likely is that, really?" },
+  { day: 172, tip: "The Evidence Technique", meaning: "What's the evidence?", example1: "What proof do you have for that thought?", example2: "Is there another way to see this?" },
+  { day: 173, tip: "The Alternative Technique", meaning: "What's another explanation?", example1: "Could there be a different reason?", example2: "What would a friend say about this?" },
+  { day: 174, tip: "The Balanced Technique", meaning: "Look at both sides.", example1: "What are the pros and cons?", example2: "What's good and bad about this situation?" },
+  { day: 175, tip: "The Big Picture Technique", meaning: "Zoom out.", example1: "Will this matter in 5 years?", example2: "In the grand scheme, how important is this?" },
+  { day: 176, tip: "The Small Picture Technique", meaning: "Zoom in.", example1: "What's the next small step?", example2: "Focus on today, not the whole mountain." },
+  { day: 177, tip: "The Gratitude Technique", meaning: "What's going well?", example1: "What are three good things today?", example2: "What can you appreciate right now?" },
+  { day: 178, tip: "The Optimism Technique", meaning: "Look for opportunities.", example1: "What opportunity does this challenge present?", example2: "What can you learn from this?" },
+  { day: 179, tip: "The Pessimism Technique", meaning: "Prepare for worst.", example1: "What's the worst case, and can you handle it?", example2: "Plan for problems, hope for best." },
+  { day: 180, tip: "The Acceptance Technique", meaning: "Accept what you can't change.", example1: "It is what it is - now what?", example2: "Accept, then act on what you can control." },
+  { day: 181, tip: "The Control Technique", meaning: "Focus on what you control.", example1: "What's in your control here?", example2: "Let go of what you can't control." },
+  { day: 182, tip: "The Responsibility Technique", meaning: "Own your part.", example1: "What's my responsibility in this?", example2: "What could I do differently?" },
+  { day: 183, tip: "The Blame Technique", meaning: "Don't blame.", example1: "Blaming doesn't solve - focus on solutions.", example2: "Instead of who's fault, ask what's next." },
+  { day: 184, tip: "The Forgiveness Technique", meaning: "Forgive to move on.", example1: "Holding anger hurts you, not them.", example2: "Forgiveness is for your peace." },
+  { day: 185, tip: "The Apology Technique", meaning: "Apologize well.", example1: "I was wrong, I'm sorry, here's how I'll fix it.", example2: "Apologize for impact, not just intent." },
+  { day: 186, tip: "The Gratitude Technique", meaning: "Say thank you.", example1: "Thank you for your patience.", example2: "I appreciate your help." },
+  { day: 187, tip: "The Appreciation Technique", meaning: "Appreciate specifically.", example1: "I really appreciated how you handled that client.", example2: "Your attention to detail made a difference." },
+  { day: 188, tip: "The Recognition Technique", meaning: "Recognize effort.", example1: "I see how hard you're working.", example2: "Your effort hasn't gone unnoticed." },
+  { day: 189, tip: "The Encouragement Technique", meaning: "Encourage progress.", example1: "You're making great progress.", example2: "Keep going - you're almost there." },
+  { day: 190, tip: "The Celebration Technique", meaning: "Celebrate wins.", example1: "Let's celebrate this milestone.", example2: "You deserve to celebrate this success." },
+  { day: 191, tip: "The Connection Technique", meaning: "Connect genuinely.", example1: "Share something real about yourself.", example2: "Ask about them, listen, remember." }
 ];
 
 // 3. DAILY SOCIAL INTELLIGENCE TIPS
@@ -288,7 +484,105 @@ const SOCIAL_INTELLIGENCE = [
   { day: 90, tip: "Notice Disagreement", meaning: "Head shake = disagreement.", example1: "Pursed lips = disagreement.", example2: "Crossed arms = disagree." },
   { day: 91, tip: "Observe Interest", meaning: "Leaning in = interested.", example1: "Questions = interested.", example2: "Eye contact = interested." },
   { day: 92, tip: "Watch for Boredom", meaning: "Glancing around = bored.", example1: "Doodling = bored.", example2: "Tapping fingers = bored." },
-  { day: 93, tip: "Notice Comfort Level", meaning: "Relaxed posture = comfortable.", example1: "Open arms = comfortable.", example2: "Laughing = comfortable." }
+  { day: 93, tip: "Notice Comfort Level", meaning: "Relaxed posture = comfortable.", example1: "Open arms = comfortable.", example2: "Laughing = comfortable." },
+   { day: 94, tip: "Read Emotional Temperature", meaning: "Gauge the mood before speaking.", example1: "If tension is high, be calming.", example2: "If energy is low, be energizing." },
+  { day: 95, tip: "Detect Hidden Emotions", meaning: "Look for micro-expressions.", example1: "Quick flash of anger before smile.", example2: "Brief sadness before neutral face." },
+  { day: 96, tip: "Spot Fake Smiles", meaning: "Real smiles reach eyes.", example1: "Duchenne smile - crow's feet appear.", example2: "Fake smile - mouth only." },
+  { day: 97, tip: "Recognize Genuine Interest", meaning: "Leaning in, eye contact, questions.", example1: "They ask follow-up questions.", example2: "They remember details later." },
+  { day: 98, tip: "Detect Boredom", meaning: "Glancing around, checking phone.", example1: "Doodling or fidgeting.", example2: "Short responses, no questions." },
+  { day: 99, tip: "Spot Discomfort", meaning: "Shifting weight, crossing arms.", example1: "Touching neck or face.", example2: "Leaning away, creating distance." },
+  { day: 100, tip: "Recognize Attraction", meaning: "Prolonged eye contact, mirroring.", example1: "Playing with hair, preening.", example2: "Leaning in, finding excuses to touch." },
+  { day: 101, tip: "Detect Deception", meaning: "Inconsistencies, over-explaining.", example1: "Touching face, covering mouth.", example2: "Less blinking, stiff posture." },
+  { day: 102, tip: "Spot Nervousness", meaning: "Fidgeting, shallow breathing.", example1: "Voice cracks, fast talking.", example2: "Sweating, blushing." },
+  { day: 103, tip: "Recognize Confidence", meaning: "Steady eye contact, open posture.", example1: "Slow speech, pauses.", example2: "Steeple hand gesture." },
+  { day: 104, tip: "Detect Insecurity", meaning: "Seeking reassurance, over-apologizing.", example1: "Defensive body language.", example2: "Downplaying achievements." },
+  { day: 105, tip: "Spot Arrogance", meaning: "One-upping, interrupting.", example1: "Dismissive gestures.", example2: "Not listening, waiting to talk." },
+  { day: 106, tip: "Recognize Kindness", meaning: "Offers help, remembers details.", example1: "Asks how you're doing, means it.", example2: "Follows up on past conversations." },
+  { day: 107, tip: "Detect Manipulation", meaning: "Guilt trips, love bombing.", example1: "Makes you feel obligated.", example2: "Hot and cold behavior." },
+  { day: 108, tip: "Spot Toxic People", meaning: "Drain your energy, make you feel bad.", example1: "Always negative, criticizing.", example2: "Drama follows them everywhere." },
+  { day: 109, tip: "Recognize Authenticity", meaning: "Consistent words and actions.", example1: "Admits mistakes, vulnerable.", example2: "No hidden agenda." },
+  { day: 110, tip: "Detect Hidden Agendas", meaning: "Too good to be true offers.", example1: "Help with strings attached.", example2: "Friendly only when need something." },
+  { day: 111, tip: "Spot Envy", meaning: "Backhanded compliments.", example1: "Happy for you but not really.", example2: "Downplays your success." },
+  { day: 112, tip: "Recognize Support", meaning: "Celebrates your wins.", example1: "Helps without expecting return.", example2: "Defends you when you're not there." },
+  { day: 113, tip: "Detect Jealousy", meaning: "Competes with you.", example1: "One-ups your stories.", example2: "Uncomfortable when you succeed." },
+  { day: 114, tip: "Spot Respect", meaning: "Listens, values your time.", example1: "Asks your opinion, considers it.", example2: "Respects boundaries." },
+  { day: 115, tip: "Recognize Disrespect", meaning: "Interrupts, dismisses your views.", example1: "Shows up late consistently.", example2: "Forgets what you said." },
+  { day: 116, tip: "Detect Interest in You", meaning: "Asks personal questions.", example1: "Remembers what you like.", example2: "Wants to spend time with you." },
+  { day: 117, tip: "Spot Self-Centeredness", meaning: "Always talks about themselves.", example1: "Never asks about you.", example2: "Every conversation turns to them." },
+  { day: 118, tip: "Recognize Generosity", meaning: "Shares credit, gives freely.", example1: "Mentors without expecting.", example2: "Happy to help." },
+  { day: 119, tip: "Detect Stinginess", meaning: "Keeps score of favors.", example1: "Reminds you of what they did.", example2: "Helps only when benefit for them." },
+  { day: 120, tip: "Spot Reliability", meaning: "Does what they say.", example1: "Shows up on time.", example2: "Follows through on promises." },
+  { day: 121, tip: "Recognize Unreliability", meaning: "Excuses, cancellations.", example1: "Promises but doesn't deliver.", example2: "Last minute changes." },
+  { day: 122, tip: "Detect Honesty", meaning: "Consistent stories, admits when wrong.", example1: "Transparent about mistakes.", example2: "No need to exaggerate." },
+  { day: 123, tip: "Spot Dishonesty", meaning: "Inconsistent, avoids eye contact.", example1: "Over-explains unnecessarily.", example2: "Changes story details." },
+  { day: 124, tip: "Recognize Emotional Intelligence", meaning: "Reads your emotions, responds appropriately.", example1: "Knows when you need space.", example2: "Comforts when you're down." },
+  { day: 125, tip: "Detect Emotional Immaturity", meaning: "Blames others, can't handle criticism.", example1: "Mood swings, unpredictable.", example2: "Can't apologize sincerely." },
+  { day: 126, tip: "Spot Maturity", meaning: "Owns mistakes, calm under pressure.", example1: "Apologizes sincerely.", example2: "Handles criticism well." },
+  { day: 127, tip: "Recognize Wisdom", meaning: "Learns from experience, gives good advice.", example1: "Shares lessons, not just opinions.", example2: "Asks good questions." },
+  { day: 128, tip: "Detect Naivety", meaning: "Trusts too easily, sees only good.", example1: "Ignoring red flags.", example2: "Believes everyone has good intentions." },
+  { day: 129, tip: "Spot Cynicism", meaning: "Assumes worst in people.", example1: "Always suspicious of motives.", example2: "Nothing good ever lasts." },
+  { day: 130, tip: "Recognize Optimism", meaning: "Sees possibilities, lifts others.", example1: "Finds silver lining.", example2: "Encourages when things are hard." },
+  { day: 131, tip: "Detect Pessimism", meaning: "Sees problems, drains energy.", example1: "Always expects worst.", example2: "Nothing will work anyway." },
+  { day: 132, tip: "Spot Leadership", meaning: "Takes initiative, helps others shine.", example1: "Makes decisions, takes responsibility.", example2: "Empowers others." },
+  { day: 133, tip: "Recognize Followership", meaning: "Supports, implements well.", example1: "Reliable executor.", example2: "Good team player." },
+  { day: 134, tip: "Detect Micromanagement", meaning: "Controls every detail, doesn't trust.", example1: "Must approve everything.", example2: "Can't delegate." },
+  { day: 135, tip: "Spot Delegation Skill", meaning: "Trusts others, gives autonomy.", example1: "Assigns then steps back.", example2: "Available but not hovering." },
+  { day: 136, tip: "Recognize Team Player", meaning: "Shares credit, helps others.", example1: "Collaborates not competes.", example2: "Celebrates team wins." },
+  { day: 137, tip: "Detect Lone Wolf", meaning: "Works alone, doesn't share.", example1: "Hoards information.", example2: "Not interested in team." },
+  { day: 138, tip: "Spot Mentor", meaning: "Develops others, shares wisdom.", example1: "Takes time to teach.", example2: "Happy when mentees succeed." },
+  { day: 139, tip: "Recognize Learner", meaning: "Always curious, asks questions.", example1: "Eager to learn from anyone.", example2: "Takes feedback well." },
+  { day: 140, tip: "Detect Know-It-All", meaning: "Already knows everything.", example1: "Dismisses others' ideas.", example2: "Can't be told anything." },
+  { day: 141, tip: "Spot Open-Mindedness", meaning: "Considers different views.", example1: "Listens without judging.", example2: "Changes mind with evidence." },
+  { day: 142, tip: "Recognize Closed-Mindedness", meaning: "My way or highway.", example1: "Ignores facts that disagree.", example2: "Dismisses others' opinions." },
+  { day: 143, tip: "Detect Flexibility", meaning: "Adapts to change easily.", example1: "Plans change, they adjust.", example2: "Sees opportunities in change." },
+  { day: 144, tip: "Spot Rigidity", meaning: "Can't handle change.", example1: "Stuck in routines.", example2: "Upset when plans change." },
+  { day: 145, tip: "Recognize Patience", meaning: "Calm while waiting.", example1: "Doesn't rush others.", example2: "Understands things take time." },
+  { day: 146, tip: "Detect Impatience", meaning: "Rushes, interrupts.", example1: "Taps foot, sighs.", example2: "Wants results now." },
+  { day: 147, tip: "Spot Tolerance", meaning: "Accepts differences.", example1: "Respects others' choices.", example2: "Doesn't judge." },
+  { day: 148, tip: "Recognize Intolerance", meaning: "Can't accept differences.", example1: "Criticizes others' lifestyles.", example2: "Must convert others to their way." },
+  { day: 149, tip: "Detect Compassion", meaning: "Feels for others, acts.", example1: "Helps without being asked.", example2: "Understands suffering." },
+  { day: 150, tip: "Spot Apathy", meaning: "Doesn't care about others.", example1: "Ignores others' struggles.", example2: "Only cares about self." },
+  { day: 151, tip: "Recognize Empathy", meaning: "Feels with others.", example1: "I can imagine how hard that is.", example2: "Your pain feels real to me." },
+  { day: 152, tip: "Detect Sympathy", meaning: "Feels for others (from distance).", example1: "I feel sorry for you.", example2: "Less connected than empathy." },
+  { day: 153, tip: "Spot Kindness", meaning: "Small acts of care.", example1: "Holds door, offers seat.", example2: "Asks if you need anything." },
+  { day: 154, tip: "Recognize Cruelty", meaning: "Enjoys others' pain.", example1: "Makes fun of others.", example2: "Happy when others fail." },
+  { day: 155, tip: "Detect Fairness", meaning: "Treats everyone equally.", example1: "Shares credit fairly.", example2: "Considers everyone's needs." },
+  { day: 156, tip: "Spot Unfairness", meaning: "Plays favorites, biased.", example1: "Different rules for different people.", example2: "Takes more than gives." },
+  { day: 157, tip: "Recognize Justice", meaning: "Wants what's right.", example1: "Speaks up against wrong.", example2: "Defends the weak." },
+  { day: 158, tip: "Detect Injustice", meaning: "Takes advantage of others.", example1: "Exploits the vulnerable.", example2: "Silent when should speak." },
+  { day: 159, tip: "Spot Integrity", meaning: "Does right when no one watches.", example1: "Returns found money.", example2: "Honest even when costly." },
+  { day: 160, tip: "Recognize Hypocrisy", meaning: "Says one thing, does another.", example1: "Preaches honesty but lies.", example2: "Rules for thee, not for me." },
+  { day: 161, tip: "Detect Courage", meaning: "Acts despite fear.", example1: "Speaks truth to power.", example2: "Admits mistakes publicly." },
+  { day: 162, tip: "Spot Cowardice", meaning: "Avoids hard conversations.", example1: "Lets others take blame.", example2: "Silent when should speak." },
+  { day: 163, tip: "Recognize Resilience", meaning: "Bounces back from setbacks.", example1: "Fails, learns, tries again.", example2: "Doesn't give up." },
+  { day: 164, tip: "Detect Fragility", meaning: "Crumbles under pressure.", example1: "Can't handle criticism.", example2: "Gives up easily." },
+  { day: 165, tip: "Spot Grit", meaning: "Persistent toward long-term goals.", example1: "Works hard despite obstacles.", example2: "Consistent effort over time." },
+  { day: 166, tip: "Recognize Quitting", meaning: "Gives up when hard.", example1: "Stops at first failure.", example2: "No follow-through." },
+  { day: 167, tip: "Detect Self-Awareness", meaning: "Knows own strengths/weaknesses.", example1: "Asks for feedback.", example2: "Reflects on behavior." },
+  { day: 168, tip: "Spot Blindness", meaning: "Unaware of own impact.", example1: "Surprised when people react.", example2: "Doesn't see own flaws." },
+  { day: 169, tip: "Recognize Humility", meaning: "Doesn't brag, admits limitations.", example1: "Shares credit.", example2: "Open to learning." },
+  { day: 170, tip: "Detect Arrogance", meaning: "Thinks they're better.", example1: "Looks down on others.", example2: "Can't admit being wrong." },
+  { day: 171, tip: "Spot Gratitude", meaning: "Appreciates what they have.", example1: "Says thank you often.", example2: "Notices small kindnesses." },
+  { day: 172, tip: "Recognize Entitlement", meaning: "Thinks they deserve more.", example1: "Ungrateful for what they get.", example2: "Expects special treatment." },
+  { day: 173, tip: "Detect Contentment", meaning: "Happy with enough.", example1: "Not always wanting more.", example2: "Enjoys present moment." },
+  { day: 174, tip: "Spot Greed", meaning: "Never enough.", example1: "Always wants more.", example2: "Takes more than needs." },
+  { day: 175, tip: "Recognize Generosity", meaning: "Gives freely.", example1: "Shares without expecting.", example2: "Happy to help others." },
+  { day: 176, tip: "Detect Selfishness", meaning: "Takes, doesn't give.", example1: "Only cares about self.", example2: "What's in it for me?" },
+  { day: 177, tip: "Spot Loyalty", meaning: "Stands by you.", example1: "Defends you when absent.", example2: "There in hard times." },
+  { day: 178, tip: "Recognize Betrayal", meaning: "Turns on you.", example1: "Shares your secrets.", example2: "Leaves when you need them." },
+  { day: 179, tip: "Detect Trustworthiness", meaning: "Keeps promises, secrets.", example1: "Reliable, consistent.", example2: "Honest even when costly." },
+  { day: 180, tip: "Spot Untrustworthiness", meaning: "Breaks promises, gossips.", example1: "Shares what you told in confidence.", example2: "Unreliable." },
+  { day: 181, tip: "Recognize Supportiveness", meaning: "Cheerleader for your success.", example1: "Celebrates your wins.", example2: "Encourages your dreams." },
+  { day: 182, tip: "Detect Jealousy", meaning: "Threatened by your success.", example1: "Downplays achievements.", example2: "Uncomfortable when you shine." },
+  { day: 183, tip: "Spot Encouragement", meaning: "Believes in you.", example1: "You can do this!'", example2: "I'm proud of you.'" },
+  { day: 184, tip: "Recognize Discouragement", meaning: "Drains your hope.", example1: "That'll never work.'", example2: "Why bother?'" },
+  { day: 185, tip: "Detect Inspiration", meaning: "Makes you want to be better.", example1: "Their example motivates you.", example2: "Lifts your spirit." },
+  { day: 186, tip: "Spot Demotivation", meaning: "Makes you want to give up.", example1: "Always negative.", example2: "Nothing matters anyway.'" },
+  { day: 187, tip: "Recognize Calm", meaning: "Brings peace to chaos.", example1: "Stays steady in crisis.", example2: "Others feel safe near them." },
+  { day: 188, tip: "Detect Chaos", meaning: "Creates drama everywhere.", example1: "Always in crisis.", example2: "Energy drains you." },
+  { day: 189, tip: "Spot Wisdom", meaning: "Knows when to speak, when to listen.", example1: "Gives advice only when asked.", example2: "Learns from everything." },
+  { day: 190, tip: "Recognize Foolishness", meaning: "Talks without thinking.", example1: "Repeats same mistakes.", example2: "Doesn't learn." },
+  { day: 191, tip: "Detect Presence", meaning: "Fully here with you.", example1: "No phone, no distraction.", example2: "Remembers what you said." }
 ];
 
 // 4. DAILY PSYCHOLOGY WORDS
@@ -385,7 +679,105 @@ const PSYCHOLOGY_WORDS = [
   { day: 90, word: "Story Method", meaning: "Create story to remember list.", example1: "Grocery list as story.", example2: "Stories 22x more memorable." },
   { day: 91, word: "Keyword Method", meaning: "For learning languages.", example1: "Spanish 'pan' (bread) - pan sounds like 'pan'", example2: "Associate foreign word with English word." },
   { day: 92, word: "Acronyms", meaning: "First letters form word.", example1: "SMART goals.", example2: "NASA, AIDS." },
-  { day: 93, word: "Acrostics", meaning: "First letters form sentence.", example1: "My Very Educated Mother Just Served Us Noodles (planets)", example2: "Sentence to remember order." }
+  { day: 93, word: "Acrostics", meaning: "First letters form sentence.", example1: "My Very Educated Mother Just Served Us Noodles (planets)", example2: "Sentence to remember order." },
+  { day: 94, word: "Proactive Interference", meaning: "Old memories disrupt new ones.", example1: "Can't remember new password because of old one.", example2: "Old phone number blocks new one." },
+  { day: 95, word: "Retroactive Interference", meaning: "New memories disrupt old ones.", example1: "Learn French, forget Spanish.", example2: "New address makes you forget old one." },
+  { day: 96, word: "Anterograde Amnesia", meaning: "Can't form new memories.", example1: "Remember past but not new people.", example2: "Movie 'Memento' shows this." },
+  { day: 97, word: "Retrograde Amnesia", meaning: "Can't remember past.", example1: "Remember new things but not old.", example2: "Forget childhood after accident." },
+  { day: 98, word: "Source Amnesia", meaning: "Remember fact but not where learned.", example1: "Know fact but forget if true or rumor.", example2: "Think your idea but heard elsewhere." },
+  { day: 99, word: "Flashbulb Memory", meaning: "Vivid memory of emotional event.", example1: "Remember where you were on 9/11.", example2: "Vivid recall of major news events." },
+  { day: 100, word: "Eyewitness Memory", meaning: "Memory of witnessed event.", example1: "Often unreliable - influenced by questions.", example2: "Different witnesses see differently." },
+  { day: 101, word: "Autobiographical Memory", meaning: "Memory of your own life.", example1: "Remembering your first day of school.", example2: "Personal life events." },
+  { day: 102, word: "Episodic Memory", meaning: "Memory of specific events.", example1: "Remembering your last birthday party.", example2: "What you did yesterday." },
+  { day: 103, word: "Semantic Memory", meaning: "Memory of facts and knowledge.", example1: "Knowing Paris is capital of France.", example2: "Facts, concepts, meanings." },
+  { day: 104, word: "Procedural Memory", meaning: "Memory of how to do things.", example1: "Riding a bike, tying shoes.", example2: "Unconscious memory of skills." },
+  { day: 105, word: "Priming", meaning: "Exposure influences response.", example1: "See 'doctor' then faster recognition of 'nurse'.", example2: "Word associations." },
+  { day: 106, word: "Encoding", meaning: "Processing information for memory.", example1: "Deep processing (meaning) vs shallow (sound).", example2: "How you learn affects recall." },
+  { day: 107, word: "Storage", meaning: "Maintaining information over time.", example1: "Short-term vs long-term storage.", example2: "Where memories live." },
+  { day: 108, word: "Retrieval", meaning: "Accessing stored information.", example1: "Recall vs recognition.", example2: "Multiple choice easier than essay." },
+  { day: 109, word: "Recall", meaning: "Retrieving without cues.", example1: "Essay questions test recall.", example2: "Harder than recognition." },
+  { day: 110, word: "Recognition", meaning: "Identifying learned information.", example1: "Multiple choice tests recognition.", example2: "Easier than recall." },
+  { day: 111, word: "Relearning", meaning: "Learning again faster.", example1: "Study for exam, forget, restudy faster.", example2: "Savings score measures this." },
+  { day: 112, word: "Savings Score", meaning: "Time saved when relearning.", example1: "Learn French in 100hrs, relearn in 40hrs - 60% savings.", example2: "Shows memory persists." },
+  { day: 113, word: "Maintenance Rehearsal", meaning: "Repeating to remember.", example1: "Repeat phone number to remember temporarily.", example2: "Shallow processing." },
+  { day: 114, word: "Elaborative Rehearsal", meaning: "Connecting to meaning.", example1: "Relate new info to what you know.", example2: "Deeper processing, better memory." },
+  { day: 115, word: "Depth of Processing", meaning: "Deeper processing = better memory.", example1: "Meaning > sound > appearance.", example2: "Think about meaning, not just words." },
+  { day: 116, word: "Shallow Processing", meaning: "Superficial encoding.", example1: "Remember font, not meaning.", example2: "Poor memory later." },
+  { day: 117, word: "Deep Processing", meaning: "Meaningful encoding.", example1: "Think about implications, examples.", example2: "Better long-term memory." },
+  { day: 118, word: "Self-Referential Encoding", meaning: "Relating to self improves memory.", example1: "How does this apply to me?", example2: "Personal examples stick." },
+  { day: 119, word: "Transfer-Appropriate Processing", meaning: "Match encoding and retrieval.", example1: "Study in quiet, test in quiet - better.", example2: "Context matters." },
+  { day: 120, word: "Context-Dependent Memory", meaning: "Same context helps recall.", example1: "Study in room, test in same room - better.", example2: "Divers remember underwater." },
+  { day: 121, word: "State-Dependent Memory", meaning: "Same internal state helps recall.", example1: "Learn drunk, recall drunk - better.", example2: "Mood affects memory." },
+  { day: 122, word: "Mood-Congruent Memory", meaning: "Recall matches current mood.", example1: "Sad mood = recall sad memories.", example2: "Happy mood = happy memories." },
+  { day: 123, word: "Encoding Specificity", meaning: "Cues at encoding help retrieval.", example1: "Remember 'piano' if cue 'heavy' vs 'sound'.", example2: "Cues matter." },
+  { day: 124, word: "Retrieval Cue", meaning: "Stimulus that triggers recall.", example1: "Smell triggers memory.", example2: "Song from past brings memories." },
+  { day: 125, word: "Encoding Failure", meaning: "Never encoded, can't recall.", example1: "Don't remember coin details - never encoded.", example2: "Not in memory at all." },
+  { day: 126, word: "Storage Decay", meaning: "Memories fade over time.", example1: "Forget names over years.", example2: "Ebbinghaus forgetting curve." },
+  { day: 127, word: "Retrieval Failure", meaning: "Memory exists but can't access.", example1: "Tip of tongue phenomenon.", example2: "Know but can't recall." },
+  { day: 128, word: "Interference Theory", meaning: "Other info blocks recall.", example1: "Proactive and retroactive interference.", example2: "Competing memories." },
+  { day: 129, word: "Motivated Forgetting", meaning: "Forget what's painful.", example1: "Forget traumatic events.", example2: "Repression - unconscious blocking." },
+  { day: 130, word: "Repression", meaning: "Unconscious blocking of painful memories.", example1: "Forget childhood abuse.", example2: "Controversial concept." },
+  { day: 131, word: "Suppression", meaning: "Conscious forgetting.", example1: "I won't think about that now.", example2: "Push thoughts away intentionally." },
+  { day: 132, word: "False Memory", meaning: "Remembering things that didn't happen.", example1: "Remember being lost in mall (implanted).", example2: "Loftus research." },
+  { day: 133, word: "Misinformation Effect", meaning: "Leading questions alter memory.", example1: "Did you see 'the' broken headlight?", example2: "Witnesses influenced." },
+  { day: 134, word: "Source Monitoring Error", meaning: "Misremembering source of info.", example1: "Thought you saw it, but heard about it.", example2: "Confusing dream with reality." },
+  { day: 135, word: "Cryptomnesia", meaning: "Think you invented, actually remembered.", example1: "New idea' is from old memory.", example2: "Unconscious plagiarism." },
+  { day: 136, word: "Consistency Bias", meaning: "Think past was like present.", example1: "I always believed that' (but you changed).", example2: "Rewrite personal history." },
+  { day: 137, word: "Change Blindness", meaning: "Miss obvious changes.", example1: "Person asking directions swapped - people don't notice.", example2: "Inattentional blindness." },
+  { day: 138, word: "Inattentional Blindness", meaning: "Miss visible things when focused.", example1: "Gorilla in basketball video - people miss it.", example2: "Focus = blind to other things." },
+  { day: 139, word: "Choice Blindness", meaning: "Don't notice choice changes.", example1: "Choose face, then shown different - defend choice.", example2: "We don't know why we choose." },
+  { day: 140, word: "Bystander Effect", meaning: "Less help when others present.", example1: "Kitty Genovese murder - 38 watched.", example2: "Diffusion of responsibility." },
+  { day: 141, word: "Diffusion of Responsibility", meaning: "Others will help, so I won't.", example1: "In group, assume someone else will act.", example2: "Less personal responsibility." },
+  { day: 142, word: "Pluralistic Ignorance", meaning: "Everyone privately disagrees, but thinks everyone agrees.", example1: "Nobody believes, but thinks everyone believes.", example2: "Peer pressure works this way." },
+  { day: 143, word: "Social Loafing", meaning: "Less effort in groups.", example1: "Tug of war - pull less in team.", example2: "Rely on others to work." },
+  { day: 144, word: "Social Facilitation", meaning: "Better on simple tasks with audience.", example1: "Pool players do better with crowd.", example2: "Worse on complex tasks." },
+  { day: 145, word: "Social Inhibition", meaning: "Worse on complex tasks with audience.", example1: "Learn new skill worse when watched.", example2: "Stage fright." },
+  { day: 146, word: "Deindividuation", meaning: "Lose self-awareness in groups.", example1: "Mob behavior, anonymity.", example2: "Klan members do things alone wouldn't." },
+  { day: 147, word: "Group Polarization", meaning: "Groups make views more extreme.", example1: "Discussion makes opinions stronger.", example2: "Risky shift - groups take more risks." },
+  { day: 148, word: "Groupthink", meaning: "Group harmony over critical thinking.", example1: "Bay of Pigs disaster - no one objected.", example2: "Everyone agrees to avoid conflict." },
+  { day: 149, word: "Abilene Paradox", meaning: "Group does what no one wants.", example1: "Family drives to Abilene - no one wanted to go.", example2: "Everyone assumes everyone wants." },
+  { day: 150, word: "Social Identity Theory", meaning: "We favor our group.", example1: "In-group vs out-group bias.", example2: "Sports fans favor their team." },
+  { day: 151, word: "In-Group Bias", meaning: "Favor our group over others.", example1: "Our team is better.", example2: "Allocate more to our group." },
+  { day: 152, word: "Out-Group Homogeneity", meaning: "They are all alike; we are diverse.", example1: "They're all the same.'", example2: "We are individuals." },
+  { day: 153, word: "Minimal Group Paradigm", meaning: "Even random groups create bias.", example1: "Split by coin flip - favor your group.", example2: "Klee vs Kandinsky experiment." },
+  { day: 154, word: "Realistic Conflict Theory", meaning: "Competition for resources creates conflict.", example1: "Robbers Cave experiment.", example2: "Jobs scarce = more prejudice." },
+  { day: 155, word: "Superordinate Goals", meaning: "Shared goals reduce conflict.", example1: "Robbers Cave - fix water supply together.", example2: "Common enemy unites." },
+  { day: 156, word: "Contact Hypothesis", meaning: "Contact reduces prejudice under conditions.", example1: "Equal status, common goals, authority support.", example2: "Integrated housing works." },
+  { day: 157, word: "Jigsaw Classroom", meaning: "Cooperative learning reduces prejudice.", example1: "Each student has piece of puzzle.", example2: "Need each other to learn." },
+  { day: 158, word: "Stereotype Threat", meaning: "Fear of confirming stereotype harms performance.", example1: "Girls told 'girls bad at math' - do worse.", example2: "Black students told test measures intelligence - do worse." },
+  { day: 159, word: "Self-Fulfilling Prophecy", meaning: "Expectations create reality.", example1: "Teacher expects student to do well - student does.", example2: "Think someone is hostile - act cold - they respond hostile." },
+  { day: 160, word: "Pygmalion Effect", meaning: "High expectations lead to high performance.", example1: "Teachers told certain students 'bloomers' - they did.", example2: "Manager expects more, gets more." },
+  { day: 161, word: "Golem Effect", meaning: "Low expectations lead to low performance.", example1: "Expect failure, get failure.", example2: "Negative Pygmalion." },
+  { day: 162, word: "Placebo Effect", meaning: "Belief in treatment causes improvement.", example1: "Sugar pill helps if you believe.", example2: "Mind-body connection." },
+  { day: 163, word: "Nocebo Effect", meaning: "Negative expectations cause harm.", example1: "Told side effects, experience them.", example2: "Believe you'll get sick, do." },
+  { day: 164, word: "Hawthorne Effect", meaning: "Behavior changes when watched.", example1: "Workers more productive when observed.", example2: "Being studied changes behavior." },
+  { day: 165, word: "John Henry Effect", meaning: "Compete when compared to others.", example1: "Control group works harder when compared.", example2: "Try harder when in experiment." },
+  { day: 166, word: "Demand Characteristics", meaning: "Participants guess study purpose, act accordingly.", example1: "Try to be 'good participant'.", example2: "Act how they think expected." },
+  { day: 167, word: "Social Desirability Bias", meaning: "Answer to look good.", example1: "Say vote, didn't. Say donate, didn't.", example2: "Overreport good, underreport bad." },
+  { day: 168, word: "Acquiescence Bias", meaning: "Agree with everything.", example1: "Yes-saying on surveys.", example2: "Agree regardless of content." },
+  { day: 169, word: "Extremity Bias", meaning: "Use extremes on scales.", example1: "Always 1 or 7, never middle.", example2: "Avoid moderate answers." },
+  { day: 170, word: "Central Tendency Bias", meaning: "Avoid extremes, choose middle.", example1: "Always 4 on 1-7 scale.", example2: "Safe, middle answers." },
+  { day: 171, word: "Recency Effect in Surveys", meaning: "Last options remembered better.", example1: "In long lists, last items chosen more.", example2: "Order matters." },
+  { day: 172, word: "Primacy Effect in Surveys", meaning: "First options remembered better.", example1: "First in list chosen more.", example2: "Especially in oral surveys." },
+  { day: 173, word: "Question Order Effect", meaning: "Earlier questions affect later.", example1: "Ask about happiness, then dating - correlated.", example2: "Order changes answers." },
+  { day: 174, word: "Framing Effect in Surveys", meaning: "Wording changes answers.", example1: "Forbid' vs 'not allow' - different.", example2: "Support' vs 'favor' - different." },
+  { day: 175, word: "Double-Barreled Question", meaning: "Two questions in one.", example1: "Do you support X and Y?' (can't answer both)", example2: "Should be separated." },
+  { day: 176, word: "Leading Question", meaning: "Suggests desired answer.", example1: "Don't you agree that...", example2: "Surely you think...'" },
+  { day: 177, word: "Loaded Question", meaning: "Contains assumption.", example1: "Have you stopped beating your wife?'", example2: "Assumes you did." },
+  { day: 178, word: "Correlation vs Causation", meaning: "Related doesn't mean caused.", example1: "Ice cream sales and drowning correlate (heat causes both).", example2: "Don't assume cause." },
+  { day: 179, word: "Third Variable Problem", meaning: "Unmeasured variable causes both.", example1: "Coffee drinkers live longer? Maybe wealth (third variable).", example2: "Hidden factor." },
+  { day: 180, word: "Directionality Problem", meaning: "Which causes which?", example1: "Depression causes low self-esteem or reverse?", example2: "Unknown direction." },
+  { day: 181, word: "Naturalistic Observation", meaning: "Observe in natural setting.", example1: "Watch children on playground.", example2: "No intervention." },
+  { day: 182, word: "Laboratory Observation", meaning: "Observe in controlled setting.", example1: "Children in playroom with camera.", example2: "Control conditions." },
+  { day: 183, word: "Case Study", meaning: "In-depth study of one person.", example1: "Phineas Gage - brain injury study.", example2: "Rare phenomena." },
+  { day: 184, word: "Survey Method", meaning: "Ask many people questions.", example1: "Political polls.", example2: "Self-report data." },
+  { day: 185, word: "Correlational Study", meaning: "Measure relationship between variables.", example1: "Study time and grades correlate.", example2: "No causation." },
+  { day: 186, word: "Experiment", meaning: "Manipulate variable to see effect.", example1: "Give drug to one group, placebo to other.", example2: "Establish causation." },
+  { day: 187, word: "Independent Variable", meaning: "What experimenter manipulates.", example1: "Drug vs placebo.", example2: "Teaching method." },
+  { day: 188, word: "Dependent Variable", meaning: "What is measured.", example1: "Test scores.", example2: "Mood ratings." },
+  { day: 189, word: "Control Group", meaning: "No treatment, for comparison.", example1: "Placebo group.", example2: "Baseline to compare." },
+  { day: 190, word: "Experimental Group", meaning: "Gets treatment.", example1: "Gets actual drug.", example2: "New teaching method." },
+  { day: 191, word: "Random Assignment", meaning: "Participants randomly assigned to groups.", example1: "Flip coin for group.", example2: "Ensures groups equivalent." }
 ];
 
 // 5. COMMON PHRASES USED BY MANIPULATORS
@@ -482,7 +874,105 @@ const MANIPULATOR_PHRASES = [
   { day: 90, phrase: "I don't recognize you anymore", meaning: "Making you feel like you're the problem.", example1: "You're not yourself lately.", example2: "What's happened to you?'" },
   { day: 91, phrase: "You used to be so [positive trait]", meaning: "Comparing past to present negatively.", example1: "You used to be so understanding, now...", example2: "You were never like this before.'" },
   { day: 92, phrase: "I miss the old you", meaning: "Implying current you is worse.", example1: "The old you would have handled this better.", example2: "I wish you were still the person I met.'" },
-  { day: 93, phrase: "You've become just like [negative person]", meaning: "Insulting comparison.", example1: "You're becoming just like your mother.", example2: "You're turning into my ex.'" }
+  { day: 93, phrase: "You've become just like [negative person]", meaning: "Insulting comparison.", example1: "You're becoming just like your mother.", example2: "You're turning into my ex.'" },
+   { day: 94, phrase: "You're too emotional", meaning: "Invalidating your feelings.", example1: "When you express anger: 'You're too emotional.'", example2: "Can't we discuss this calmly?' (when you're calm)" },
+  { day: 95, phrase: "You're overthinking", meaning: "Dismissing your concerns.", example1: "It's not a big deal, you're overthinking.", example2: "You always read too much into things.'" },
+  { day: 96, phrase: "You're paranoid", meaning: "Making you doubt valid suspicions.", example1: "You think I'm cheating? You're paranoid.", example2: "No one's out to get you, you're paranoid.'" },
+  { day: 97, phrase: "You're so insecure", meaning: "Attacking when you question them.", example1: "If you were secure, you wouldn't ask.", example2: "Your insecurity is pushing me away.'" },
+  { day: 98, phrase: "You're being dramatic", meaning: "Minimizing your feelings.", example1: "It's not that bad, you're being dramatic.", example2: "Stop making everything a drama.'" },
+  { day: 99, phrase: "You're making a big deal out of nothing", meaning: "Invalidating your concerns.", example1: "It was just a joke, you're making a big deal.", example2: "Why are you so upset over nothing?'" },
+  { day: 100, phrase: "You're impossible to please", meaning: "Making you feel unreasonable.", example1: "Nothing I do is ever good enough for you.", example2: "You're never satisfied.'" },
+  { day: 101, phrase: "You're too demanding", meaning: "Shaming your needs.", example1: "You always want more, you're too demanding.", example2: "Why can't you just be happy with what you have?'" },
+  { day: 102, phrase: "You're too needy", meaning: "Shaming your need for connection.", example1: "I need space, you're too needy.", example2: "You're suffocating me.'" },
+  { day: 103, phrase: "You're too clingy", meaning: "Making you feel bad for wanting closeness.", example1: "Can't I have time alone? You're too clingy.", example2: "You're always there, it's too much.'" },
+  { day: 104, phrase: "You're too controlling", meaning: "When you set boundaries.", example1: "I can't have friends? You're controlling.", example2: "You want to know where I am? Controlling.'" },
+  { day: 105, phrase: "You're too jealous", meaning: "Dismissing valid concerns.", example1: "I was just talking to them, you're jealous.", example2: "Your jealousy is your problem.'" },
+  { day: 106, phrase: "You're too sensitive", meaning: "Classic invalidation.", example1: "I was joking, you're too sensitive.", example2: "Can't you take criticism? Too sensitive.'" },
+  { day: 107, phrase: "You're too serious", meaning: "Dismissing your concerns.", example1: "Lighten up, you're too serious.", example2: "Why so serious? It was just a joke.'" },
+  { day: 108, phrase: "You have no sense of humor", meaning: "When you don't laugh at their cruelty.", example1: "Can't take a joke? No sense of humor.", example2: "You're so uptight, no humor.'" },
+  { day: 109, phrase: "You're so negative", meaning: "Dismissing valid criticism.", example1: "Always pointing out problems, so negative.", example2: "Can't you be positive for once?'" },
+  { day: 110, phrase: "You're always complaining", meaning: "Silencing your concerns.", example1: "Nothing is ever good enough for you.", example2: "All you do is complain.'" },
+  { day: 111, phrase: "You're never happy", meaning: "Making you seem impossible.", example1: "I do so much and you're never happy.", example2: "What would make you happy? Nothing.'" },
+  { day: 112, phrase: "You expect too much", meaning: "Lowering your standards.", example1: "Expecting me to remember? You expect too much.", example2: "Basic respect is too much?'" },
+  { day: 113, phrase: "You're so ungrateful", meaning: "Guilt-tripping.", example1: "After all I do, you're so ungrateful.", example2: "Never a thank you, so ungrateful.'" },
+  { day: 114, phrase: "You don't appreciate anything", meaning: "Making you feel guilty.", example1: "I work so hard and you don't appreciate it.", example2: "Nothing I do is appreciated.'" },
+  { day: 115, phrase: "You take me for granted", meaning: "Guilt-tripping.", example1: "You think I'll always be here? Taking me for granted.", example2: "I'm not your doormat.'" },
+  { day: 116, phrase: "You don't deserve me", meaning: "Lowering self-esteem.", example1: "Other people would appreciate me.", example2: "You're lucky I stay with you.'" },
+  { day: 117, phrase: "No one else would want you", meaning: "Destroying self-worth.", example1: "Look at yourself, who else would want you?", example2: "You should be grateful I'm with you.'" },
+  { day: 118, phrase: "You're lucky I put up with you", meaning: "Making you feel inferior.", example1: "Most people would have left by now.", example2: "I'm the only one who tolerates you.'" },
+  { day: 119, phrase: "I'm the best thing that ever happened to you", meaning: "Inflating their importance.", example1: "Your life was a mess before me.", example2: "You'd be lost without me.'" },
+  { day: 120, phrase: "You'd be nothing without me", meaning: "Creating dependency.", example1: "I made you who you are.", example2: "Without me, you have nothing.'" },
+  { day: 121, phrase: "I gave you everything", meaning: "Exaggerating their contributions.", example1: "I sacrificed everything for you.", example2: "And this is how you repay me?'" },
+  { day: 122, phrase: "I did so much for you", meaning: "Guilt-tripping with favors.", example1: "Remember when I helped you with...", example2: "You owe me for all I've done.'" },
+  { day: 123, phrase: "You owe me", meaning: "Creating false debt.", example1: "I did X, so you owe me Y.", example2: "After all I've done, you owe me.'" },
+  { day: 124, phrase: "You need to earn my trust back", meaning: "Moving goalposts.", example1: "You made a mistake, now earn trust.", example2: "No matter what, not enough.'" },
+  { day: 125, phrase: "Trust is earned", meaning: "Holding over your head.", example1: "You haven't earned my trust yet.", example2: "Keep trying, maybe someday.'" },
+  { day: 126, phrase: "I need to think about whether I can forgive you", meaning: "Keeping you in limbo.", example1: "Dangling forgiveness, not giving it.", example2: "You'll have to wait and see.'" },
+  { day: 127, phrase: "I forgive you, but I won't forget", meaning: "Holding grudge.", example1: "I'll remind you of this forever.", example2: "Forgiveness with conditions.'" },
+  { day: 128, phrase: "I'll never forget this", meaning: "Holding onto resentment.", example1: "You'll pay for this forever.", example2: "This will always be between us.'" },
+  { day: 129, phrase: "You'll regret this", meaning: "Threat.", example1: "If you leave, you'll regret it.", example2: "You don't want to make me angry.'" },
+  { day: 130, phrase: "You'll be sorry", meaning: "Threat.", example1: "Just wait, you'll be sorry.", example2: "You'll regret crossing me.'" },
+  { day: 131, phrase: "I'll make sure everyone knows what you did", meaning: "Threat to reputation.", example1: "I'll tell everyone your secrets.", example2: "Wait till they find out about you.'" },
+  { day: 132, phrase: "Wait till I tell people about you", meaning: "Threat to reputation.", example1: "They'll see who you really are.", example2: "Your reputation will be ruined.'" },
+  { day: 133, phrase: "Everyone will know the truth about you", meaning: "Threat to expose.", example1: "I have proof of what you did.", example2: "The real you will come out.'" },
+  { day: 134, phrase: "I have evidence", meaning: "Threatening with 'proof'.", example1: "I saved all your messages.", example2: "I have recordings, you know.'" },
+  { day: 135, phrase: "I'll destroy you", meaning: "Extreme threat.", example1: "I'll ruin your life.", example2: "You'll wish you never met me.'" },
+  { day: 136, phrase: "You don't know what I'm capable of", meaning: "Vague threat.", example1: "You haven't seen my dark side.", example2: "Don't push me.'" },
+  { day: 137, phrase: "I'm not the one to mess with", meaning: "Intimidation.", example1: "You picked the wrong person.", example2: "I always get even.'" },
+  { day: 138, phrase: "You asked for this", meaning: "Blaming you for their actions.", example1: "If you hadn't..., I wouldn't have...", example2: "You brought this on yourself.'" },
+  { day: 139, phrase: "Look what you made me do", meaning: "Blaming you for their behavior.", example1: "I wouldn't have yelled if you didn't...", example2: "You pushed me to this.'" },
+  { day: 140, phrase: "You provoked me", meaning: "Justifying abuse.", example1: "I hit you because you provoked me.", example2: "You knew how to make me angry.'" },
+  { day: 141, phrase: "You know how to push my buttons", meaning: "Blaming you for their reaction.", example1: "You do this on purpose to upset me.", example2: "You know exactly what sets me off.'" },
+  { day: 142, phrase: "You're making me angry", meaning: "Making you responsible for their emotions.", example1: "Stop before I get angry.", example2: "You're making me lose my temper.'" },
+  { day: 143, phrase: "Don't make me angry", meaning: "Warning/threat.", example1: "You won't like me when I'm angry.", example2: "Don't push your luck.'" },
+  { day: 144, phrase: "You won't like me when I'm angry", meaning: "Threat.", example1: "Hulk reference but threatening.", example2: "I lose control when angry.'" },
+  { day: 145, phrase: "I can't control myself when I'm angry", meaning: "Excuse for behavior.", example1: "I just snap, I can't help it.", example2: "You know how I get.'" },
+  { day: 146, phrase: "You know I have anger issues", meaning: "Excuse, not taking responsibility.", example1: "It's not my fault, I have issues.", example2: "You knew this when you met me.'" },
+  { day: 147, phrase: "This is just who I am", meaning: "Refusing to change.", example1: "Take it or leave it, this is me.", example2: "I'm not going to change.'" },
+  { day: 148, phrase: "I'm not going to change", meaning: "Refusing growth.", example1: "This is me, deal with it.", example2: "If you don't like it, leave.'" },
+  { day: 149, phrase: "If you can't handle me at my worst...", meaning: "Excuse for bad behavior.", example1: "...you don't deserve me at my best.'", example2: "Marilyn Monroe quote misused.'" },
+  { day: 150, phrase: "Take it or leave it", meaning: "Ultimatum.", example1: "These are my terms, take or leave.", example2: "No negotiation.'" },
+  { day: 151, phrase: "It's my way or the highway", meaning: "No compromise.", example1: "Do it my way or get out.", example2: "I don't negotiate.'" },
+  { day: 152, phrase: "I'm not asking, I'm telling", meaning: "Authoritarian.", example1: "This isn't a request.", example2: "Do it because I said so.'" },
+  { day: 153, phrase: "Because I said so", meaning: "No explanation needed.", example1: "Parent to child, but in adult relationships.", example2: "My word is law.'" },
+  { day: 154, phrase: "I don't have to explain myself to you", meaning: "Shutting down communication.", example1: "I do what I want, no explanation.", example2: "You're not entitled to an answer.'" },
+  { day: 155, phrase: "You're not my boss", meaning: "Dismissing valid requests.", example1: "I don't answer to you.", example2: "Who made you in charge?'" },
+  { day: 156, phrase: "You can't tell me what to do", meaning: "Rebelling against boundaries.", example1: "I'm free to do what I want.", example2: "You're controlling me.'" },
+  { day: 157, phrase: "I'll do what I want", meaning: "Refusing accountability.", example1: "Don't try to stop me.", example2: "You can't control me.'" },
+  { day: 158, phrase: "You're not the boss of me", meaning: "Childish defiance.", example1: "I don't have to listen to you.", example2: "You're not my parent.'" },
+  { day: 159, phrase: "Mind your own business", meaning: "Pushing you away.", example1: "Stay out of my affairs.", example2: "This doesn't concern you.'" },
+  { day: 160, phrase: "Stay out of it", meaning: "Excluding you.", example1: "This is between me and them.", example2: "You're not involved.'" },
+  { day: 161, phrase: "It's none of your business", meaning: "Keeping secrets.", example1: "What I do is my business.", example2: "You don't need to know.'" },
+  { day: 162, phrase: "You don't need to know", meaning: "Withholding information.", example1: "I'll tell you if I want to.", example2: "Need-to-know basis.'" },
+  { day: 163, phrase: "I'll tell you when you need to know", meaning: "Controlling information.", example1: "You'll find out when it's time.", example2: "Don't ask again.'" },
+  { day: 164, phrase: "Stop asking questions", meaning: "Shutting down curiosity.", example1: "Just do what I say.", example2: "Questions aren't allowed.'" },
+  { day: 165, phrase: "Don't question me", meaning: "Demanding blind obedience.", example1: "I know what I'm doing.", example2: "Trust me, don't ask.'" },
+  { day: 166, phrase: "Just trust me", meaning: "Asking blind faith.", example1: "I have a plan, just trust me.", example2: "You'll see, but trust me now.'" },
+  { day: 167, phrase: "You'll see, I'm right", meaning: "Dismissing your views.", example1: "I told you so later.", example2: "Just wait, you'll agree eventually.'" },
+  { day: 168, phrase: "Mark my words", meaning: "Predicting to seem wise.", example1: "You'll remember what I said.", example2: "This will happen, mark my words.'" },
+  { day: 169, phrase: "I told you so", meaning: "Gloating after being right.", example1: "See, I was right.", example2: "Should have listened to me.'" },
+  { day: 170, phrase: "You should have listened to me", meaning: "Blaming after failure.", example1: "If you had listened, this wouldn't have happened.", example2: "But no, you knew better.'" },
+  { day: 171, phrase: "I knew this would happen", meaning: "Claiming foresight.", example1: "I predicted this from the start.", example2: "I tried to warn you.'" },
+  { day: 172, phrase: "I tried to warn you", meaning: "I-told-you-so.", example1: "But you didn't listen.", example2: "Now look what happened.'" },
+  { day: 173, phrase: "Don't say I didn't warn you", meaning: "Covering themselves.", example1: "I did my part, now it's on you.", example2: "Remember this conversation.'" },
+  { day: 174, phrase: "I wash my hands of this", meaning: "Abandoning responsibility.", example1: "It's your problem now.", example2: "I'm done, don't come to me.'" },
+  { day: 175, phrase: "It's your problem now", meaning: "Abandoning you.", example1: "I'm out, deal with it yourself.", example2: "Not my circus, not my monkeys.'" },
+  { day: 176, phrase: "Don't come crying to me", meaning: "Withdrawing support.", example1: "When it fails, don't blame me.", example2: "You made your bed, lie in it.'" },
+  { day: 177, phrase: "You made your bed, now lie in it", meaning: "No sympathy.", example1: "You chose this, now deal.", example2: "Consequences of your actions.'" },
+  { day: 178, phrase: "Actions have consequences", meaning: "Punishing/threatening.", example1: "You'll learn when something bad happens.", example2: "Hope you're ready for what comes.'" },
+  { day: 179, phrase: "Play stupid games, win stupid prizes", meaning: "Mocking your choices.", example1: "What did you expect?", example2: "You got what you deserved.'" },
+  { day: 180, phrase: "What did you expect?", meaning: "Blaming you.", example1: "You knew who I was.", example2: "You should have seen this coming.'" },
+  { day: 181, phrase: "You knew what you were getting into", meaning: "Dismissing complaints.", example1: "I was like this from day one.", example2: "Don't act surprised now.'" },
+  { day: 182, phrase: "I never promised you anything", meaning: "Avoiding responsibility.", example1: "I didn't say I'd change.", example2: "You assumed, I didn't promise.'" },
+  { day: 183, phrase: "That was your assumption", meaning: "Gaslighting.", example1: "I never said that, you assumed.", example2: "You read too much into it.'" },
+  { day: 184, phrase: "You misinterpreted", meaning: "Blaming your understanding.", example1: "That's not what I meant.", example2: "You took it the wrong way.'" },
+  { day: 185, phrase: "You're putting words in my mouth", meaning: "Denying what they said.", example1: "I never said that.", example2: "Stop twisting my words.'" },
+  { day: 186, phrase: "Stop twisting my words", meaning: "When paraphrased accurately.", example1: "That's not what I meant.", example2: "You're distorting what I said.'" },
+  { day: 187, phrase: "You're taking it out of context", meaning: "Defending indefensible.", example1: "In context, it was different.", example2: "You're ignoring the full picture.'" },
+  { day: 188, phrase: "You don't understand", meaning: "Dismissing your perspective.", example1: "It's complicated, you wouldn't get it.", example2: "You're not in my shoes.'" },
+  { day: 189, phrase: "You can't possibly understand", meaning: "Excluding you.", example1: "You haven't been through this.", example2: "It's different for me.'" },
+  { day: 190, phrase: "You're not listening", meaning: "Blaming you for not agreeing.", example1: "You hear but don't listen.", example2: "You're not really hearing me.'" },
+  { day: 191, phrase: "You hear what you want to hear", meaning: "Dismissing your understanding.", example1: "You filter everything through your bias.", example2: "You only listen to confirm your views.'" }
 ];
 
 // 6. TACTICS USED BY MANIPULATORS
@@ -579,20 +1069,125 @@ const MANIPULATOR_TACTICS = [
   { day: 90, tactic: "Catastrophizing: Making Things Huge", meaning: "Small issues become disasters.", example1: "If you make this mistake, you'll be fired.", example2: "This tiny error will ruin everything.'" },
   { day: 91, tactic: "Pathologizing: You're Crazy", meaning: "Labeling you mentally ill.", example1: "You're bipolar, you're crazy.", example2: "You need help, you're not normal.'" },
   { day: 92, tactic: "Diagnosing: You Have [Disorder]", meaning: "Pretending to diagnose you.", example1: "You're narcissistic, I've researched it.", example2: "You have borderline personality disorder.'" },
-  { day: 93, tactic: "Ultimatums: This or That", meaning: "Forcing choice with threats.", example1: "It's me or your friends.", example2: "Do this or I'm leaving.'" }
+  { day: 93, tactic: "Ultimatums: This or That", meaning: "Forcing choice with threats.", example1: "It's me or your friends.", example2: "Do this or I'm leaving.'" },
+  { day: 94, tactic: "Emotional Blackmail", meaning: "Using fear, obligation, guilt.", example1: "If you leave, I'll hurt myself.", example2: "After all I've done for you...'" },
+  { day: 95, tactic: "Fear Mongering", meaning: "Creating fear to control.", example1: "The world is dangerous, stay with me.", example2: "No one else will protect you.'" },
+  { day: 96, tactic: "Future Faking 2.0", meaning: "Promising future to keep you.", example1: "We'll get married, have kids, travel.", example2: "Next year we'll buy a house.'" },
+  { day: 97, tactic: "Love Bombing 2.0", meaning: "Overwhelming affection after conflict.", example1: "After abuse, gifts and apologies.", example2: "Honeymoon phase after fight.'" },
+  { day: 98, tactic: "Intermittent Reinforcement 2.0", meaning: "Random rewards keep you hooked.", example1: "Sometimes kind, sometimes cruel.", example2: "Addictive unpredictability.'" },
+  { day: 99, tactic: "Gaslighting 2.0: Reality Distortion", meaning: "Denying your reality.", example1: "That never happened, you're imagining.", example2: "You're crazy, that's not true.'" },
+  { day: 100, tactic: "Gaslighting 2.0: Trivializing", meaning: "Making feelings seem small.", example1: "You're overreacting, it's nothing.", example2: "It wasn't that bad.'" },
+  { day: 101, tactic: "Gaslighting 2.0: Withholding", meaning: "Pretending not to understand.", example1: "I don't know what you're talking about.", example2: "You're confusing me.'" },
+  { day: 102, tactic: "Gaslighting 2.0: Countering", meaning: "Questioning your memory.", example1: "Are you sure that's how it happened?", example2: "I remember it differently.'" },
+  { day: 103, tactic: "Gaslighting 2.0: Diverting", meaning: "Changing subject.", example1: "You're upset about that? What about you...", example2: "Let's talk about your problems.'" },
+  { day: 104, tactic: "Gaslighting 2.0: Forgetting/Denial", meaning: "Pretending to forget.", example1: "I don't remember saying that.", example2: "You must have misunderstood.'" },
+  { day: 105, tactic: "Triangulation 2.0", meaning: "Bringing in others to control.", example1: "Even your mother agrees with me.", example2: "Everyone thinks you're wrong.'" },
+  { day: 106, tactic: "Isolation 2.0", meaning: "Cutting off support system.", example1: "Your friends are toxic.", example2: "Your family doesn't love you like I do.'" },
+  { day: 107, tactic: "Moving Goalposts 2.0", meaning: "Changing expectations constantly.", example1: "You did X, but now I need Y.", example2: "Never satisfied, always more.'" },
+  { day: 108, tactic: "Projection 2.0", meaning: "Accusing you of their flaws.", example1: "You're cheating (when they are).", example2: "You're the liar (when they lie).'" },
+  { day: 109, tactic: "Blaming 2.0", meaning: "Everything is your fault.", example1: "If you hadn't..., I wouldn't have...", example2: "Our problems are because of you.'" },
+  { day: 110, tactic: "Shaming 2.0", meaning: "Making you feel worthless.", example1: "You're stupid, ugly, fat, etc.", example2: "What's wrong with you?'" },
+  { day: 111, tactic: "Guilt-Tripping 2.0", meaning: "Making you feel guilty.", example1: "I sacrificed everything for you.", example2: "You owe me after all I've done.'" },
+  { day: 112, tactic: "Victim Playing 2.0", meaning: "Making themselves the victim.", example1: "Why is everyone so mean to me?", example2: "I'm always the one who suffers.'" },
+  { day: 113, tactic: "Martyrdom 2.0", meaning: "Sacrificing then guilt-tripping.", example1: "I gave up everything for you.", example2: "I work so hard for this family.'" },
+  { day: 114, tactic: "Silent Treatment 2.0", meaning: "Withdrawing to punish.", example1: "Ignores for hours/days.", example2: "Refuses to speak until you apologize.'" },
+  { day: 115, tactic: "Stonewalling 2.0", meaning: "Refusing to communicate.", example1: "Shuts down, won't engage.", example2: "Leaves room, hangs up.'" },
+  { day: 116, tactic: "Withholding 2.0", meaning: "Withholding affection, attention.", example1: "No intimacy until you comply.", example2: "Cold and distant.'" },
+  { day: 117, tactic: "Negging 2.0", meaning: "Backhanded compliments.", example1: "You're pretty for your size.", example2: "I usually don't date your type.'" },
+  { day: 118, tactic: "Comparison 2.0", meaning: "Comparing you unfavorably.", example1: "Why can't you be more like...", example2: "My ex was better at this.'" },
+  { day: 119, tactic: "Competition 2.0", meaning: "Always competing with you.", example1: "My problem is worse than yours.", example2: "I'm more tired/sicker/busier.'" },
+  { day: 120, tactic: "One-Upmanship 2.0", meaning: "Always have to be better.", example1: "You got a raise? I got bigger.", example2: "You're sick? I'm sicker.'" },
+  { day: 121, tactic: "Minimizing 2.0", meaning: "Making concerns seem small.", example1: "It's not a big deal.", example2: "You're overreacting.'" },
+  { day: 122, tactic: "Trivializing 2.0", meaning: "Making important things small.", example1: "Your feelings don't matter.", example2: "That's not important.'" },
+  { day: 123, tactic: "Catastrophizing 2.0", meaning: "Making small issues huge.", example1: "This mistake will ruin everything.", example2: "You'll never recover from this.'" },
+  { day: 124, tactic: "Pathologizing 2.0", meaning: "Labeling you mentally ill.", example1: "You're bipolar, you're crazy.", example2: "You need therapy.'" },
+  { day: 125, tactic: "Diagnosing 2.0", meaning: "Pretending to diagnose you.", example1: "You have narcissistic personality.", example2: "You're borderline, I researched.'" },
+  { day: 126, tactic: "Word Salad 2.0", meaning: "Confusing talk to avoid issues.", example1: "Rambling, no point, you get confused.", example2: "Changes subjects constantly.'" },
+  { day: 127, tactic: "Circular Conversations 2.0", meaning: "Going in circles, no resolution.", example1: "Same argument for years.", example2: "Never reach conclusion.'" },
+  { day: 128, tactic: "Jokes That Aren't Funny 2.0", meaning: "Cruelty disguised as humor.", example1: "Says hurtful things, then 'just joking'.", example2: "Can't you take a joke?'" },
+  { day: 129, tactic: "Name-Calling 2.0", meaning: "Labels to hurt.", example1: "Crazy, stupid, fat, ugly.", example2: "You're impossible, too much.'" },
+  { day: 130, tactic: "Ultimatums 2.0", meaning: "This or that, no choice.", example1: "It's me or your job.", example2: "Do this or I'm gone.'" },
+  { day: 131, tactic: "Threats 2.0", meaning: "Threatening to get way.", example1: "If you leave, I'll hurt myself.", example2: "I'll ruin your reputation.'" },
+  { day: 132, tactic: "Intimidation 2.0", meaning: "Scaring you into compliance.", example1: "Yelling, blocking exits, throwing things.", example2: "Physical presence to scare.'" },
+  { day: 133, tactic: "Financial Control", meaning: "Controlling money to control you.", example1: "Access to all accounts, you get allowance.", example2: "You can't spend without permission.'" },
+  { day: 134, tactic: "Social Control", meaning: "Controlling who you see.", example1: "Who you can be friends with.", example2: "Need permission to go out.'" },
+  { day: 135, tactic: "Digital Control", meaning: "Controlling phone/social media.", example1: "Checking your phone, passwords.", example2: "Who you can follow/talk to.'" },
+  { day: 136, tactic: "Time Control", meaning: "Controlling your time.", example1: "Where you go, when you return.", example2: "Timing your errands.'" },
+  { day: 137, tactic: "Information Control", meaning: "Controlling what you know.", example1: "Hiding information, lying.", example2: "You don't need to know.'" },
+  { day: 138, tactic: "Emotional Control", meaning: "Controlling how you feel.", example1: "Make you feel guilty, afraid.", example2: "Mood determines your mood.'" },
+  { day: 139, tactic: "Reality Control", meaning: "Controlling what's real.", example1: "Gaslighting - denying reality.", example2: "Rewriting history.'" },
+  { day: 140, tactic: "Choice Control", meaning: "Controlling your decisions.", example1: "Must consult them before deciding.", example2: "Your choices are wrong.'" },
+  { day: 141, tactic: "Micro-Managing", meaning: "Controlling every detail.", example1: "How you do everything.", example2: "Nothing is good enough.'" },
+  { day: 142, tactic: "Second-Guessing", meaning: "Making you doubt yourself.", example1: "Are you sure that's right?", example2: "Maybe you should think again.'" },
+  { day: 143, tactic: "Undermining", meaning: "Weakening your confidence.", example1: "You'll probably fail.", example2: "That's too hard for you.'" },
+  { day: 144, tactic: "Sabotage", meaning: "Actively making you fail.", example1: "Interfere with your work.", example2: "Create problems for you.'" },
+  { day: 145, tactic: "Sleep Deprivation", meaning: "Keeping you tired.", example1: "Keep you up late fighting.", example2: "Wake you up unnecessarily.'" },
+  { day: 146, tactic: "Food Control", meaning: "Controlling what you eat.", example1: "Comment on what you eat.", example2: "Restrict or force food.'" },
+  { day: 147, tactic: "Health Control", meaning: "Controlling healthcare.", example1: "Prevent doctor visits.", example2: "Dismiss your health concerns.'" },
+  { day: 148, tactic: "Appearance Control", meaning: "Controlling how you look.", example1: "What you wear, how you style.", example2: "Criticize appearance constantly.'" },
+  { day: 149, tactic: "Privacy Invasion", meaning: "No boundaries.", example1: "Read your messages, emails.", example2: "Follow you, track you.'" },
+  { day: 150, tactic: "Boundary Violation", meaning: "Ignoring your limits.", example1: "Touch when you say no.", example2: "Enter when door closed.'" },
+  { day: 151, tactic: "Gaslighting 3.0: Reality Shifting", meaning: "Changing facts constantly.", example1: "First said X, now says Y, denies X.", example2: "You can't keep up.'" },
+  { day: 152, tactic: "Gaslighting 3.0: Time Distortion", meaning: "Making you doubt time.", example1: "That happened last week' (was yesterday).", example2: "You're losing track of time.'" },
+  { day: 153, tactic: "Gaslighting 3.0: Event Distortion", meaning: "Changing event details.", example1: "You said X' (you didn't).", example2: "That's not what happened.'" },
+  { day: 154, tactic: "Gaslighting 3.0: Emotion Invalidation", meaning: "Your feelings are wrong.", example1: "You shouldn't feel that way.", example2: "You're too sensitive.'" },
+  { day: 155, tactic: "Gaslighting 3.0: Perception Invalidation", meaning: "What you see isn't real.", example1: "You're imagining things.", example2: "That's not what happened.'" },
+  { day: 156, tactic: "Love Bombing 3.0: Trauma Bonding", meaning: "Creating addiction through abuse cycles.", example1: "Abuse then love - you're hooked.", example2: "Stockholm syndrome dynamics.'" },
+  { day: 157, tactic: "Love Bombing 3.0: Idealize-Devalue-Discard", meaning: "Cycle of abuse.", example1: "Put on pedestal, then tear down.", example2: "Then abandon, then repeat.'" },
+  { day: 158, tactic: "Intermittent Reinforcement 3.0", meaning: "Random rewards strongest.", example1: "Slot machine effect - unpredictable.", example2: "Keeps you trying for love.'" },
+  { day: 159, tactic: "Triangulation 3.0: Jealousy Induction", meaning: "Making you jealous.", example1: "Talk about others interested in them.", example2: "Flirt with others to make you insecure.'" },
+  { day: 160, tactic: "Isolation 3.0: Create Dependency", meaning: "Make you need them.", example1: "Destroy confidence so you rely on them.", example2: "Handle everything so you can't.'" },
+  { day: 161, tactic: "Moving Goalposts 3.0", meaning: "Standards always rise.", example1: "You meet one, new one appears.", example2: "Can never satisfy.'" },
+  { day: 162, tactic: "Projection 3.0: Mirror Accusations", meaning: "Accuse you of what they do.", example1: "Cheaters accuse of cheating.", example2: "Liars call you liar.'" },
+  { day: 163, tactic: "Blaming 3.0: Reverse Victim", meaning: "You're the real abuser.", example1: "I only react to your abuse.", example2: "You're the narcissist.'" },
+  { day: 164, tactic: "Shaming 3.0: Public Humiliation", meaning: "Embarrass you publicly.", example1: "Share secrets in front of others.", example2: "Mock you in public.'" },
+  { day: 165, tactic: "Guilt-Tripping 3.0: Debt Collection", meaning: "Keep score of favors.", example1: "Remember when I did X for you?", example2: "You owe me for Y.'" },
+  { day: 166, tactic: "Victim Playing 3.0: Professional Victim", meaning: "Always the victim.", example1: "Everyone always hurts me.", example2: "Why does this always happen to me?'" },
+  { day: 167, tactic: "Martyrdom 3.0: Suffering Show", meaning: "Make suffering obvious.", example1: "Sigh loudly, look miserable.", example2: "I'll just suffer in silence.'" },
+  { day: 168, tactic: "Silent Treatment 3.0: Stone Cold", meaning: "Complete shutdown.", example1: "Act like you don't exist.", example2: "No response for days.'" },
+  { day: 169, tactic: "Withholding 3.0: Emotional Starvation", meaning: "No affection, no warmth.", example1: "Cold, distant, unresponsive.", example2: "You're alone even with them.'" },
+  { day: 170, tactic: "Negging 3.0: Subtle Undermining", meaning: "Small digs constantly.", example1: "That's an interesting choice...", example2: "You actually look nice today.'" },
+  { day: 171, tactic: "Comparison 3.0: Benchmarking", meaning: "Always comparing.", example1: "Why can't you be like them?", example2: "They do this better than you.'" },
+  { day: 172, tactic: "Competition 3.0: Everything is Contest", meaning: "Life is competition.", example1: "My success vs your success.", example2: "Can't just be happy for you.'" },
+  { day: 173, tactic: "One-Upmanship 3.0: Always Win", meaning: "Must be superior.", example1: "You did well, but I did better.", example2: "Your experience? Let me top it.'" },
+  { day: 174, tactic: "Minimizing 3.0: Dismissive", meaning: "Nothing matters.", example1: "It's not important.", example2: "Why focus on that?'" },
+  { day: 175, tactic: "Trivializing 3.0: It's Nothing", meaning: "Your concerns are nothing.", example1: "You're upset over that?", example2: "That's not worth discussing.'" },
+  { day: 176, tactic: "Catastrophizing 3.0: Disaster Always", meaning: "Everything is disaster.", example1: "This small mistake will ruin everything.", example2: "It's the end of the world.'" },
+  { day: 177, tactic: "Pathologizing 3.0: You're Sick", meaning: "You have disorders.", example1: "You're bipolar, narcissistic, etc.", example2: "You need professional help.'" },
+  { day: 178, tactic: "Word Salad 3.0: Nonsense", meaning: "Can't follow conversation.", example1: "Rambling, no logic.", example2: "You give up trying.'" },
+  { day: 179, tactic: "Circular Conversations 3.0", meaning: "Same loop forever.", example1: "Same arguments, no progress.", example2: "Exhausting and pointless.'" },
+  { day: 180, tactic: "Jokes That Aren't Funny 3.0", meaning: "Testing boundaries.", example1: "Cruel 'jokes' to see what you tolerate.", example2: "If you object, 'sensitive'.'" },
+  { day: 181, tactic: "Name-Calling 3.0: Labels", meaning: "Constant negative labels.", example1: "Crazy, stupid, useless, etc.", example2: "Words designed to hurt.'" },
+  { day: 182, tactic: "Ultimatums 3.0: Final Offer", meaning: "No negotiation.", example1: "Last chance, take it or leave.", example2: "This is your only option.'" },
+  { day: 183, tactic: "Threats 3.0: Veiled Threats", meaning: "Not direct but threatening.", example1: "You don't want to see me angry.", example2: "Things might get worse.'" },
+  { day: 184, tactic: "Intimidation 3.0: Presence", meaning: "Physical presence to scare.", example1: "Stand too close, block path.", example2: "Use size to intimidate.'" },
+  { day: 185, tactic: "Financial Abuse 2.0", meaning: "Using money to control.", example1: "Withholding money, stealing.", example2: "Prevent work, create dependency.'" },
+  { day: 186, tactic: "Coercive Control", meaning: "Overall pattern of control.", example1: "Isolation, intimidation, control.", example2: "Trapping you in relationship.'" },
+  { day: 187, tactic: "Stalking", meaning: "Following, monitoring.", example1: "Show up where you are.", example2: "Track your movements.'" },
+  { day: 188, tactic: "Cyberstalking", meaning: "Online monitoring.", example1: "Check all your social media.", example2: "Fake accounts to watch you.'" },
+  { day: 189, tactic: "Gaslighting 4.0: Reality Erasure", meaning: "Make you question everything.", example1: "Your memories, perceptions, sanity.", example2: "You don't know what's real.'" },
+  { day: 190, tactic: "Love Bombing 4.0: Soulmate Lie", meaning: "Claim you're soulmates.", example1: "We're meant to be together.", example2: "I've never felt this way.'" },
+  { day: 191, tactic: "Intermittent Reinforcement 4.0", meaning: "Addiction cycle complete.", example1: "Random rewards strongest bond.", example2: "Trauma bond complete.'" }
 ];
 
-
-
-// ==================== DAY-WISE DATA (93 Days) ====================
-// ... (तुम्हारा सारा data यहाँ रहेगा - मैंने space बचाने के लिए नहीं लिखा)
-
+// ==================== MAIN COMPONENT ====================
 export default function PsychologyMaster() {
   const [streak, setStreak] = useState(0);
   const [checks, setChecks] = useState({});
   const [expandedSection, setExpandedSection] = useState(null);
   const [isInitialized, setIsInitialized] = useState(false);
   const [challengeDay, setChallengeDay] = useState(1);
+  
+  // ===== Favorites State =====
+  const [favorites, setFavorites] = useState({
+    psychology_trick: [],
+    communication_tip: [],
+    social_tip: [],
+    psychology_word: [],
+    manipulator_phrase: [],
+    manipulator_tactic: []
+  });
+  const [showFavorites, setShowFavorites] = useState(false);
   
   const today = new Date();
   const todayStr = today.toDateString();
@@ -604,7 +1199,7 @@ export default function PsychologyMaster() {
       const start = new Date(startDate);
       const diffTime = Math.abs(today - start);
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      setChallengeDay(Math.min(diffDays, 93));
+      setChallengeDay(Math.min(diffDays, 191));
     } else {
       localStorage.setItem("psychologyStartDate", today.toDateString());
       setChallengeDay(1);
@@ -625,7 +1220,15 @@ export default function PsychologyMaster() {
       const saved = localStorage.getItem("psychologyMaster");
       if (saved) {
         const parsed = JSON.parse(saved);
-        setChecks(parsed);
+        setChecks(parsed.checks || {});
+        setFavorites(parsed.favorites || {
+          psychology_trick: [],
+          communication_tip: [],
+          social_tip: [],
+          psychology_word: [],
+          manipulator_phrase: [],
+          manipulator_tactic: []
+        });
         console.log("✅ Psychology data loaded:", parsed);
       }
     } catch (error) {
@@ -635,12 +1238,11 @@ export default function PsychologyMaster() {
     }
   }, []);
 
-  // ✅ FIXED: Calculate streak based on completed tasks
+  // Calculate streak based on completed tasks
   useEffect(() => {
     if (!isInitialized) return;
     
     const calculateStreak = () => {
-      // Get all dates with at least one completed task
       const completedDates = Object.keys(checks)
         .filter(date => {
           const dayData = checks[date];
@@ -648,18 +1250,13 @@ export default function PsychologyMaster() {
         })
         .map(date => new Date(date).toDateString());
       
-      console.log("Psychology completed dates:", completedDates);
-      
-      // Check if today has any completed task
       const todayCompleted = completedDates.includes(todayStr);
-      console.log("Today completed:", todayCompleted);
       
       if (!todayCompleted) {
         setStreak(0);
         return;
       }
       
-      // Calculate consecutive days from today
       let count = 1;
       let currentDate = new Date(today);
       
@@ -676,7 +1273,6 @@ export default function PsychologyMaster() {
         }
       }
       
-      console.log("Calculated streak:", count);
       setStreak(count);
     };
     
@@ -686,26 +1282,65 @@ export default function PsychologyMaster() {
   // Save to localStorage
   useEffect(() => {
     if (!isInitialized) return;
-    localStorage.setItem("psychologyMaster", JSON.stringify(checks));
+    const dataToSave = {
+      checks: checks,
+      favorites: favorites
+    };
+    localStorage.setItem("psychologyMaster", JSON.stringify(dataToSave));
     console.log("✅ Psychology data saved");
-  }, [checks, isInitialized]);
+  }, [checks, favorites, isInitialized]);
 
   // Toggle task completion
   const toggleTask = (taskId) => {
     setChecks(prev => {
       const todayData = prev[todayStr] || {};
-      
-      // Toggle the specific task
       const updatedToday = {
         ...todayData,
         [taskId]: !todayData[taskId]
       };
-      
       return {
         ...prev,
         [todayStr]: updatedToday
       };
     });
+  };
+
+  // ===== Toggle Favorite Function =====
+  const toggleFavorite = (category, item) => {
+    setFavorites(prev => {
+      const categoryFavorites = prev[category] || [];
+      
+      // Check if already saved
+      const exists = categoryFavorites.some(fav => fav.day === item.day);
+      
+      if (exists) {
+        // Remove from favorites
+        return {
+          ...prev,
+          [category]: categoryFavorites.filter(fav => fav.day !== item.day)
+        };
+      } else {
+        // Add to favorites
+        const newItem = {
+          day: item.day,
+          title: item.trick || item.tip || item.word || item.phrase || item.tactic,
+          meaning: item.meaning,
+          example1: item.example1,
+          example2: item.example2,
+          category: category
+        };
+        return {
+          ...prev,
+          [category]: [...categoryFavorites, newItem]
+        };
+      }
+    });
+  };
+
+  // ===== Check if Item is Favorite =====
+  const isFavorite = (category, item) => {
+    const categoryFavorites = favorites[category] || [];
+    return categoryFavorites.some(fav => fav.day === item.day);
   };
 
   // Calculate completed tasks count
@@ -721,6 +1356,9 @@ export default function PsychologyMaster() {
   const completedCount = tasks.filter(t => t.completed).length;
   const progressPercent = tasks.length > 0 ? Math.round((completedCount / tasks.length) * 100) : 0;
 
+  // Calculate total favorites count
+  const totalFavorites = Object.values(favorites).reduce((acc, curr) => acc + curr.length, 0);
+
   if (!isInitialized) {
     return <div className="psychology-master">Loading...</div>;
   }
@@ -733,7 +1371,7 @@ export default function PsychologyMaster() {
           <span className="header-icon">🧠</span>
           <h2>Psychology & Communication</h2>
         </div>
-        <div className="day-badge">Day {challengeDay}/93</div>
+        <div className="day-badge">Day {challengeDay}/191</div>
       </div>
 
       {/* Streak & Progress */}
@@ -773,7 +1411,24 @@ export default function PsychologyMaster() {
         
         {expandedSection === 'trick' && (
           <div className="card-content">
-            <h4>{todaysPsychologyTrick.trick}</h4>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+              <h4>{todaysPsychologyTrick.trick}</h4>
+              <button 
+                onClick={() => toggleFavorite('psychology_trick', {...todaysPsychologyTrick, day: challengeDay})}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  color: isFavorite('psychology_trick', {...todaysPsychologyTrick, day: challengeDay}) ? 'var(--warning)' : '#ccc',
+                  transition: 'transform 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                {isFavorite('psychology_trick', {...todaysPsychologyTrick, day: challengeDay}) ? '★' : '☆'}
+              </button>
+            </div>
             <p className="meaning">{todaysPsychologyTrick.meaning}</p>
             <div className="examples">
               <p><strong>Example 1:</strong> {todaysPsychologyTrick.example1}</p>
@@ -800,7 +1455,24 @@ export default function PsychologyMaster() {
         
         {expandedSection === 'communication' && (
           <div className="card-content">
-            <h4>{todaysCommunicationTip.tip}</h4>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+              <h4>{todaysCommunicationTip.tip}</h4>
+              <button 
+                onClick={() => toggleFavorite('communication_tip', {...todaysCommunicationTip, day: challengeDay})}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  color: isFavorite('communication_tip', {...todaysCommunicationTip, day: challengeDay}) ? 'var(--warning)' : '#ccc',
+                  transition: 'transform 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                {isFavorite('communication_tip', {...todaysCommunicationTip, day: challengeDay}) ? '★' : '☆'}
+              </button>
+            </div>
             <p className="meaning">{todaysCommunicationTip.meaning}</p>
             <div className="examples">
               <p><strong>Example 1:</strong> {todaysCommunicationTip.example1}</p>
@@ -827,7 +1499,24 @@ export default function PsychologyMaster() {
         
         {expandedSection === 'social' && (
           <div className="card-content">
-            <h4>{todaysSocialTip.tip}</h4>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+              <h4>{todaysSocialTip.tip}</h4>
+              <button 
+                onClick={() => toggleFavorite('social_tip', {...todaysSocialTip, day: challengeDay})}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  color: isFavorite('social_tip', {...todaysSocialTip, day: challengeDay}) ? 'var(--warning)' : '#ccc',
+                  transition: 'transform 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                {isFavorite('social_tip', {...todaysSocialTip, day: challengeDay}) ? '★' : '☆'}
+              </button>
+            </div>
             <p className="meaning">{todaysSocialTip.meaning}</p>
             <div className="examples">
               <p><strong>Example 1:</strong> {todaysSocialTip.example1}</p>
@@ -854,7 +1543,24 @@ export default function PsychologyMaster() {
         
         {expandedSection === 'word' && (
           <div className="card-content">
-            <h4>{todaysPsychologyWord.word}</h4>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+              <h4>{todaysPsychologyWord.word}</h4>
+              <button 
+                onClick={() => toggleFavorite('psychology_word', {...todaysPsychologyWord, day: challengeDay})}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  color: isFavorite('psychology_word', {...todaysPsychologyWord, day: challengeDay}) ? 'var(--warning)' : '#ccc',
+                  transition: 'transform 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                {isFavorite('psychology_word', {...todaysPsychologyWord, day: challengeDay}) ? '★' : '☆'}
+              </button>
+            </div>
             <p className="meaning">{todaysPsychologyWord.meaning}</p>
             <div className="examples">
               <p><strong>Example 1:</strong> {todaysPsychologyWord.example1}</p>
@@ -881,7 +1587,24 @@ export default function PsychologyMaster() {
         
         {expandedSection === 'phrase' && (
           <div className="card-content">
-            <h4>"{todaysManipulatorPhrase.phrase}"</h4>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+              <h4>"{todaysManipulatorPhrase.phrase}"</h4>
+              <button 
+                onClick={() => toggleFavorite('manipulator_phrase', {...todaysManipulatorPhrase, day: challengeDay})}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  color: isFavorite('manipulator_phrase', {...todaysManipulatorPhrase, day: challengeDay}) ? 'var(--warning)' : '#ccc',
+                  transition: 'transform 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                {isFavorite('manipulator_phrase', {...todaysManipulatorPhrase, day: challengeDay}) ? '★' : '☆'}
+              </button>
+            </div>
             <p className="meaning">{todaysManipulatorPhrase.meaning}</p>
             <div className="examples">
               <p><strong>Example 1:</strong> {todaysManipulatorPhrase.example1}</p>
@@ -908,7 +1631,24 @@ export default function PsychologyMaster() {
         
         {expandedSection === 'tactic' && (
           <div className="card-content">
-            <h4>{todaysManipulatorTactic.tactic}</h4>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+              <h4>{todaysManipulatorTactic.tactic}</h4>
+              <button 
+                onClick={() => toggleFavorite('manipulator_tactic', {...todaysManipulatorTactic, day: challengeDay})}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  color: isFavorite('manipulator_tactic', {...todaysManipulatorTactic, day: challengeDay}) ? 'var(--warning)' : '#ccc',
+                  transition: 'transform 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                {isFavorite('manipulator_tactic', {...todaysManipulatorTactic, day: challengeDay}) ? '★' : '☆'}
+              </button>
+            </div>
             <p className="meaning">{todaysManipulatorTactic.meaning}</p>
             <div className="examples">
               <p><strong>Example 1:</strong> {todaysManipulatorTactic.example1}</p>
@@ -917,6 +1657,275 @@ export default function PsychologyMaster() {
           </div>
         )}
       </div>
-    </div>
+
+      {/* ===== FAVORITES TOGGLE BUTTON ===== */}
+      <button 
+        className="favorites-toggle-btn"
+        onClick={() => setShowFavorites(!showFavorites)}
+        style={{
+          width: '100%',
+          padding: '0.8rem',
+          margin: '1rem 0',
+          background: showFavorites ? 'var(--warning)' : 'linear-gradient(135deg, var(--primary), var(--primary-dark))',
+          color: 'white',
+          border: 'none',
+          borderRadius: 'var(--radius-lg)',
+          fontWeight: '600',
+          fontSize: '1rem',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '0.5rem',
+          transition: 'all 0.3s ease'
+        }}
+      >
+        <span>{showFavorites ? '⭐' : '☆'}</span>
+        {showFavorites ? 'Hide Favorites' : `Show Favorites (${totalFavorites})`}
+      </button>
+
+      {/* ===== FAVORITES SECTION ===== */}
+      {showFavorites && (
+        <div className="favorites-section" style={{
+          background: 'var(--card-light)',
+          borderRadius: 'var(--radius-xl)',
+          padding: '1.5rem',
+          marginTop: '0rem',
+          marginBottom: '2rem',
+          border: '2px solid var(--warning)',
+          boxShadow: 'var(--shadow-lg)'
+        }}>
+          <h3 style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            marginBottom: '1.5rem',
+            color: 'var(--warning)',
+            fontSize: '1.3rem'
+          }}>
+            <span>⭐</span> Your Saved Favorites
+          </h3>
+
+          {/* Psychology Tricks Favorites */}
+          {favorites.psychology_trick.length > 0 && (
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h4 style={{ color: 'var(--primary)', marginBottom: '0.8rem' }}>🎯 Psychology Tricks</h4>
+              {favorites.psychology_trick.map((item, idx) => (
+                <div key={idx} style={{
+                  background: 'var(--bg-light)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '1rem',
+                  marginBottom: '0.8rem',
+                  border: '1px solid var(--border-light)',
+                  position: 'relative'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <strong style={{ color: 'var(--primary)' }}>Day {item.day}: {item.title}</strong>
+                    <button 
+                      onClick={() => toggleFavorite('psychology_trick', item)}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        fontSize: '1.2rem',
+                        cursor: 'pointer',
+                        color: 'var(--warning)'
+                      }}
+                    >
+                      ★
+                    </button>
+                  </div>
+                  <p style={{ fontSize: '0.9rem', marginBottom: '0.3rem' }}>{item.meaning}</p>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text)' }}>Example 1: {item.example1}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Communication Tips Favorites */}
+          {favorites.communication_tip.length > 0 && (
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h4 style={{ color: 'var(--success)', marginBottom: '0.8rem' }}>💬 Communication Tips</h4>
+              {favorites.communication_tip.map((item, idx) => (
+                <div key={idx} style={{
+                  background: 'var(--bg-light)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '1rem',
+                  marginBottom: '0.8rem',
+                  border: '1px solid var(--border-light)',
+                  position: 'relative'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <strong style={{ color: 'var(--success)' }}>Day {item.day}: {item.title}</strong>
+                    <button 
+                      onClick={() => toggleFavorite('communication_tip', item)}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        fontSize: '1.2rem',
+                        cursor: 'pointer',
+                        color: 'var(--warning)'
+                      }}
+                    >
+                      ★
+                    </button>
+                  </div>
+                  <p style={{ fontSize: '0.9rem', marginBottom: '0.3rem' }}>{item.meaning}</p>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text)' }}>Example 1: {item.example1}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Social Intelligence Favorites */}
+          {favorites.social_tip.length > 0 && (
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h4 style={{ color: 'var(--info)', marginBottom: '0.8rem' }}>🤝 Social Intelligence</h4>
+              {favorites.social_tip.map((item, idx) => (
+                <div key={idx} style={{
+                  background: 'var(--bg-light)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '1rem',
+                  marginBottom: '0.8rem',
+                  border: '1px solid var(--border-light)',
+                  position: 'relative'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <strong style={{ color: 'var(--info)' }}>Day {item.day}: {item.title}</strong>
+                    <button 
+                      onClick={() => toggleFavorite('social_tip', item)}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        fontSize: '1.2rem',
+                        cursor: 'pointer',
+                        color: 'var(--warning)'
+                      }}
+                    >
+                      ★
+                    </button>
+                  </div>
+                  <p style={{ fontSize: '0.9rem', marginBottom: '0.3rem' }}>{item.meaning}</p>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text)' }}>Example 1: {item.example1}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Psychology Words Favorites */}
+          {favorites.psychology_word.length > 0 && (
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h4 style={{ color: 'var(--purple)', marginBottom: '0.8rem' }}>📚 Psychology Words</h4>
+              {favorites.psychology_word.map((item, idx) => (
+                <div key={idx} style={{
+                  background: 'var(--bg-light)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '1rem',
+                  marginBottom: '0.8rem',
+                  border: '1px solid var(--border-light)',
+                  position: 'relative'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <strong style={{ color: 'var(--purple)' }}>Day {item.day}: {item.title}</strong>
+                    <button 
+                      onClick={() => toggleFavorite('psychology_word', item)}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        fontSize: '1.2rem',
+                        cursor: 'pointer',
+                        color: 'var(--warning)'
+                      }}
+                    >
+                      ★
+                    </button>
+                  </div>
+                  <p style={{ fontSize: '0.9rem', marginBottom: '0.3rem' }}>{item.meaning}</p>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text)' }}>Example 1: {item.example1}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Manipulator Phrases Favorites */}
+          {favorites.manipulator_phrase.length > 0 && (
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h4 style={{ color: 'var(--warning)', marginBottom: '0.8rem' }}>⚠️ Manipulator Phrases</h4>
+              {favorites.manipulator_phrase.map((item, idx) => (
+                <div key={idx} style={{
+                  background: 'var(--bg-light)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '1rem',
+                  marginBottom: '0.8rem',
+                  border: '1px solid var(--border-light)',
+                  position: 'relative'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <strong style={{ color: 'var(--warning)' }}>Day {item.day}: "{item.title}"</strong>
+                    <button 
+                      onClick={() => toggleFavorite('manipulator_phrase', item)}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        fontSize: '1.2rem',
+                        cursor: 'pointer',
+                        color: 'var(--warning)'
+                      }}
+                    >
+                      ★
+                    </button>
+                  </div>
+                  <p style={{ fontSize: '0.9rem', marginBottom: '0.3rem' }}>{item.meaning}</p>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text)' }}>Example 1: {item.example1}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Manipulator Tactics Favorites */}
+          {favorites.manipulator_tactic.length > 0 && (
+            <div style={{ marginBottom: '1.5rem' }}>
+              <h4 style={{ color: 'var(--danger)', marginBottom: '0.8rem' }}>🔍 Manipulator Tactics</h4>
+              {favorites.manipulator_tactic.map((item, idx) => (
+                <div key={idx} style={{
+                  background: 'var(--bg-light)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '1rem',
+                  marginBottom: '0.8rem',
+                  border: '1px solid var(--border-light)',
+                  position: 'relative'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <strong style={{ color: 'var(--danger)' }}>Day {item.day}: {item.title}</strong>
+                    <button 
+                      onClick={() => toggleFavorite('manipulator_tactic', item)}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        fontSize: '1.2rem',
+                        cursor: 'pointer',
+                        color: 'var(--warning)'
+                      }}
+                    >
+                      ★
+                    </button>
+                  </div>
+                  <p style={{ fontSize: '0.9rem', marginBottom: '0.3rem' }}>{item.meaning}</p>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text)' }}>Example 1: {item.example1}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {totalFavorites === 0 && (
+            <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text)' }}>
+              <p style={{ fontSize: '3rem', marginBottom: '1rem' }}>⭐</p>
+              <p>No favorites saved yet.</p>
+              <p style={{ fontSize: '0.9rem', opacity: '0.7' }}>Click the ★ button on any card to save it here.</p>
+            </div>
+          )}
+        </div>
+      )}
+
+    </div>  
   );
 }
