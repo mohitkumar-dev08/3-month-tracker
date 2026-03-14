@@ -44,7 +44,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h4>🌳 93 Days Challenge</h4>
+          <h4>🌳 51 Days Challenge</h4>
           <p>Transform yourself in 3 months. Every day counts.</p>
         </div>
         
