@@ -12,7 +12,8 @@ export default function Dashboard({ data, onSurvive, onRelapse, message }) {
     { path: "/english", icon: "🇬🇧", name: "English", desc: "3 Month Fluency" },
     { path: "/wellness", icon: "🧘", name: "Wellness", desc: "Mood • Journal • Sleep" },
     { path: "/inspiration", icon: "💭", name: "Inspire", desc: "Daily Quotes" },
-    { path: "/advice", icon: "💡", name: "Advice", desc: "Daily Wisdom" }
+    { path: "/advice", icon: "💡", name: "Advice", desc: "Daily Wisdom" },
+    { path: "/psychology", icon: "🧠", name: "Psychology", desc: "Mind Hacks • Communication" }
   ];
 
   return (
