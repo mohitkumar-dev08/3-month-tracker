@@ -5,18 +5,21 @@ export default function StreakHeatmap({ streakData = {} }) {
   const [monthMarkers, setMonthMarkers] = useState([]);
   const [stats, setStats] = useState({
     totalActive: 0,
+    totalMissed: 0,
     currentStreak: 0,
     longestStreak: 0,
     consistency: 0
   });
+  const [hoveredCell, setHoveredCell] = useState(null);
 
-  // 🔥 START DATE - 15 March 2026
+  // 🔥 START DATE - 20 March 2026 (Friday)
   const START_DATE = new Date(2026, 2, 20);
-  const TOTAL_DAYS = 191;
-  const CELL_SIZE = 14; // px
-  const CELL_GAP = 3; // px
+  const TOTAL_DAYS = 93;
+  
+  // RESPONSIVE CELL SIZES
+  const CELL_SIZE = typeof window !== 'undefined' && window.innerWidth < 640 ? 16 : 22;
+  const CELL_GAP = typeof window !== 'undefined' && window.innerWidth < 640 ? 3 : 5;
 
-  // Color shades based on activity
   const COLORS = {
     0: '#ebedf0',
     1: '#9be9a8',
@@ -25,69 +28,81 @@ export default function StreakHeatmap({ streakData = {} }) {
     4: '#216e39'
   };
 
-  // ✅ FULL WEEKDAY NAMES - 7 rows
   const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   useEffect(() => {
     generateHeatmapData();
+    
+    // Window resize par cells resize ho jayenge
+    const handleResize = () => {
+      generateHeatmapData();
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [streakData]);
 
   const generateHeatmapData = () => {
-    // Generate all days
     const allDays = [];
     const startDate = new Date(START_DATE);
+    const startDayOfWeek = startDate.getDay(); 
+    
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
     
     for (let i = 0; i < TOTAL_DAYS; i++) {
       const currentDate = new Date(startDate);
       currentDate.setDate(startDate.getDate() + i);
+      currentDate.setHours(0, 0, 0, 0);
       
       const dateStr = currentDate.toDateString();
       const isActive = streakData[dateStr] || false;
+      
+      // ✅ Check if date is missed (past date and not active)
+      const isMissed = currentDate < today && !isActive;
+      
+      // Real intensity based on activity
       const intensity = isActive ? Math.floor(Math.random() * 4) + 1 : 0;
+      
+      const totalOffset = i + startDayOfWeek;
+      const weekIndex = Math.floor(totalOffset / 7);
+      const dayOfWeek = totalOffset % 7;
       
       allDays.push({
         date: new Date(currentDate),
         dateStr: dateStr,
         day: i + 1,
         active: isActive,
+        missed: isMissed,
         intensity: intensity,
         month: currentDate.toLocaleString('default', { month: 'short' }),
         year: currentDate.getFullYear(),
-        weekIndex: Math.floor((i + startDate.getDay()) / 7),
-        dayOfWeek: currentDate.getDay()
+        weekIndex: weekIndex,
+        dayOfWeek: dayOfWeek
       });
     }
 
-    // Organize into weeks (7 days per week)
-    const weeksArray = [];
-    let currentWeek = new Array(7).fill(null).map(() => ({ empty: true }));
+    const totalWeeks = Math.ceil((TOTAL_DAYS + startDayOfWeek) / 7);
+    const weeksArray = Array(totalWeeks).fill().map(() => 
+      Array(7).fill(null).map(() => ({ empty: true }))
+    );
     
     allDays.forEach(day => {
-      const weekIdx = day.weekIndex;
-      const dayIdx = day.dayOfWeek;
-      
-      if (!weeksArray[weekIdx]) {
-        weeksArray[weekIdx] = new Array(7).fill(null).map(() => ({ empty: true }));
-      }
-      
-      weeksArray[weekIdx][dayIdx] = day;
+      weeksArray[day.weekIndex][day.dayOfWeek] = day;
     });
     
-    setWeeks(weeksArray.filter(week => week.some(day => !day.empty)));
+    setWeeks(weeksArray);
 
-    // Calculate month markers
     const markers = [];
-    let currentMonth = '';
+    let currentMonth = "";
     
-    allDays.forEach((day, index) => {
-      const monthKey = `${day.month} ${day.year}`;
-      if (monthKey !== currentMonth) {
+    allDays.forEach((day) => {
+      if (day.month !== currentMonth) {
         markers.push({
-          month: monthKey,
-          weekIndex: day.weekIndex,
-          dayIndex: index
+          month: day.month,
+          weekIndex: day.weekIndex
         });
-        currentMonth = monthKey;
+        currentMonth = day.month;
       }
     });
     
@@ -97,6 +112,7 @@ export default function StreakHeatmap({ streakData = {} }) {
 
   const calculateStats = (data) => {
     const active = data.filter(d => d.active).length;
+    const missed = data.filter(d => d.missed).length;
     let current = 0;
     let longest = 0;
     let temp = 0;
@@ -122,9 +138,10 @@ export default function StreakHeatmap({ streakData = {} }) {
     
     setStats({
       totalActive: active,
+      totalMissed: missed,
       currentStreak: current,
       longestStreak: longest,
-      consistency: Math.round((active / TOTAL_DAYS) * 100)
+      consistency: Math.round((active / TOTAL_DAYS) * 100) || 0
     });
   };
 
@@ -132,23 +149,35 @@ export default function StreakHeatmap({ streakData = {} }) {
     return weekIndex * (CELL_SIZE + CELL_GAP);
   };
 
+  const endDate = new Date(START_DATE);
+  endDate.setDate(START_DATE.getDate() + TOTAL_DAYS - 1);
+  const endDateStr = endDate.toLocaleDateString('en-US', { 
+    month: 'short', day: 'numeric', year: 'numeric' 
+  });
+  const startDateStr = START_DATE.toLocaleDateString('en-US', { 
+    month: 'short', day: 'numeric', year: 'numeric' 
+  });
+
   return (
     <div className="heatmap-page">
-      {/* Header */}
+      {/* Header - No animations */}
       <div className="heatmap-header">
         <div>
-          <h1>🔥 191 Days Challenge</h1>
-          <p className="heatmap-subtitle">20 March 2026 - 26 September 2026</p>
+          <h1>🔥 93 Days Challenge</h1>
+          <p className="heatmap-subtitle">
+            {startDateStr} - {endDateStr}
+          </p>
         </div>
         <div className="heatmap-badge">
-          Day {Math.min(stats.totalActive, 191)}/191
+          Day {stats.totalActive || 0}/{TOTAL_DAYS}
         </div>
       </div>
 
-      {/* Stats Cards */}
+      {/* Stats Cards - Simple hover effect only */}
       <div className="heatmap-stats">
         {[
           { icon: "✅", value: stats.totalActive, label: "Days Active" },
+          { icon: "❌", value: stats.totalMissed, label: "Days Missed" },
           { icon: "🔥", value: stats.currentStreak, label: "Current Streak" },
           { icon: "🏆", value: stats.longestStreak, label: "Longest Streak" },
           { icon: "📊", value: `${stats.consistency}%`, label: "Consistency" }
@@ -165,137 +194,116 @@ export default function StreakHeatmap({ streakData = {} }) {
 
       {/* Heatmap Container */}
       <div className="heatmap-container">
-        {/* Month Labels - Perfectly positioned */}
-        <div className="month-track" style={{ 
-          marginLeft: '45px', // Match weekday label width
-          height: '25px',
-          position: 'relative',
-          marginBottom: '8px'
-        }}>
-          {monthMarkers.map((marker, index) => {
-            const leftPos = getWeekLeftPosition(marker.weekIndex);
+        
+        {/* Center Wrapper */}
+        <div className="heatmap-center-wrapper">
+          <div className="heatmap-inner-content">
             
-            return (
-              <div
-                key={index}
-                className="month-marker"
-                style={{
-                  position: 'absolute',
-                  left: `${leftPos}px`,
-                  top: 0,
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  color: '#6b7280',
-                  textTransform: 'uppercase',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                {marker.month.split(' ')[0]}
-              </div>
-            );
-          })}
-        </div>
+            {/* Month Labels */}
+            <div className="month-track">
+              {monthMarkers.map((marker, index) => {
+                const leftPos = getWeekLeftPosition(marker.weekIndex);
+                return (
+                  <div
+                    key={index}
+                    className="month-marker"
+                    style={{ left: `${leftPos}px` }}
+                  >
+                    {marker.month}
+                  </div>
+                );
+              })}
+            </div>
 
-        {/* Main Heatmap */}
-        <div className="heatmap-main" style={{ display: 'flex' }}>
-          {/* ✅ Weekday Labels - ALL 7 DAYS */}
-          <div className="weekday-labels" style={{ 
-            width: '45px',
-            marginRight: '5px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: `${CELL_GAP}px`
-          }}>
-            {WEEKDAYS.map((day, i) => (
-              <div
-                key={i}
-                style={{
-                  height: `${CELL_SIZE}px`,
-                  fontSize: '11px',
-                  color: '#6b7280',
-                  textAlign: 'right',
-                  paddingRight: '8px',
-                  lineHeight: `${CELL_SIZE}px`,
-                  fontWeight: i === 0 || i === 6 ? 400 : 500 // Sun/Sat slightly lighter
-                }}
-              >
-                {day}
+            {/* Main Heatmap */}
+            <div className="heatmap-main">
+              {/* Weekday Labels */}
+              <div className="weekday-labels">
+                {WEEKDAYS.map((day, i) => (
+                  <div 
+                    key={i} 
+                    className="weekday-label"
+                    style={{ 
+                      height: `${CELL_SIZE}px`, 
+                      lineHeight: `${CELL_SIZE}px`
+                    }}
+                  >
+                    {day}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          {/* Grid Container */}
-          <div className="grid-container" style={{ 
-            display: 'flex',
-            gap: `${CELL_GAP}px`,
-            overflowX: 'auto',
-            paddingBottom: '5px',
-            flex: 1
-          }}>
-            {weeks.map((week, weekIdx) => (
-              <div key={weekIdx} className="week-column" style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: `${CELL_GAP}px`
-              }}>
-                {/* ✅ 7 rows - one for each day of week */}
-                {WEEKDAYS.map((_, dayIdx) => {
-                  const day = week[dayIdx];
-                  return (
-                    <div
-                      key={dayIdx}
-                      className={`heatmap-cell ${!day || day.empty ? 'empty' : ''}`}
-                      style={{
-                        width: `${CELL_SIZE}px`,
-                        height: `${CELL_SIZE}px`,
-                        backgroundColor: day && !day.empty 
-                          ? COLORS[day.intensity] 
-                          : COLORS[0],
-                        opacity: day && !day.empty ? 1 : 0.15,
-                        borderRadius: '3px',
-                        cursor: day && !day.empty ? 'pointer' : 'default'
-                      }}
-                      title={day && !day.empty ? 
-                        `${day.date.toLocaleDateString('en-US', { 
-                          weekday: 'long', 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
-                        })}\nDay ${day.day}\n${day.active ? '✅ Completed' : '❌ Missed'}`
-                        : ''
-                      }
-                    />
-                  );
-                })}
+              {/* Grid Container with cells */}
+              <div className="grid-container" style={{ gap: `${CELL_GAP}px` }}>
+                {weeks.map((week, weekIdx) => (
+                  <div 
+                    key={weekIdx} 
+                    className="week-column" 
+                    style={{ gap: `${CELL_GAP}px`, width: `${CELL_SIZE}px` }}
+                  >
+                    {WEEKDAYS.map((_, dayIdx) => {
+                      const day = week[dayIdx];
+                      const isHovered = hoveredCell === `${weekIdx}-${dayIdx}`;
+                      
+                      return (
+                        <div
+                          key={dayIdx}
+                          className={`heatmap-cell ${!day || day.empty ? 'empty' : ''} 
+                            ${day?.active ? 'active-cell' : ''} 
+                            ${day?.missed ? 'missed-cell' : ''}`}
+                          style={{
+                            width: `${CELL_SIZE}px`,
+                            height: `${CELL_SIZE}px`,
+                            backgroundColor: day && !day.empty 
+                              ? (day.missed ? '#fee2e2' : COLORS[day.intensity]) 
+                              : COLORS[0],
+                            opacity: day && !day.empty ? 1 : 0.3,
+                            transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+                            boxShadow: isHovered ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
+                            zIndex: isHovered ? 10 : 1,
+                            position: 'relative'
+                          }}
+                          onMouseEnter={() => setHoveredCell(`${weekIdx}-${dayIdx}`)}
+                          onMouseLeave={() => setHoveredCell(null)}
+                          title={day && !day.empty ? 
+                            `${day.date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}\nDay ${day.day}\n${day.active ? '✅ Completed' : day.missed ? '❌ Missed' : '⏳ Future'}`
+                            : ''
+                          }
+                        >
+                          {day && day.missed && (
+                            <span style={{
+                              position: 'absolute',
+                              top: '50%',
+                              left: '50%',
+                              transform: 'translate(-50%, -50%)',
+                              fontSize: CELL_SIZE > 18 ? '14px' : '10px',
+                              color: '#ef4444',
+                              fontWeight: 'bold'
+                            }}>❌</span>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
           </div>
         </div>
 
         {/* Legend */}
-        <div className="heatmap-legend" style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          gap: '4px',
-          marginTop: '20px',
-          paddingTop: '15px',
-          borderTop: '1px solid var(--border-light)'
-        }}>
-          <span style={{ fontSize: '11px', color: '#6b7280', marginRight: '5px' }}>Less</span>
+        <div className="heatmap-legend">
+          <span>Less</span>
           {[0,1,2,3,4].map(level => (
             <div
               key={level}
-              style={{ 
-                backgroundColor: COLORS[level],
-                width: `${CELL_SIZE}px`,
-                height: `${CELL_SIZE}px`,
-                borderRadius: '3px'
-              }}
+              className="legend-box"
+              style={{ backgroundColor: COLORS[level] }}
             />
           ))}
-          <span style={{ fontSize: '11px', color: '#6b7280', marginLeft: '5px' }}>More</span>
-        </div>
+          <span>More</span>
+      </div>
       </div>
 
       {/* Daily Breakdown */}
@@ -306,172 +314,281 @@ export default function StreakHeatmap({ streakData = {} }) {
             .filter(day => day && !day.empty)
             .slice(0, 30)
             .map((day, idx) => (
-              <div key={idx} className="breakdown-item">
+              <div 
+                key={idx} 
+                className="breakdown-item"
+                style={{ 
+                  background: day.missed ? '#fee2e2' : '#f9fafb'
+                }}
+              >
                 <span className="breakdown-date">
                   {day.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                 </span>
                 <div 
                   className="breakdown-dot"
                   style={{ 
-                    backgroundColor: day.active ? COLORS[day.intensity] : COLORS[0],
-                    width: '12px',
-                    height: '12px',
-                    borderRadius: '3px'
+                    backgroundColor: day.active ? COLORS[day.intensity] : (day.missed ? '#ef4444' : COLORS[0])
                   }}
                 />
-                <span className="breakdown-day">Day {day.day}</span>
+                <span className="breakdown-day" style={{ color: day.missed ? '#ef4444' : '#9ca3af' }}>
+                  Day {day.day}
+                </span>
               </div>
             ))}
         </div>
-      </div>
-
-      {/* Footer */}
-      <div className="heatmap-footer">
-        <p>
-          <span>📌</span> 
-          Started: <strong>15 March 2026</strong> • 
-          Target: <strong>21 September 2026</strong> • 
-          <span className={stats.totalActive >= 191 ? 'text-success' : ''}>
-            {stats.totalActive >= 191 ? ' 🎉 COMPLETED!' : ` ${191 - stats.totalActive} days remaining`}
-          </span>
-        </p>
       </div>
 
       <style jsx>{`
         .heatmap-page {
           max-width: 1200px;
           margin: 0 auto;
-          padding: 1.5rem;
+          padding: 1rem;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
         }
 
+        /* ===== HEADER STYLES ===== */
         .heatmap-header {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
+          flex-wrap: wrap;
+          gap: 1rem;
         }
 
         .heatmap-header h1 {
-          font-size: 2rem;
+          font-size: 1.8rem;
           margin: 0;
-          background: linear-gradient(135deg, #10b981, #34d399);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          color: #10b981;
         }
 
         .heatmap-subtitle {
           color: #6b7280;
           font-size: 0.9rem;
-          margin-top: 0.3rem;
+          margin-top: 0.2rem;
         }
 
         .heatmap-badge {
-          background: linear-gradient(135deg, #10b981, #059669);
+          background: #10b981;
           color: white;
-          padding: 0.6rem 1.2rem;
+          padding: 0.5rem 1rem;
           border-radius: 2rem;
           font-weight: 600;
+          font-size: 0.9rem;
         }
 
+        /* ===== STATS CARDS ===== */
         .heatmap-stats {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 1rem;
-          margin-bottom: 2rem;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 0.8rem;
+          margin-bottom: 1.5rem;
         }
 
         .stat-card {
-          background: var(--card-light);
-          border-radius: 1rem;
-          padding: 1rem;
+          background: #ffffff;
+          border-radius: 0.8rem;
+          padding: 0.8rem;
           display: flex;
           align-items: center;
-          gap: 1rem;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-          border: 1px solid var(--border-light);
+          gap: 0.8rem;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+          border: 1px solid #f3f4f6;
+          transition: transform 0.2s ease;
+          cursor: pointer;
         }
 
-        .dark .stat-card {
-          background: var(--card-dark);
-          border-color: var(--border-dark);
+        .stat-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .stat-icon {
-          font-size: 1.8rem;
-          background: #f3f4f6;
-          width: 3rem;
-          height: 3rem;
-          border-radius: 0.75rem;
+          font-size: 1.5rem;
+          background: #f9fafb;
+          width: 2.8rem;
+          height: 2.8rem;
+          border-radius: 0.6rem;
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-
-        .dark .stat-icon {
-          background: #2d2d2d;
+          flex-shrink: 0;
         }
 
         .stat-value {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           font-weight: 700;
-          color: var(--text-h);
+          color: #111827;
           line-height: 1.2;
         }
 
         .stat-label {
-          font-size: 0.7rem;
+          font-size: 0.65rem;
           color: #6b7280;
           text-transform: uppercase;
           letter-spacing: 0.03em;
+          margin-top: 0.1rem;
         }
 
+        /* ===== HEATMAP CONTAINER ===== */
         .heatmap-container {
-          background: var(--card-light);
-          border-radius: 1.5rem;
-          padding: 2rem;
-          margin-bottom: 2rem;
-          box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-          border: 1px solid var(--border-light);
+          background: #ffffff;
+          border-radius: 1.2rem;
+          padding: 1.5rem;
+          margin-bottom: 1.5rem;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+          border: 1px solid #f3f4f6;
+          overflow-x: auto;
         }
 
-        .dark .heatmap-container {
-          background: var(--card-dark);
-          border-color: var(--border-dark);
+        .heatmap-center-wrapper {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          overflow-x: auto;
+          padding-bottom: 8px;
+          -webkit-overflow-scrolling: touch;
         }
 
+        .heatmap-inner-content {
+          display: flex;
+          flex-direction: column;
+          width: fit-content;
+          min-width: min-content;
+        }
+
+        /* ===== MONTH MARKERS ===== */
+        .month-track {
+          margin-left: 40px;
+          height: 22px;
+          position: relative;
+          margin-bottom: 6px;
+          min-width: fit-content;
+        }
+
+        .month-marker {
+          position: absolute;
+          top: 0;
+          font-size: 11px;
+          font-weight: 600;
+          color: #6b7280;
+          letter-spacing: 0.3px;
+          white-space: nowrap;
+        }
+
+        /* ===== HEATMAP GRID ===== */
+        .heatmap-main {
+          display: flex;
+          min-width: fit-content;
+        }
+
+        .weekday-labels {
+          width: 35px;
+          margin-right: 8px;
+          display: flex;
+          flex-direction: column;
+          gap: ${typeof CELL_GAP !== 'undefined' ? CELL_GAP : 5}px;
+          flex-shrink: 0;
+        }
+
+        .weekday-label {
+          font-size: 10px;
+          color: #9ca3af;
+          text-align: right;
+          font-weight: 500;
+          white-space: nowrap;
+        }
+
+        .grid-container {
+          display: flex;
+          width: fit-content;
+          gap: ${typeof CELL_GAP !== 'undefined' ? CELL_GAP : 5}px;
+        }
+
+        .week-column {
+          display: flex;
+          flex-direction: column;
+          gap: ${typeof CELL_GAP !== 'undefined' ? CELL_GAP : 5}px;
+          width: ${typeof CELL_SIZE !== 'undefined' ? CELL_SIZE : 22}px;
+          flex-shrink: 0;
+        }
+
+        /* ===== HEATMAP CELLS ===== */
         .heatmap-cell {
+          border-radius: 4px;
+          cursor: pointer;
           transition: all 0.2s ease;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .heatmap-cell.missed-cell {
+          background-color: #fee2e2 !important;
         }
 
         .heatmap-cell:not(.empty):hover {
-          transform: scale(1.2);
-          box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+          transform: scale(1.1);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
           z-index: 10;
         }
 
-        .daily-breakdown {
-          background: var(--card-light);
-          border-radius: 1.5rem;
-          padding: 1.5rem;
-          margin-bottom: 2rem;
-          border: 1px solid var(--border-light);
+        .heatmap-cell.empty {
+          transition: opacity 0.2s ease;
         }
 
-        .dark .daily-breakdown {
-          background: var(--card-dark);
-          border-color: var(--border-dark);
+        .heatmap-cell.empty:hover {
+          opacity: 0.5 !important;
+        }
+
+        /* ===== LEGEND ===== */
+        .heatmap-legend {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
+          margin-top: 1.5rem;
+          padding-top: 1rem;
+          border-top: 1px solid #f3f4f6;
+          flex-wrap: wrap;
+        }
+
+        .legend-box {
+          width: 14px;
+          height: 14px;
+          border-radius: 3px;
+          position: relative;
+          flex-shrink: 0;
+        }
+
+        .heatmap-legend span {
+          font-size: 11px;
+          color: #6b7280;
+          margin: 0 4px;
+        }
+
+        /* ===== DAILY BREAKDOWN ===== */
+        .daily-breakdown {
+          background: #ffffff;
+          border-radius: 1.2rem;
+          padding: 1.2rem;
+          border: 1px solid #f3f4f6;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .daily-breakdown h3 {
           margin: 0 0 1rem 0;
-          font-size: 1.1rem;
+          font-size: 1rem;
+          color: #374151;
         }
 
         .breakdown-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-          gap: 0.5rem;
-          max-height: 200px;
+          grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+          gap: 0.6rem;
+          max-height: 220px;
           overflow-y: auto;
           padding-right: 0.5rem;
         }
@@ -479,61 +596,144 @@ export default function StreakHeatmap({ streakData = {} }) {
         .breakdown-item {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: 0.4rem;
           padding: 0.4rem;
           background: #f9fafb;
-          border-radius: 0.5rem;
+          border-radius: 0.4rem;
           font-size: 0.7rem;
+          transition: all 0.2s ease;
         }
 
-        .dark .breakdown-item {
-          background: #2d2d2d;
+        .breakdown-item:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
         .breakdown-date {
-          min-width: 45px;
+          min-width: 40px;
           font-weight: 600;
+          color: #4b5563;
+          font-size: 0.65rem;
         }
 
         .breakdown-dot {
-          border-radius: 3px;
+          width: 8px;
+          height: 8px;
+          border-radius: 2px;
+          transition: transform 0.2s ease;
+        }
+
+        .breakdown-item:hover .breakdown-dot {
+          transform: scale(1.2);
         }
 
         .breakdown-day {
-          color: #6b7280;
+          color: #9ca3af;
+          font-size: 0.65rem;
         }
 
-        .heatmap-footer {
-          text-align: center;
-          padding: 1.5rem;
-          background: linear-gradient(135deg, #10b98110, #34d39910);
-          border-radius: 1rem;
-          font-size: 0.9rem;
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+          width: 6px;
+          height: 6px;
         }
 
-        .text-success {
-          color: #10b981;
-          font-weight: 600;
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: #10b981;
+          border-radius: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: #059669;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+          .heatmap-stats {
+            grid-template-columns: repeat(3, 1fr);
+          }
         }
 
         @media (max-width: 768px) {
-          .heatmap-stats {
-            grid-template-columns: repeat(2, 1fr);
-          }
-          
           .heatmap-header {
             flex-direction: column;
-            gap: 1rem;
-            text-align: center;
+            align-items: flex-start;
+          }
+          
+          .heatmap-stats {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+          }
+          
+          .stat-card {
+            padding: 0.6rem;
+          }
+          
+          .stat-icon {
+            width: 2.2rem;
+            height: 2.2rem;
+            font-size: 1.2rem;
+          }
+          
+          .stat-value {
+            font-size: 1rem;
+          }
+          
+          .stat-label {
+            font-size: 0.6rem;
+          }
+          
+          .month-track {
+            margin-left: 35px;
+          }
+          
+          .weekday-labels {
+            width: 30px;
+            margin-right: 6px;
+          }
+          
+          .weekday-label {
+            font-size: 9px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .heatmap-page {
+            padding: 0.8rem;
+          }
+          
+          .heatmap-container {
+            padding: 1rem;
           }
           
           .breakdown-grid {
             grid-template-columns: repeat(2, 1fr);
           }
           
-          .heatmap-cell {
-            width: 12px !important;
-            height: 12px !important;
+          .month-track {
+            margin-left: 30px;
+          }
+          
+          .month-marker {
+            font-size: 10px;
+          }
+          
+          .heatmap-legend {
+            gap: 3px;
+          }
+          
+          .legend-box {
+            width: 12px;
+            height: 12px;
+          }
+          
+          .heatmap-legend span {
+            font-size: 10px;
           }
         }
       `}</style>

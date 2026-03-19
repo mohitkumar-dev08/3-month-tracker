@@ -1199,7 +1199,7 @@ export default function PsychologyMaster() {
       const start = new Date(startDate);
       const diffTime = Math.abs(today - start);
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      setChallengeDay(Math.min(diffDays, 191));
+      setChallengeDay(Math.min(diffDays, 93));
     } else {
       localStorage.setItem("psychologyStartDate", today.toDateString());
       setChallengeDay(1);
@@ -1371,7 +1371,7 @@ export default function PsychologyMaster() {
           <span className="header-icon">🧠</span>
           <h2>Psychology & Communication</h2>
         </div>
-        <div className="day-badge">Day {challengeDay}/191</div>
+        <div className="day-badge">Day {challengeDay}/93</div>
       </div>
 
       {/* Streak & Progress */}
