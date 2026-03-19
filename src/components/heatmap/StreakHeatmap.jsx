@@ -11,7 +11,7 @@ export default function StreakHeatmap({ streakData = {} }) {
   });
 
   // 🔥 START DATE - 15 March 2026
-  const START_DATE = new Date(2026, 2, 15);
+  const START_DATE = new Date(2026, 2, 20);
   const TOTAL_DAYS = 191;
   const CELL_SIZE = 14; // px
   const CELL_GAP = 3; // px
@@ -138,7 +138,7 @@ export default function StreakHeatmap({ streakData = {} }) {
       <div className="heatmap-header">
         <div>
           <h1>🔥 191 Days Challenge</h1>
-          <p className="heatmap-subtitle">15 March 2026 - 21 September 2026</p>
+          <p className="heatmap-subtitle">20 March 2026 - 26 September 2026</p>
         </div>
         <div className="heatmap-badge">
           Day {Math.min(stats.totalActive, 191)}/191

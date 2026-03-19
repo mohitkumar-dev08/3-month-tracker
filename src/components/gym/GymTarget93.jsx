@@ -157,7 +157,7 @@ export default function GymTarget93() {
       
       // Show success message after state update
       setTimeout(() => {
-        alert(`✅ Day ${day} marked and photo saved in 93-days-progress folder!`);
+        alert(`✅ Day ${day} marked and photo saved in 186-days-progress folder!`);
       }, 100);
       
     } catch (error) {

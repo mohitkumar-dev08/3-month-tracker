@@ -1,6 +1,7 @@
 // pages/TrackerPage.jsx
 import QuoteBanner from "../components/common/QuoteBanner";
 import AchievementsGrid from "../components/tracker/AchievementsGrid";
+// ✅ Calendar import hata diya
 
 export default function TrackerPage({ data, onSurvive, onRelapse }) {
   const remainingDays = Math.max(0, 191 - data.currentStreak);
@@ -11,16 +12,16 @@ export default function TrackerPage({ data, onSurvive, onRelapse }) {
   const isTodayMarked = data.lastCheckIn === today;
   
   const milestones = [
-  { days: 7, emoji: "🌿", name: "Sprout", unlocked: data.currentStreak >= 7 },
-  { days: 15, emoji: "🌲", name: "Sapling", unlocked: data.currentStreak >= 15 },
-  { days: 30, emoji: "🌳", name: "Tree", unlocked: data.currentStreak >= 30 },
-  { days: 60, emoji: "🏆", name: "Strong", unlocked: data.currentStreak >= 60 },
-  { days: 90, emoji: "⭐", name: "Star", unlocked: data.currentStreak >= 90 },
-  { days: 120, emoji: "🔥", name: "Fire", unlocked: data.currentStreak >= 120 },
-  { days: 150, emoji: "💪", name: "Warrior", unlocked: data.currentStreak >= 150 },
-  { days: 180, emoji: "👑", name: "Legend", unlocked: data.currentStreak >= 180 },
-  { days: 191, emoji: "🏅", name: "Champion", unlocked: data.currentStreak >= 191 }  // 🔴 190 → 191
-];
+    { days: 7, emoji: "🌿", name: "Sprout", unlocked: data.currentStreak >= 7 },
+    { days: 15, emoji: "🌲", name: "Sapling", unlocked: data.currentStreak >= 15 },
+    { days: 30, emoji: "🌳", name: "Tree", unlocked: data.currentStreak >= 30 },
+    { days: 60, emoji: "🏆", name: "Strong", unlocked: data.currentStreak >= 60 },
+    { days: 90, emoji: "⭐", name: "Star", unlocked: data.currentStreak >= 90 },
+    { days: 120, emoji: "🔥", name: "Fire", unlocked: data.currentStreak >= 120 },
+    { days: 150, emoji: "💪", name: "Warrior", unlocked: data.currentStreak >= 150 },
+    { days: 180, emoji: "👑", name: "Legend", unlocked: data.currentStreak >= 180 },
+    { days: 191, emoji: "🏅", name: "Champion", unlocked: data.currentStreak >= 191 }
+  ];
 
   return (
     <div className="tracker-page">
@@ -86,10 +87,12 @@ export default function TrackerPage({ data, onSurvive, onRelapse }) {
         <div className="tracker-right">
           <AchievementsGrid milestones={milestones} />
           
+          {/* ✅ Calendar section hata diya */}
+          
           <div className="action-card">
             <h3 className="card-title">Daily Check-in</h3>
             <div className="action-buttons">
-              {/* ✅ FIXED: Show different button if already marked */}
+              {/* Show different button if already marked */}
               {isTodayMarked ? (
                 <button 
                   className="btn btn-success btn-block" 
@@ -109,7 +112,7 @@ export default function TrackerPage({ data, onSurvive, onRelapse }) {
               </button>
             </div>
             
-            {/* ✅ OPTIONAL: Show last check-in time */}
+            {/* Show last check-in time */}
             {data.lastCheckIn && (
               <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', color: 'var(--text-light)' }}>
                 Last check-in: {new Date(data.lastCheckIn).toLocaleDateString()}

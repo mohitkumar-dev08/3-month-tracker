@@ -136,7 +136,13 @@ function App() {
             <Route path="/tasks" element={<TasksPage streak={data.currentStreak} />} />
             <Route path="/gym" element={<GymPage streak={data.currentStreak} />} />
             <Route path="/english" element={<EnglishPage streak={data.currentStreak} />} />
-            <Route path="/wellness" element={<WellnessPage streak={data.currentStreak} />} />
+            
+            {/* ✅ FIXED: Pass complete data object to WellnessPage */}
+            <Route 
+              path="/wellness" 
+              element={<WellnessPage streakData={data} />} 
+            />
+            
             <Route path="/inspiration" element={<InspirationPage streak={data.currentStreak} />} />
             <Route path="/advice" element={<AdvicePage streak={data.currentStreak} />} />
             <Route path="/psychology" element={<PsychologyPage streak={data.currentStreak} />} />

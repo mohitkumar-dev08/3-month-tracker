@@ -1,7 +1,7 @@
 // components/wellness/WellnessCalendar.jsx
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 
-export default function WellnessCalendar() {
+export default function WellnessCalendar({ streakData }) {
   const [currentDate, setCurrentDate] = useState(new Date());
   
   const year = currentDate.getFullYear();
@@ -14,9 +14,27 @@ export default function WellnessCalendar() {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDay = new Date(year, month, 1).getDay();
 
-  // Mock data - replace with actual data from your storage
-  const completedDates = ['2026-03-13', '2026-03-12', '2026-03-11', '2026-03-10']; // Completed days
   const todayStr = today.toDateString();
+
+  // ✅ Calculate completed dates based on streak
+  const completedDates = useMemo(() => {
+    if (!streakData || streakData.currentStreak === 0 || !streakData.lastCheckIn) {
+      return [];
+    }
+    
+    const dates = [];
+    const lastDate = new Date(streakData.lastCheckIn);
+    lastDate.setHours(0, 0, 0, 0);
+    
+    // Streak ke hisaab se pichle dates calculate karo
+    for (let i = 0; i < streakData.currentStreak; i++) {
+      const date = new Date(lastDate);
+      date.setDate(lastDate.getDate() - i);
+      dates.push(date.toDateString());
+    }
+    
+    return dates;
+  }, [streakData?.currentStreak, streakData?.lastCheckIn]);
 
   const days = [];
   for (let i = 0; i < firstDay; i++) days.push(null);
@@ -36,8 +54,7 @@ export default function WellnessCalendar() {
   };
 
   const isMissed = (date) => {
-    // Missed if date is before today and not completed
-    return date < today && !isCompleted(date);
+    return date < today && !isCompleted(date) && !isToday(date);
   };
 
   const goToPreviousMonth = () => {
@@ -67,7 +84,7 @@ export default function WellnessCalendar() {
           }
 
           const completed = isCompleted(date);
-          const today = isToday(date);
+          const todayActive = isToday(date);
           const missed = isMissed(date);
 
           return (
@@ -75,7 +92,7 @@ export default function WellnessCalendar() {
               key={index} 
               className={`calendar-day 
                 ${completed ? 'completed' : ''} 
-                ${today ? 'today' : ''} 
+                ${todayActive ? 'today' : ''} 
                 ${missed ? 'missed' : ''}
               `}
             >
@@ -90,7 +107,7 @@ export default function WellnessCalendar() {
       <div className="calendar-legend">
         <div className="legend-item">
           <span className="legend-color completed-color"></span>
-          <span>Completed</span>
+          <span>Completed ({completedDates.length} days)</span>
         </div>
         <div className="legend-item">
           <span className="legend-color today-color"></span>
@@ -101,6 +118,8 @@ export default function WellnessCalendar() {
           <span>Missed</span>
         </div>
       </div>
+      
+      {/* ❌ Streak info completely removed */}
     </div>
   );
 }

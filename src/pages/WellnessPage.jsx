@@ -7,7 +7,8 @@ import DailyJournal from "../components/wellness/DailyJournal";
 import SleepTracker from "../components/wellness/SleepTracker";
 import SleepAnalytics from "../components/wellness/SleepAnalytics";
 
-export default function WellnessPage({ streak }) {
+// ✅ FIXED: Accept streakData prop (complete object)
+export default function WellnessPage({ streakData }) {
   const [activeTab, setActiveTab] = useState("calendar");
 
   const tabs = [
@@ -20,7 +21,7 @@ export default function WellnessPage({ streak }) {
 
   return (
     <div className="wellness-page">
-      <QuoteBanner streak={streak} />
+      <QuoteBanner streak={streakData?.currentStreak || 0} />
 
       <div className="wellness-tabs">
         {tabs.map(tab => (
@@ -35,7 +36,10 @@ export default function WellnessPage({ streak }) {
       </div>
 
       <div className="wellness-content">
-        {activeTab === "calendar" && <WellnessCalendar />}
+        {/* ✅ Pass streakData to Calendar */}
+        {activeTab === "calendar" && <WellnessCalendar streakData={streakData} />}
+        
+        {/* Other components (no changes needed) */}
         {activeTab === "mood" && <MoodTracker />}
         {activeTab === "journal" && <DailyJournal />}
         {activeTab === "sleep" && <SleepTracker />}

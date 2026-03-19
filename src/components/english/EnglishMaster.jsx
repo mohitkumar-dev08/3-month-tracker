@@ -537,46 +537,70 @@ export default function EnglishMaster() {
   }, []);
 
   // Calculate streak based on completed tasks
-  useEffect(() => {
-    if (!isInitialized) return;
+  // ✅ Calculate streak based on completed tasks
+useEffect(() => {
+  if (!isInitialized) return;
+  
+  const calculateStreak = () => {
+    // Sab dates nikaalo jahan koi task complete hua hai
+    const completedDates = Object.keys(checks)
+      .filter(date => {
+        const dayData = checks[date];
+        return dayData && Object.values(dayData).some(v => v === true);
+      })
+      .map(date => new Date(date).toDateString());
     
-    const calculateStreak = () => {
-      const completedDates = Object.keys(checks)
-        .filter(date => {
-          const dayData = checks[date];
-          return dayData && Object.values(dayData).some(v => v === true);
-        })
-        .map(date => new Date(date).toDateString());
-      
-      const todayCompleted = completedDates.includes(todayStr);
-      
-      if (!todayCompleted) {
-        setStreak(0);
-        return;
-      }
-      
-      let count = 1;
-      let currentDate = new Date(today);
-      
-      for (let i = 1; i < 365; i++) {
-        const prevDate = new Date(currentDate);
-        prevDate.setDate(prevDate.getDate() - 1);
-        const prevDateStr = prevDate.toDateString();
-        
-        if (completedDates.includes(prevDateStr)) {
-          count++;
-          currentDate = prevDate;
-        } else {
-          break;
-        }
-      }
-      
-      setStreak(count);
-    };
+    console.log("✅ Completed dates:", completedDates);
     
-    calculateStreak();
-  }, [checks, todayStr, isInitialized]);
-
+    // Agar koi bhi completed date nahi hai to streak 0
+    if (completedDates.length === 0) {
+      setStreak(0);
+      return;
+    }
+    
+    // Sabse recent completed date dhundo
+    const sortedDates = [...completedDates].sort((a, b) => 
+      new Date(b) - new Date(a)
+    );
+    
+    const mostRecentDate = new Date(sortedDates[0]);
+    mostRecentDate.setHours(0, 0, 0, 0);
+    
+    const todayDate = new Date(today);
+    todayDate.setHours(0, 0, 0, 0);
+    
+    // Calculate days difference
+    const diffTime = todayDate - mostRecentDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    
+    // ✅ Agar last completed date 1 se zyada din pehle hai to streak 0
+    if (diffDays > 1) {
+      setStreak(0);
+      return;
+    }
+    
+    // Streak count karo - last completed date se consecutive days count karo
+    let count = 1;
+    let currentDate = new Date(mostRecentDate);
+    
+    for (let i = 1; i < 365; i++) {
+      const prevDate = new Date(currentDate);
+      prevDate.setDate(prevDate.getDate() - 1);
+      const prevDateStr = prevDate.toDateString();
+      
+      if (completedDates.includes(prevDateStr)) {
+        count++;
+        currentDate = prevDate;
+      } else {
+        break;
+      }
+    }
+    
+    setStreak(count);
+  };
+  
+  calculateStreak();
+}, [checks, todayStr, isInitialized]);
   // Save to localStorage
   useEffect(() => {
     if (!isInitialized) return;
@@ -637,7 +661,7 @@ export default function EnglishMaster() {
       }
     }
     
-    return history.reverse();
+    return history;
   };
 
   const history = getHistory();

@@ -26,12 +26,12 @@ export default function GymPhotoUpload({ dayNumber, onPhotoUploaded }) {
         startIn: 'documents'
       });
       
-      // Create or get "93-days-progress" subfolder
+      // Create or get "186-days-progress" subfolder
       let gymFolder;
       try {
-        gymFolder = await handle.getDirectoryHandle('93-days-progress', { create: true });
+        gymFolder = await handle.getDirectoryHandle('186-days-progress', { create: true });
       } catch (err) {
-        gymFolder = await handle.getDirectoryHandle('93-days-progress', { create: true });
+        gymFolder = await handle.getDirectoryHandle('186-days-progress', { create: true });
       }
       
       // Store folder handle in state
@@ -39,14 +39,14 @@ export default function GymPhotoUpload({ dayNumber, onPhotoUploaded }) {
       setFolderSelected(true);
       
       // Get folder path for display
-      const path = handle.name + '/93-days-progress';
+      const path = handle.name + '/186-days-progress';
       setFolderPath(path);
       
       // Store flag and path in localStorage
-      localStorage.setItem("gym93FolderSelected", "true");
-      localStorage.setItem("gym93FolderPath", path);
+      localStorage.setItem("gym186FolderSelected", "true");
+      localStorage.setItem("gym186FolderPath", path);
       
-      alert('✅ Folder "93-days-progress" selected/created! Photos will save there.');
+      alert('✅ Folder "186-days-progress" selected/created! Photos will save there.');
       return gymFolder;
       
     } catch (err) {
@@ -118,7 +118,7 @@ export default function GymPhotoUpload({ dayNumber, onPhotoUploaded }) {
         if (!currentFolderHandle && !folderSelected) {
           const wantsToSelect = window.confirm(
             "📁 No folder selected. Would you like to select a folder for photos?\n\n" +
-            "This will create a '93-days-progress' folder where all photos will be saved."
+            "This will create a '186-days-progress' folder where all photos will be saved."
           );
           
           if (wantsToSelect) {
@@ -131,7 +131,7 @@ export default function GymPhotoUpload({ dayNumber, onPhotoUploaded }) {
         if (currentFolderHandle) {
           saved = await saveToFolder(file, fileName);
           if (saved) {
-            const folderPath = localStorage.getItem("gym93FolderPath") || "93-days-progress";
+            const folderPath = localStorage.getItem("gym186FolderPath") || "186-days-progress";
             alert(`✅ Photo saved as "${folderPath}/${fileName}"`);
           } else {
             downloadPhoto(base64String, fileName);
@@ -154,7 +154,7 @@ export default function GymPhotoUpload({ dayNumber, onPhotoUploaded }) {
             timestamp: new Date().toISOString(),
             day: dayNumber,
             fileName: fileName,
-            folder: saved ? localStorage.getItem("gym93FolderPath") || '93-days-progress' : 'downloads'
+            folder: saved ? localStorage.getItem("gym186FolderPath") || '186-days-progress' : 'downloads'
           }
         };
         localStorage.setItem("gymProgressPhotos", JSON.stringify(updatedPhotos));
@@ -188,15 +188,15 @@ export default function GymPhotoUpload({ dayNumber, onPhotoUploaded }) {
 
       {!folderSelected ? (
         <div className="folder-select-section">
-          <p className="folder-info">📁 Photos will save in "93-days-progress" folder</p>
+          <p className="folder-info">📁 Photos will save in "186-days-progress" folder</p>
           <button onClick={selectFolder} className="folder-select-btn">
             📂 Select/Create Folder
           </button>
-          <p className="folder-hint">(Choose any location - a "93-days-progress" folder will be created)</p>
+          <p className="folder-hint">(Choose any location - a "186-days-progress" folder will be created)</p>
         </div>
       ) : (
         <div className="folder-selected-badge">
-          ✅ Folder: {folderPath || '93-days-progress'}
+          ✅ Folder: {folderPath || '186-days-progress'}
         </div>
       )}
 
@@ -204,7 +204,7 @@ export default function GymPhotoUpload({ dayNumber, onPhotoUploaded }) {
         <div className="photo-preview">
           <img src={preview} alt={`Day ${dayNumber}`} />
           <p className="photo-saved">
-            ✅ Saved in: {folderSelected ? (folderPath || '93-days-progress') : 'Downloads'}
+            ✅ Saved in: {folderSelected ? (folderPath || '186-days-progress') : 'Downloads'}
           </p>
           <button 
             className="change-photo-btn"
@@ -220,7 +220,7 @@ export default function GymPhotoUpload({ dayNumber, onPhotoUploaded }) {
             <span>Click to select photo</span>
             <span className="upload-hint">
               {folderSelected 
-                ? `Will save in: ${folderPath || '93-days-progress'}`
+                ? `Will save in: ${folderPath || '186-days-progress'}`
                 : 'Will download if no folder selected'}
             </span>
           </label>
