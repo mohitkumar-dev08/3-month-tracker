@@ -11,15 +11,18 @@ const TABS = [
 
 const TASKS = {
   todo: [
+    { id: "WaterTip", text: "Water Tip:- Paani dabakar piyo: Din bhar mein 4 litre paani ka target rakho. Agar paani kam pioge toh itni garmi body handle nahi kar payegi aur shayad 1-2 bareek pimple aa jayein." },
     { id: "med1", text: "Meditation 5 Min (3 finger straight + 2 min visualize) - Morning" },
     { id: "english", text: "English Practice" },
     { id: "read", text: "Read Children English stories book" },
     { id: "med2", text: "Meditation 5 Min Simple + Face Yoga" },
     { id: "water", text: "4 liter+ water track with app" },
+    { id: "Yoga", text: "Face Yoga 5 Min only 1 exercise which i sent in WhatsApp" },
     { id: "face", text: "Face Structure Exercise (WhatsApp saved video)" },
     { id: "ice", text: "One min Ice Cube on face" },
     { id: "grooming", text: "Grooming & well fitted outfits / old money / formal classy look" },
-    { id: "asans", text: "Daily 7 Asans [30 sec each, total 1 min per asan]" }
+    { id: "asans", text: "Daily 7 Asans [30 sec each, total 1 min per asan]" },
+    { id: "Sit", text: "Sit with yourself for 10-15 mins without doing anything, simply sit with yourself" },
   ],
   rules: [
     { id: "earbuds", text: "No Earbuds (use wire earphones if needed)" },
@@ -52,6 +55,7 @@ const TASKS = {
   diet: [
     { id: "soaked", text: "5 long + Souf soak overnight OR Sounf powder + gur powder + 4 small gond kitira (alternate days)" },
     { id: "khajoor", text: "1 long, 1 Elaichi, 1 ginger, 1 lemon in khajoor - eat morning" },
+    { id: "Munakka", text: "3 Munakka (without beej eat) + 1 anjeer with water(oversoaked) at morning before going to college" },
     { id: "supplements", text: "One spoon creatine + one whey protein" },
     { id: "milk", text: "Milk + haldi + ginger before sleep (if possible)" },
     { id: "cucumber", text: "One Cucumber Daily" },
