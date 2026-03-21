@@ -13,8 +13,8 @@ export default function StreakHeatmap({ streakData = {} }) {
   const [hoveredCell, setHoveredCell] = useState(null);
 
   // 🔥 START DATE - 20 March 2026 (Friday)
-  const START_DATE = new Date(2026, 2, 20);
-  const TOTAL_DAYS = 93;
+  const START_DATE = new Date(2026, 2, 27);
+  const TOTAL_DAYS = 52;
   
   // RESPONSIVE CELL SIZES
   const CELL_SIZE = typeof window !== 'undefined' && window.innerWidth < 640 ? 16 : 22;
@@ -163,7 +163,7 @@ export default function StreakHeatmap({ streakData = {} }) {
       {/* Header - No animations */}
       <div className="heatmap-header">
         <div>
-          <h1>🔥 93 Days Challenge</h1>
+          <h1>🔥 52 Days Challenge</h1>
           <p className="heatmap-subtitle">
             {startDateStr} - {endDateStr}
           </p>

@@ -484,7 +484,7 @@ export default function EnglishMaster() {
       const start = new Date(startDate);
       const diffTime = Math.abs(today - start);
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      setChallengeDay(Math.min(diffDays, 93));
+      setChallengeDay(Math.min(diffDays, 52));
     } else {
       localStorage.setItem("englishStartDate", today.toDateString());
       setChallengeDay(1);
@@ -695,10 +695,10 @@ useEffect(() => {
       <div className="english-header">
         <div className="header-left">
           <span className="header-icon">🇬🇧</span>
-          <h2>English 6 Month</h2>
+          <h2>English 52 Days</h2>
         </div>
         <div style={{ display: 'flex', gap: '0.5rem' }}>
-          <span className="day-badge" style={{ background: 'var(--primary)' }}>Day {challengeDay}/93</span>
+          <span className="day-badge" style={{ background: 'var(--primary)' }}>Day {challengeDay}/52</span>
           <div className={`day-badge ${dayType}`}>
             {dayType === "sunday" ? "🎙️ Mock Sunday" : 
              dayType === "day1" ? "📘 Day 1" : "📗 Day 2"}

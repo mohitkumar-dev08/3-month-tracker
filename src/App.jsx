@@ -29,7 +29,7 @@ const defaultData = {
   weeklyData: Array(7).fill(0),
   darkMode: false,
   goalStartDate: new Date().toDateString(),
-  goalDuration: 93
+  goalDuration: 52
 };
 
 function App() {
