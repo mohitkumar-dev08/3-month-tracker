@@ -484,7 +484,7 @@ export default function EnglishMaster() {
       const start = new Date(startDate);
       const diffTime = Math.abs(today - start);
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      setChallengeDay(Math.min(diffDays, 52));
+      setChallengeDay(Math.min(diffDays, 56));
     } else {
       localStorage.setItem("englishStartDate", today.toDateString());
       setChallengeDay(1);
@@ -695,10 +695,10 @@ useEffect(() => {
       <div className="english-header">
         <div className="header-left">
           <span className="header-icon">🇬🇧</span>
-          <h2>English 52 Days</h2>
+          <h2>English 56 Days</h2>
         </div>
         <div style={{ display: 'flex', gap: '0.5rem' }}>
-          <span className="day-badge" style={{ background: 'var(--primary)' }}>Day {challengeDay}/52</span>
+          <span className="day-badge" style={{ background: 'var(--primary)' }}>Day {challengeDay}/56</span>
           <div className={`day-badge ${dayType}`}>
             {dayType === "sunday" ? "🎙️ Mock Sunday" : 
              dayType === "day1" ? "📘 Day 1" : "📗 Day 2"}
@@ -721,7 +721,7 @@ useEffect(() => {
       <div className="english-milestones" style={{ marginTop: '1rem', marginBottom: '1rem' }}>
         <h4>🏆 Milestones</h4>
         <div className="milestone-badges">
-          { [10, 20, 30, 40, 50, 60, 70, 80, 93].map(days => (
+          { [10, 20, 30, 40, 56, 60, 70, 80, 93].map(days => (
             <div 
               key={days}
               className={`badge ${streak >= days ? 'unlocked' : 'locked'}`}

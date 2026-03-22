@@ -21,7 +21,6 @@ const TASKS = {
     { id: "face", text: "Face Structure Exercise (WhatsApp saved video)" },
     { id: "ice", text: "One min Ice Cube on face" },
     { id: "grooming", text: "Grooming & well fitted outfits / old money / formal classy look" },
-    { id: "asans", text: "Daily 7 Asans [30 sec each, total 1 min per asan]" },
     { id: "Sit", text: "Sit with yourself for 10-15 mins without doing anything, simply sit with yourself" },
   ],
   rules: [
@@ -44,8 +43,7 @@ const TASKS = {
     { id: "mon_thu", text: "Mon & Thu: besan + milk + honey + haldi (15 min)" },
     { id: "beard", text: "Beard oil & Eye cream before sleep" },
     { id: "feet", text: "Talwe clean + 5 min coconut oil massage before sleep" },
-    { id: "hair", text: "Hair remedy: Amla, Reetha, Shikakai + vit E - Tue & Fri (20 min)" },
-    { id: "serum", text: "Use hair serum before night" }
+    { id: "hair", text: "Hair remedy: Amla, Reetha, Shikakai + vit E - Tue & Fri (20 min)" }
   ],
   gym: [
     { id: "push", text: "Push Day: Chest(2), Shoulder(2), Triceps(2) + 100 Incline Push Ups" },

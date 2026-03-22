@@ -4,8 +4,8 @@ import AchievementsGrid from "../components/tracker/AchievementsGrid";
 // ✅ Calendar import hata diya
 
 export default function TrackerPage({ data, onSurvive, onRelapse }) {
-  const remainingDays = Math.max(0, 52 - data.currentStreak);
-  const progressPercent = (data.currentStreak / 52) * 100;
+  const remainingDays = Math.max(0, 56 - data.currentStreak);
+  const progressPercent = (data.currentStreak / 56) * 100;
   
   // ✅ Check if today is already marked
   const today = new Date().toDateString();
@@ -16,7 +16,7 @@ export default function TrackerPage({ data, onSurvive, onRelapse }) {
     { days: 20, emoji: "🌿", name: "Sprout", unlocked: data.currentStreak >= 20 },
     { days: 30, emoji: "🌲", name: "Sapling", unlocked: data.currentStreak >= 30 },
     { days: 40, emoji: "🌳", name: "Growing Tree", unlocked: data.currentStreak >= 40 },
-    { days: 50, emoji: "💪", name: "Strong", unlocked: data.currentStreak >= 52 },
+    { days: 56, emoji: "💪", name: "Strong", unlocked: data.currentStreak >= 56  },
     { days: 60, emoji: "🔥", name: "On Fire", unlocked: data.currentStreak >= 60 },
     { days: 70, emoji: "⚡", name: "Power Mode", unlocked: data.currentStreak >= 70 },
     { days: 80, emoji: "⭐", name: "Star", unlocked: data.currentStreak >= 80 },
@@ -31,7 +31,7 @@ export default function TrackerPage({ data, onSurvive, onRelapse }) {
         {/* Left Column */}
         <div className="tracker-left">
           <div className="progress-card">
-            <h2 className="card-title">52 Days Challenge</h2>
+            <h2 className="card-title">56 Days Challenge</h2>
             
             <div className="progress-circle-large">
               <svg viewBox="0 0 120 120">
@@ -44,7 +44,7 @@ export default function TrackerPage({ data, onSurvive, onRelapse }) {
                   stroke="var(--primary)"
                   strokeWidth="12"
                   strokeDasharray="339.292"
-                  strokeDashoffset={339.292 * (1 - data.currentStreak / 52)}
+                  strokeDashoffset={339.292 * (1 - data.currentStreak / 56)}
                   strokeLinecap="round"
                   transform="rotate(-90 60 60)"
                 />

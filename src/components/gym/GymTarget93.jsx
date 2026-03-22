@@ -8,7 +8,7 @@ export default function GymTarget93() {
     const saved = localStorage.getItem("gymTarget93");
     return saved ? JSON.parse(saved) : {
       startDate: new Date().toDateString(),
-      totalDays: 52,
+      totalDays: 56,
       completedDays: 0,
       skippedDays: 0, 
       skipHistory: [],
@@ -235,7 +235,7 @@ export default function GymTarget93() {
       )}
 
       <div className="gym-header">
-        <h2>💪 52  Days Gym Target</h2>
+        <h2>💪 56  Days Gym Target</h2>
         <span className="days-badge">{remainingDays} days left</span>
       </div>
 
@@ -358,7 +358,7 @@ export default function GymTarget93() {
       {/* Footer */}
       <div className="gym-footer">
         <span>Started: {formatDate(targetData.startDate)}</span>
-        <span>Target: 52 days</span>
+        <span>Target: 56 days</span>
       </div>
     </div>
   );
